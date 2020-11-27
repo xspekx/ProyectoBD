@@ -701,15 +701,15 @@ public class MenuPostres extends javax.swing.JFrame {
             val2.setText(String.valueOf(i));
             b = i*b;
             total1.setText(String.valueOf(a+b+c+d+e+f+g));
+
         }
     }//GEN-LAST:event_menos2MouseClicked
 
     private void mas4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mas4MouseClicked
         // TODO add your handling code here:
-        int i = 0;
         d = Integer.parseInt(precioPostre4.getText());
-        i = Integer.parseInt(val4.getText());
-        if(i>=0 && i<=50){
+         int i = Integer.parseInt(val4.getText());
+         if(i>=0 && i<=50){
             i = i+1;
             val4.setText(String.valueOf(i));
             d = i*d;

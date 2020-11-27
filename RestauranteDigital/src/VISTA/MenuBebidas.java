@@ -70,21 +70,18 @@ public class MenuBebidas extends javax.swing.JFrame {
         subComida7 = new javax.swing.JTextArea();
         subComida8 = new javax.swing.JTextArea();
         subComida9 = new javax.swing.JTextArea();
+        menos3 = new javax.swing.JLabel();
+        val3 = new javax.swing.JLabel();
+        mas3 = new javax.swing.JLabel();
         jLabel60 = new javax.swing.JLabel();
         jLabel61 = new javax.swing.JLabel();
         jLabel62 = new javax.swing.JLabel();
         jLabel63 = new javax.swing.JLabel();
-        menos3 = new javax.swing.JLabel();
-        val3 = new javax.swing.JLabel();
-        mas2 = new javax.swing.JLabel();
         precioBebida3 = new javax.swing.JLabel();
         precioBebida4 = new javax.swing.JLabel();
         menos4 = new javax.swing.JLabel();
         val4 = new javax.swing.JLabel();
-        mas3 = new javax.swing.JLabel();
         precioBebida2 = new javax.swing.JLabel();
-        menos2 = new javax.swing.JLabel();
-        val2 = new javax.swing.JLabel();
         mas4 = new javax.swing.JLabel();
         precioBebida5 = new javax.swing.JLabel();
         menos5 = new javax.swing.JLabel();
@@ -120,10 +117,12 @@ public class MenuBebidas extends javax.swing.JFrame {
         menos9 = new javax.swing.JLabel();
         val9 = new javax.swing.JLabel();
         mas9 = new javax.swing.JLabel();
+        menos2 = new javax.swing.JLabel();
+        val2 = new javax.swing.JLabel();
+        mas2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(540, 770));
         getContentPane().setLayout(null);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -400,6 +399,35 @@ public class MenuBebidas extends javax.swing.JFrame {
         getContentPane().add(subComida9);
         subComida9.setBounds(50, 600, 250, 40);
 
+        menos3.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
+        menos3.setForeground(new java.awt.Color(34, 66, 73));
+        menos3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/-.png"))); // NOI18N
+        menos3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menos3MouseClicked(evt);
+            }
+        });
+        getContentPane().add(menos3);
+        menos3.setBounds(430, 280, 20, 20);
+
+        val3.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        val3.setForeground(new java.awt.Color(34, 66, 73));
+        val3.setText("0");
+        val3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        getContentPane().add(val3);
+        val3.setBounds(460, 270, 40, 40);
+
+        mas3.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
+        mas3.setForeground(new java.awt.Color(34, 66, 73));
+        mas3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/Imagen7.png"))); // NOI18N
+        mas3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                mas3MouseClicked(evt);
+            }
+        });
+        getContentPane().add(mas3);
+        mas3.setBounds(490, 280, 20, 20);
+
         jLabel60.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel60.setForeground(new java.awt.Color(34, 66, 73));
         jLabel60.setText("6.");
@@ -423,35 +451,6 @@ public class MenuBebidas extends javax.swing.JFrame {
         jLabel63.setText("9.");
         getContentPane().add(jLabel63);
         jLabel63.setBounds(20, 560, 50, 60);
-
-        menos3.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
-        menos3.setForeground(new java.awt.Color(34, 66, 73));
-        menos3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/-.png"))); // NOI18N
-        menos3.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                menos3MouseClicked(evt);
-            }
-        });
-        getContentPane().add(menos3);
-        menos3.setBounds(430, 280, 20, 20);
-
-        val3.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
-        val3.setForeground(new java.awt.Color(34, 66, 73));
-        val3.setText("0");
-        val3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        getContentPane().add(val3);
-        val3.setBounds(460, 260, 40, 60);
-
-        mas2.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
-        mas2.setForeground(new java.awt.Color(34, 66, 73));
-        mas2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/Imagen7.png"))); // NOI18N
-        mas2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                mas2MouseClicked(evt);
-            }
-        });
-        getContentPane().add(mas2);
-        mas2.setBounds(490, 230, 20, 20);
 
         precioBebida3.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
         precioBebida3.setForeground(new java.awt.Color(255, 102, 0));
@@ -483,40 +482,11 @@ public class MenuBebidas extends javax.swing.JFrame {
         getContentPane().add(val4);
         val4.setBounds(460, 310, 40, 60);
 
-        mas3.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
-        mas3.setForeground(new java.awt.Color(34, 66, 73));
-        mas3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/Imagen7.png"))); // NOI18N
-        mas3.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                mas3MouseClicked(evt);
-            }
-        });
-        getContentPane().add(mas3);
-        mas3.setBounds(490, 280, 20, 20);
-
         precioBebida2.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
         precioBebida2.setForeground(new java.awt.Color(255, 102, 0));
         precioBebida2.setText("1500");
         getContentPane().add(precioBebida2);
         precioBebida2.setBounds(350, 220, 70, 40);
-
-        menos2.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
-        menos2.setForeground(new java.awt.Color(34, 66, 73));
-        menos2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/-.png"))); // NOI18N
-        menos2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                menos2MouseClicked(evt);
-            }
-        });
-        getContentPane().add(menos2);
-        menos2.setBounds(430, 230, 20, 20);
-
-        val2.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
-        val2.setForeground(new java.awt.Color(34, 66, 73));
-        val2.setText("0");
-        val2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        getContentPane().add(val2);
-        val2.setBounds(460, 210, 40, 60);
 
         mas4.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         mas4.setForeground(new java.awt.Color(34, 66, 73));
@@ -799,40 +769,41 @@ public class MenuBebidas extends javax.swing.JFrame {
         getContentPane().add(mas9);
         mas9.setBounds(490, 580, 20, 20);
 
+        menos2.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
+        menos2.setForeground(new java.awt.Color(34, 66, 73));
+        menos2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/-.png"))); // NOI18N
+        menos2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menos2MouseClicked(evt);
+            }
+        });
+        getContentPane().add(menos2);
+        menos2.setBounds(430, 230, 20, 20);
+
+        val2.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        val2.setForeground(new java.awt.Color(34, 66, 73));
+        val2.setText("0");
+        val2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        getContentPane().add(val2);
+        val2.setBounds(460, 220, 40, 40);
+
+        mas2.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
+        mas2.setForeground(new java.awt.Color(34, 66, 73));
+        mas2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/Imagen7.png"))); // NOI18N
+        mas2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                mas2MouseClicked(evt);
+            }
+        });
+        getContentPane().add(mas2);
+        mas2.setBounds(490, 230, 20, 20);
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/93b5f9913d2e4316cd6e541c67b9aed0.jpg"))); // NOI18N
         getContentPane().add(jLabel1);
         jLabel1.setBounds(-10, -20, 690, 820);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void menos3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menos3MouseClicked
-        // TODO add your handling code here:
-        int i = 0;
-        c = Integer.parseInt(precioBebida3.getText());
-        i = Integer.parseInt(val3.getText());
-        if(i>0){
-            i = i-1;   
-            
-            val3.setText(String.valueOf(i));
-            c = i*c;
-            total1.setText(String.valueOf(a+b+c+d+e+f+g+h+j));
-        }
-    }//GEN-LAST:event_menos3MouseClicked
-
-    private void mas2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mas2MouseClicked
-        // TODO add your handling code here:
-        int i = 0;
-        b = Integer.parseInt(precioBebida2.getText());
-        i = Integer.parseInt(val2.getText());
-        if(i>=0 && i<=50){
-            i = i+1;
-            val2.setText(String.valueOf(i));
-            b=i*b;
-            total1.setText(String.valueOf(a+b+c+d+e+f+g+h+j));
-
-        }
-    }//GEN-LAST:event_mas2MouseClicked
 
     private void menos4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menos4MouseClicked
         // TODO add your handling code here:
@@ -847,33 +818,6 @@ public class MenuBebidas extends javax.swing.JFrame {
 
         }
     }//GEN-LAST:event_menos4MouseClicked
-
-    private void mas3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mas3MouseClicked
-        // TODO add your handling code here:
-        int i = 0;
-        c = Integer.parseInt(precioBebida3.getText());
-        i = Integer.parseInt(val3.getText());
-        if(i>0 && i<=50){
-            i = i+1;
-            val3.setText(String.valueOf(i));
-            c = i*c;
-            total1.setText(String.valueOf(a+b+c+d+e+f+g+h+j));
-
-        }
-    }//GEN-LAST:event_mas3MouseClicked
-
-    private void menos2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menos2MouseClicked
-        // TODO add your handling code here:
-        int i = 0;
-        b = Integer.parseInt(precioBebida2.getText());
-        i = Integer.parseInt(val2.getText());
-        if(i>0){
-            i = i-1;
-            val2.setText(String.valueOf(i));
-            b = i*b;
-            total1.setText(String.valueOf(a+b+c+d+e+f+g+h+j));
-        }
-    }//GEN-LAST:event_menos2MouseClicked
 
     private void mas4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mas4MouseClicked
         // TODO add your handling code here:
@@ -1045,7 +989,7 @@ public class MenuBebidas extends javax.swing.JFrame {
         if(i>0){
             i = i-1;
             val6.setText(String.valueOf(i));
-            f = i*8990;
+            f = i*f;
             total1.setText(String.valueOf(a+b+c+d+e+f+g+h+j));
 
         }
@@ -1057,6 +1001,60 @@ public class MenuBebidas extends javax.swing.JFrame {
         go.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_total2MouseClicked
+
+    private void menos2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menos2MouseClicked
+        // TODO add your handling code here:
+        int i = 0;
+        b = Integer.parseInt(precioBebida2.getText());
+        i = Integer.parseInt(val6.getText());
+        if(i>0){
+            i = i-1;
+            val2.setText(String.valueOf(i));
+            b = i*b;
+            total1.setText(String.valueOf(a+b+c+d+e+f+g+h+j));
+
+        }
+    }//GEN-LAST:event_menos2MouseClicked
+
+    private void mas2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mas2MouseClicked
+        // TODO add your handling code here:
+        int i = 0;
+        b = Integer.parseInt(precioBebida2.getText());
+        i = Integer.parseInt(val2.getText());
+        if(i>=0 && i<=50){
+            i = i+1;
+            val2.setText(String.valueOf(i));
+            b = i*b;
+            total1.setText(String.valueOf(a+b+c+d+e+f+g+h+j));
+        }
+    }//GEN-LAST:event_mas2MouseClicked
+
+    private void menos3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menos3MouseClicked
+        // TODO add your handling code here:
+        int i = 0;
+        c = Integer.parseInt(precioBebida3.getText());
+        i = Integer.parseInt(val6.getText());
+        if(i>0){
+            i = i-1;
+            val3.setText(String.valueOf(i));
+            c = i*c;
+            total1.setText(String.valueOf(a+b+c+d+e+f+g+h+j));
+        }
+        
+    }//GEN-LAST:event_menos3MouseClicked
+
+    private void mas3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mas3MouseClicked
+        // TODO add your handling code here:
+        int i = 0;
+        c = Integer.parseInt(precioBebida3.getText());
+        i = Integer.parseInt(val3.getText());
+        if(i>=0 && i<=50){
+            i = i+1;
+            val3.setText(String.valueOf(i));
+            c = i*c;
+            total1.setText(String.valueOf(a+b+c+d+e+f+g+h+j));
+        }
+    }//GEN-LAST:event_mas3MouseClicked
 
     /**
      * @param args the command line arguments
