@@ -10,8 +10,17 @@ package VISTA;
  * @author reyna
  */
 public class MenuBebidas extends javax.swing.JFrame {
-
+    int a = 0;
+    int b = 0;
+    int c = 0;
+    int d = 0;
+    int e = 0;
+    int f = 0;
+    int g = 0;
+    int h = 0;
+    int j = 0;
         
+
 
     /**
      * Creates new form MenuBebidas
@@ -33,7 +42,6 @@ public class MenuBebidas extends javax.swing.JFrame {
 
         jLabel4 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        menos3 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -41,82 +49,94 @@ public class MenuBebidas extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        val3 = new javax.swing.JLabel();
-        mas2 = new javax.swing.JLabel();
-        precioBebida3 = new javax.swing.JLabel();
         bebida3 = new javax.swing.JLabel();
         bebida4 = new javax.swing.JLabel();
-        precioBebida4 = new javax.swing.JLabel();
-        menos4 = new javax.swing.JLabel();
-        val4 = new javax.swing.JLabel();
-        mas3 = new javax.swing.JLabel();
         bebida2 = new javax.swing.JLabel();
-        precioBebida2 = new javax.swing.JLabel();
-        menos2 = new javax.swing.JLabel();
-        val2 = new javax.swing.JLabel();
-        mas4 = new javax.swing.JLabel();
         bebida5 = new javax.swing.JLabel();
-        precioBebida5 = new javax.swing.JLabel();
-        menos5 = new javax.swing.JLabel();
-        val5 = new javax.swing.JLabel();
-        mas5 = new javax.swing.JLabel();
+        total2 = new javax.swing.JLabel();
         bebida6 = new javax.swing.JLabel();
-        precioBebida6 = new javax.swing.JLabel();
-        menos6 = new javax.swing.JLabel();
-        val6 = new javax.swing.JLabel();
-        mas6 = new javax.swing.JLabel();
         bebida8 = new javax.swing.JLabel();
-        precioBebida8 = new javax.swing.JLabel();
-        menos8 = new javax.swing.JLabel();
-        val8 = new javax.swing.JLabel();
-        mas8 = new javax.swing.JLabel();
         bebida9 = new javax.swing.JLabel();
-        precioBebida9 = new javax.swing.JLabel();
-        menos9 = new javax.swing.JLabel();
-        val9 = new javax.swing.JLabel();
-        mas9 = new javax.swing.JLabel();
         bebida1 = new javax.swing.JLabel();
-        precioBebida1 = new javax.swing.JLabel();
-        menos1 = new javax.swing.JLabel();
-        val1 = new javax.swing.JLabel();
-        mas1 = new javax.swing.JLabel();
         bebida7 = new javax.swing.JLabel();
-        precioBebida7 = new javax.swing.JLabel();
-        menos7 = new javax.swing.JLabel();
-        val7 = new javax.swing.JLabel();
-        mas7 = new javax.swing.JLabel();
+        total1 = new javax.swing.JLabel();
+        total = new javax.swing.JLabel();
+        subComida1 = new javax.swing.JTextArea();
+        subComida2 = new javax.swing.JTextArea();
+        subComida3 = new javax.swing.JTextArea();
+        subComida4 = new javax.swing.JTextArea();
+        subComida5 = new javax.swing.JTextArea();
+        subComida6 = new javax.swing.JTextArea();
+        subComida7 = new javax.swing.JTextArea();
+        subComida8 = new javax.swing.JTextArea();
+        subComida9 = new javax.swing.JTextArea();
         jLabel60 = new javax.swing.JLabel();
         jLabel61 = new javax.swing.JLabel();
         jLabel62 = new javax.swing.JLabel();
         jLabel63 = new javax.swing.JLabel();
+        menos3 = new javax.swing.JLabel();
+        val3 = new javax.swing.JLabel();
+        mas2 = new javax.swing.JLabel();
+        precioBebida3 = new javax.swing.JLabel();
+        precioBebida4 = new javax.swing.JLabel();
+        menos4 = new javax.swing.JLabel();
+        val4 = new javax.swing.JLabel();
+        mas3 = new javax.swing.JLabel();
+        precioBebida2 = new javax.swing.JLabel();
+        menos2 = new javax.swing.JLabel();
+        val2 = new javax.swing.JLabel();
+        mas4 = new javax.swing.JLabel();
+        precioBebida5 = new javax.swing.JLabel();
+        menos5 = new javax.swing.JLabel();
+        val5 = new javax.swing.JLabel();
+        mas5 = new javax.swing.JLabel();
+        precioBebida6 = new javax.swing.JLabel();
+        menos6 = new javax.swing.JLabel();
+        val6 = new javax.swing.JLabel();
+        mas6 = new javax.swing.JLabel();
+        precioBebida1 = new javax.swing.JLabel();
+        menos1 = new javax.swing.JLabel();
+        val1 = new javax.swing.JLabel();
+        mas1 = new javax.swing.JLabel();
+        precioBebida7 = new javax.swing.JLabel();
+        menos7 = new javax.swing.JLabel();
+        val7 = new javax.swing.JLabel();
+        mas7 = new javax.swing.JLabel();
+        simbolo1 = new javax.swing.JLabel();
+        simbolo2 = new javax.swing.JLabel();
+        simbolo3 = new javax.swing.JLabel();
+        simbolo4 = new javax.swing.JLabel();
+        simbolo5 = new javax.swing.JLabel();
+        simbolo6 = new javax.swing.JLabel();
+        simbolo7 = new javax.swing.JLabel();
+        simbolo8 = new javax.swing.JLabel();
+        precioBebida8 = new javax.swing.JLabel();
+        simbolo9 = new javax.swing.JLabel();
+        precioBebida9 = new javax.swing.JLabel();
+        menos8 = new javax.swing.JLabel();
+        val8 = new javax.swing.JLabel();
+        mas8 = new javax.swing.JLabel();
+        simbolo10 = new javax.swing.JLabel();
+        menos9 = new javax.swing.JLabel();
+        val9 = new javax.swing.JLabel();
+        mas9 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(550, 770));
+        setPreferredSize(new java.awt.Dimension(540, 770));
         getContentPane().setLayout(null);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(34, 66, 73));
         jLabel4.setText("5.");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(20, 430, 60, 60);
+        jLabel4.setBounds(20, 360, 60, 60);
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(34, 66, 73));
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/Imagen4.png"))); // NOI18N
         getContentPane().add(jLabel8);
-        jLabel8.setBounds(70, 20, 40, 100);
-
-        menos3.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
-        menos3.setForeground(new java.awt.Color(34, 66, 73));
-        menos3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/-.png"))); // NOI18N
-        menos3.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                menos3MouseClicked(evt);
-            }
-        });
-        getContentPane().add(menos3);
-        menos3.setBounds(400, 350, 20, 20);
+        jLabel8.setBounds(70, 10, 40, 100);
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(34, 66, 73));
@@ -125,10 +145,10 @@ public class MenuBebidas extends javax.swing.JFrame {
         jLabel9.setBounds(30, 10, 40, 110);
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(34, 66, 73));
+        jLabel7.setForeground(new java.awt.Color(255, 102, 0));
         jLabel7.setText("BEBIDAS");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(180, 50, 230, 60);
+        jLabel7.setBounds(160, 50, 230, 60);
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(34, 66, 73));
@@ -140,32 +160,287 @@ public class MenuBebidas extends javax.swing.JFrame {
         jLabel11.setForeground(new java.awt.Color(34, 66, 73));
         jLabel11.setText("1.");
         getContentPane().add(jLabel11);
-        jLabel11.setBounds(20, 230, 50, 60);
+        jLabel11.setBounds(20, 160, 50, 60);
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(34, 66, 73));
         jLabel13.setText("2.");
         getContentPane().add(jLabel13);
-        jLabel13.setBounds(20, 280, 50, 60);
+        jLabel13.setBounds(20, 210, 50, 60);
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(34, 66, 73));
         jLabel14.setText("3.");
         getContentPane().add(jLabel14);
-        jLabel14.setBounds(20, 330, 60, 60);
+        jLabel14.setBounds(20, 260, 60, 60);
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(34, 66, 73));
         jLabel15.setText("4.");
         getContentPane().add(jLabel15);
-        jLabel15.setBounds(20, 380, 50, 60);
+        jLabel15.setBounds(20, 310, 50, 60);
+
+        bebida3.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        bebida3.setForeground(new java.awt.Color(255, 102, 0));
+        bebida3.setText("Fanta (500 ml)");
+        getContentPane().add(bebida3);
+        bebida3.setBounds(50, 260, 160, 60);
+
+        bebida4.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        bebida4.setForeground(new java.awt.Color(255, 102, 0));
+        bebida4.setText("Fanta Zero (500 ml)");
+        getContentPane().add(bebida4);
+        bebida4.setBounds(50, 310, 200, 60);
+
+        bebida2.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        bebida2.setForeground(new java.awt.Color(255, 102, 0));
+        bebida2.setText("Coca-Cola Zero");
+        getContentPane().add(bebida2);
+        bebida2.setBounds(50, 210, 250, 60);
+
+        bebida5.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        bebida5.setForeground(new java.awt.Color(255, 102, 0));
+        bebida5.setText("Sprite (500 ml)");
+        getContentPane().add(bebida5);
+        bebida5.setBounds(50, 360, 180, 60);
+
+        total2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        total2.setForeground(new java.awt.Color(34, 66, 73));
+        total2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/agregar.png"))); // NOI18N
+        total2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                total2MouseClicked(evt);
+            }
+        });
+        getContentPane().add(total2);
+        total2.setBounds(310, 660, 200, 80);
+
+        bebida6.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        bebida6.setForeground(new java.awt.Color(255, 102, 0));
+        bebida6.setText("Sprite Zero (500 ml)");
+        getContentPane().add(bebida6);
+        bebida6.setBounds(50, 410, 200, 60);
+
+        bebida8.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        bebida8.setForeground(new java.awt.Color(255, 102, 0));
+        bebida8.setText("Jugo natural melon");
+        getContentPane().add(bebida8);
+        bebida8.setBounds(50, 520, 190, 40);
+
+        bebida9.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        bebida9.setForeground(new java.awt.Color(255, 102, 0));
+        bebida9.setText("Jugo natural piña");
+        getContentPane().add(bebida9);
+        bebida9.setBounds(50, 570, 280, 40);
+
+        bebida1.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        bebida1.setForeground(new java.awt.Color(255, 102, 0));
+        bebida1.setText("Coca-Cola");
+        getContentPane().add(bebida1);
+        bebida1.setBounds(50, 160, 220, 60);
+
+        bebida7.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        bebida7.setForeground(new java.awt.Color(255, 102, 0));
+        bebida7.setText("Jugo natural frambuesa");
+        getContentPane().add(bebida7);
+        bebida7.setBounds(50, 470, 230, 40);
+
+        total1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        total1.setForeground(new java.awt.Color(34, 66, 73));
+        getContentPane().add(total1);
+        total1.setBounds(130, 670, 140, 40);
+
+        total.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        total.setForeground(new java.awt.Color(34, 66, 73));
+        total.setText("TOTAL  $");
+        getContentPane().add(total);
+        total.setBounds(20, 670, 130, 40);
+
+        subComida1.setEditable(false);
+        subComida1.setColumns(20);
+        subComida1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        subComida1.setForeground(new java.awt.Color(34, 66, 73));
+        subComida1.setLineWrap(true);
+        subComida1.setRows(5);
+        subComida1.setText("500 ml");
+        subComida1.setBorder(null);
+        subComida1.setCaretColor(new java.awt.Color(255, 255, 255));
+        subComida1.setDisabledTextColor(new java.awt.Color(34, 66, 73));
+        subComida1.setMinimumSize(new java.awt.Dimension(150, 20));
+        subComida1.setPreferredSize(new java.awt.Dimension(280, 100));
+        subComida1.setSelectionColor(new java.awt.Color(34, 66, 73));
+        getContentPane().add(subComida1);
+        subComida1.setBounds(50, 200, 250, 50);
+
+        subComida2.setEditable(false);
+        subComida2.setColumns(20);
+        subComida2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        subComida2.setForeground(new java.awt.Color(34, 66, 73));
+        subComida2.setLineWrap(true);
+        subComida2.setRows(5);
+        subComida2.setText("500ml\n");
+        subComida2.setBorder(null);
+        subComida2.setCaretColor(new java.awt.Color(255, 255, 255));
+        subComida2.setDisabledTextColor(new java.awt.Color(34, 66, 73));
+        subComida2.setMinimumSize(new java.awt.Dimension(150, 20));
+        subComida2.setPreferredSize(new java.awt.Dimension(280, 100));
+        subComida2.setSelectionColor(new java.awt.Color(34, 66, 73));
+        getContentPane().add(subComida2);
+        subComida2.setBounds(50, 250, 250, 40);
+
+        subComida3.setEditable(false);
+        subComida3.setColumns(20);
+        subComida3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        subComida3.setForeground(new java.awt.Color(34, 66, 73));
+        subComida3.setLineWrap(true);
+        subComida3.setRows(5);
+        subComida3.setText("500 ml");
+        subComida3.setBorder(null);
+        subComida3.setCaretColor(new java.awt.Color(255, 255, 255));
+        subComida3.setDisabledTextColor(new java.awt.Color(34, 66, 73));
+        subComida3.setMinimumSize(new java.awt.Dimension(150, 20));
+        subComida3.setPreferredSize(new java.awt.Dimension(280, 100));
+        subComida3.setSelectionColor(new java.awt.Color(34, 66, 73));
+        getContentPane().add(subComida3);
+        subComida3.setBounds(50, 300, 250, 50);
+
+        subComida4.setEditable(false);
+        subComida4.setColumns(20);
+        subComida4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        subComida4.setForeground(new java.awt.Color(34, 66, 73));
+        subComida4.setLineWrap(true);
+        subComida4.setRows(5);
+        subComida4.setText("500 ml");
+        subComida4.setBorder(null);
+        subComida4.setCaretColor(new java.awt.Color(255, 255, 255));
+        subComida4.setDisabledTextColor(new java.awt.Color(34, 66, 73));
+        subComida4.setMinimumSize(new java.awt.Dimension(150, 20));
+        subComida4.setPreferredSize(new java.awt.Dimension(280, 100));
+        subComida4.setSelectionColor(new java.awt.Color(34, 66, 73));
+        getContentPane().add(subComida4);
+        subComida4.setBounds(50, 350, 250, 40);
+
+        subComida5.setEditable(false);
+        subComida5.setColumns(20);
+        subComida5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        subComida5.setForeground(new java.awt.Color(34, 66, 73));
+        subComida5.setLineWrap(true);
+        subComida5.setRows(5);
+        subComida5.setText("500 ml");
+        subComida5.setBorder(null);
+        subComida5.setCaretColor(new java.awt.Color(255, 255, 255));
+        subComida5.setDisabledTextColor(new java.awt.Color(34, 66, 73));
+        subComida5.setMinimumSize(new java.awt.Dimension(150, 20));
+        subComida5.setPreferredSize(new java.awt.Dimension(280, 100));
+        subComida5.setSelectionColor(new java.awt.Color(34, 66, 73));
+        getContentPane().add(subComida5);
+        subComida5.setBounds(50, 400, 250, 40);
+
+        subComida6.setEditable(false);
+        subComida6.setColumns(20);
+        subComida6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        subComida6.setForeground(new java.awt.Color(34, 66, 73));
+        subComida6.setLineWrap(true);
+        subComida6.setRows(5);
+        subComida6.setText("500 ml");
+        subComida6.setBorder(null);
+        subComida6.setCaretColor(new java.awt.Color(255, 255, 255));
+        subComida6.setDisabledTextColor(new java.awt.Color(34, 66, 73));
+        subComida6.setMinimumSize(new java.awt.Dimension(150, 20));
+        subComida6.setPreferredSize(new java.awt.Dimension(280, 100));
+        subComida6.setSelectionColor(new java.awt.Color(34, 66, 73));
+        getContentPane().add(subComida6);
+        subComida6.setBounds(50, 450, 250, 50);
+
+        subComida7.setEditable(false);
+        subComida7.setColumns(20);
+        subComida7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        subComida7.setForeground(new java.awt.Color(34, 66, 73));
+        subComida7.setLineWrap(true);
+        subComida7.setRows(5);
+        subComida7.setText("500 ml");
+        subComida7.setBorder(null);
+        subComida7.setCaretColor(new java.awt.Color(255, 255, 255));
+        subComida7.setDisabledTextColor(new java.awt.Color(34, 66, 73));
+        subComida7.setMinimumSize(new java.awt.Dimension(150, 20));
+        subComida7.setPreferredSize(new java.awt.Dimension(280, 100));
+        subComida7.setSelectionColor(new java.awt.Color(34, 66, 73));
+        getContentPane().add(subComida7);
+        subComida7.setBounds(50, 500, 250, 40);
+
+        subComida8.setEditable(false);
+        subComida8.setColumns(20);
+        subComida8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        subComida8.setForeground(new java.awt.Color(34, 66, 73));
+        subComida8.setLineWrap(true);
+        subComida8.setRows(5);
+        subComida8.setText("500 ml");
+        subComida8.setBorder(null);
+        subComida8.setCaretColor(new java.awt.Color(255, 255, 255));
+        subComida8.setDisabledTextColor(new java.awt.Color(34, 66, 73));
+        subComida8.setMinimumSize(new java.awt.Dimension(150, 20));
+        subComida8.setPreferredSize(new java.awt.Dimension(280, 100));
+        subComida8.setSelectionColor(new java.awt.Color(34, 66, 73));
+        getContentPane().add(subComida8);
+        subComida8.setBounds(50, 550, 250, 40);
+
+        subComida9.setEditable(false);
+        subComida9.setColumns(20);
+        subComida9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        subComida9.setForeground(new java.awt.Color(34, 66, 73));
+        subComida9.setLineWrap(true);
+        subComida9.setRows(5);
+        subComida9.setText("500 ml");
+        subComida9.setBorder(null);
+        subComida9.setCaretColor(new java.awt.Color(255, 255, 255));
+        subComida9.setDisabledTextColor(new java.awt.Color(34, 66, 73));
+        subComida9.setMinimumSize(new java.awt.Dimension(150, 20));
+        subComida9.setPreferredSize(new java.awt.Dimension(280, 100));
+        subComida9.setSelectionColor(new java.awt.Color(34, 66, 73));
+        getContentPane().add(subComida9);
+        subComida9.setBounds(50, 600, 250, 40);
+
+        jLabel60.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel60.setForeground(new java.awt.Color(34, 66, 73));
+        jLabel60.setText("6.");
+        getContentPane().add(jLabel60);
+        jLabel60.setBounds(20, 410, 50, 60);
+
+        jLabel61.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel61.setForeground(new java.awt.Color(34, 66, 73));
+        jLabel61.setText("7.");
+        getContentPane().add(jLabel61);
+        jLabel61.setBounds(20, 460, 50, 60);
+
+        jLabel62.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel62.setForeground(new java.awt.Color(34, 66, 73));
+        jLabel62.setText("8.");
+        getContentPane().add(jLabel62);
+        jLabel62.setBounds(20, 510, 60, 60);
+
+        jLabel63.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel63.setForeground(new java.awt.Color(34, 66, 73));
+        jLabel63.setText("9.");
+        getContentPane().add(jLabel63);
+        jLabel63.setBounds(20, 560, 50, 60);
+
+        menos3.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
+        menos3.setForeground(new java.awt.Color(34, 66, 73));
+        menos3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/-.png"))); // NOI18N
+        menos3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menos3MouseClicked(evt);
+            }
+        });
+        getContentPane().add(menos3);
+        menos3.setBounds(430, 280, 20, 20);
 
         val3.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
         val3.setForeground(new java.awt.Color(34, 66, 73));
         val3.setText("0");
         val3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         getContentPane().add(val3);
-        val3.setBounds(430, 330, 40, 50);
+        val3.setBounds(460, 260, 40, 60);
 
         mas2.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         mas2.setForeground(new java.awt.Color(34, 66, 73));
@@ -176,31 +451,19 @@ public class MenuBebidas extends javax.swing.JFrame {
             }
         });
         getContentPane().add(mas2);
-        mas2.setBounds(470, 300, 20, 20);
+        mas2.setBounds(490, 230, 20, 20);
 
         precioBebida3.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
-        precioBebida3.setForeground(new java.awt.Color(34, 66, 73));
-        precioBebida3.setText("$1500");
+        precioBebida3.setForeground(new java.awt.Color(255, 102, 0));
+        precioBebida3.setText("1500");
         getContentPane().add(precioBebida3);
-        precioBebida3.setBounds(310, 340, 70, 40);
-
-        bebida3.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
-        bebida3.setForeground(new java.awt.Color(34, 66, 73));
-        bebida3.setText("Fanta (500 ml)");
-        getContentPane().add(bebida3);
-        bebida3.setBounds(50, 330, 160, 60);
-
-        bebida4.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
-        bebida4.setForeground(new java.awt.Color(34, 66, 73));
-        bebida4.setText("Fanta Zero (500 ml)");
-        getContentPane().add(bebida4);
-        bebida4.setBounds(50, 380, 200, 60);
+        precioBebida3.setBounds(350, 270, 70, 40);
 
         precioBebida4.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
-        precioBebida4.setForeground(new java.awt.Color(34, 66, 73));
-        precioBebida4.setText("$1500");
+        precioBebida4.setForeground(new java.awt.Color(255, 102, 0));
+        precioBebida4.setText("1500");
         getContentPane().add(precioBebida4);
-        precioBebida4.setBounds(310, 390, 70, 40);
+        precioBebida4.setBounds(350, 320, 70, 40);
 
         menos4.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         menos4.setForeground(new java.awt.Color(34, 66, 73));
@@ -211,14 +474,14 @@ public class MenuBebidas extends javax.swing.JFrame {
             }
         });
         getContentPane().add(menos4);
-        menos4.setBounds(400, 400, 20, 20);
+        menos4.setBounds(430, 330, 30, 20);
 
         val4.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
         val4.setForeground(new java.awt.Color(34, 66, 73));
         val4.setText("0");
         val4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         getContentPane().add(val4);
-        val4.setBounds(430, 380, 40, 50);
+        val4.setBounds(460, 310, 40, 60);
 
         mas3.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         mas3.setForeground(new java.awt.Color(34, 66, 73));
@@ -229,19 +492,13 @@ public class MenuBebidas extends javax.swing.JFrame {
             }
         });
         getContentPane().add(mas3);
-        mas3.setBounds(470, 350, 20, 20);
-
-        bebida2.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
-        bebida2.setForeground(new java.awt.Color(34, 66, 73));
-        bebida2.setText("Coca-Cola Zero (500 ml)");
-        getContentPane().add(bebida2);
-        bebida2.setBounds(50, 280, 250, 60);
+        mas3.setBounds(490, 280, 20, 20);
 
         precioBebida2.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
-        precioBebida2.setForeground(new java.awt.Color(34, 66, 73));
-        precioBebida2.setText("$1500");
+        precioBebida2.setForeground(new java.awt.Color(255, 102, 0));
+        precioBebida2.setText("1500");
         getContentPane().add(precioBebida2);
-        precioBebida2.setBounds(310, 290, 70, 40);
+        precioBebida2.setBounds(350, 220, 70, 40);
 
         menos2.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         menos2.setForeground(new java.awt.Color(34, 66, 73));
@@ -252,14 +509,14 @@ public class MenuBebidas extends javax.swing.JFrame {
             }
         });
         getContentPane().add(menos2);
-        menos2.setBounds(400, 300, 20, 20);
+        menos2.setBounds(430, 230, 20, 20);
 
         val2.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
         val2.setForeground(new java.awt.Color(34, 66, 73));
         val2.setText("0");
         val2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         getContentPane().add(val2);
-        val2.setBounds(430, 280, 40, 50);
+        val2.setBounds(460, 210, 40, 60);
 
         mas4.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         mas4.setForeground(new java.awt.Color(34, 66, 73));
@@ -270,19 +527,13 @@ public class MenuBebidas extends javax.swing.JFrame {
             }
         });
         getContentPane().add(mas4);
-        mas4.setBounds(470, 400, 20, 20);
-
-        bebida5.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
-        bebida5.setForeground(new java.awt.Color(34, 66, 73));
-        bebida5.setText("Sprite (500 ml)");
-        getContentPane().add(bebida5);
-        bebida5.setBounds(50, 430, 180, 60);
+        mas4.setBounds(490, 330, 30, 20);
 
         precioBebida5.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
-        precioBebida5.setForeground(new java.awt.Color(34, 66, 73));
-        precioBebida5.setText("$1500");
+        precioBebida5.setForeground(new java.awt.Color(255, 102, 0));
+        precioBebida5.setText("1500");
         getContentPane().add(precioBebida5);
-        precioBebida5.setBounds(310, 440, 70, 40);
+        precioBebida5.setBounds(350, 370, 70, 40);
 
         menos5.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         menos5.setForeground(new java.awt.Color(34, 66, 73));
@@ -293,14 +544,14 @@ public class MenuBebidas extends javax.swing.JFrame {
             }
         });
         getContentPane().add(menos5);
-        menos5.setBounds(400, 450, 20, 20);
+        menos5.setBounds(430, 380, 20, 20);
 
         val5.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
         val5.setForeground(new java.awt.Color(34, 66, 73));
         val5.setText("0");
         val5.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         getContentPane().add(val5);
-        val5.setBounds(430, 430, 40, 50);
+        val5.setBounds(460, 360, 40, 60);
 
         mas5.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         mas5.setForeground(new java.awt.Color(34, 66, 73));
@@ -311,19 +562,13 @@ public class MenuBebidas extends javax.swing.JFrame {
             }
         });
         getContentPane().add(mas5);
-        mas5.setBounds(470, 450, 20, 20);
-
-        bebida6.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
-        bebida6.setForeground(new java.awt.Color(34, 66, 73));
-        bebida6.setText("Sprite Zero (500 ml)");
-        getContentPane().add(bebida6);
-        bebida6.setBounds(50, 480, 200, 60);
+        mas5.setBounds(490, 380, 20, 20);
 
         precioBebida6.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
-        precioBebida6.setForeground(new java.awt.Color(34, 66, 73));
-        precioBebida6.setText("$1500");
+        precioBebida6.setForeground(new java.awt.Color(255, 102, 0));
+        precioBebida6.setText("1500");
         getContentPane().add(precioBebida6);
-        precioBebida6.setBounds(310, 490, 70, 40);
+        precioBebida6.setBounds(350, 420, 70, 40);
 
         menos6.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         menos6.setForeground(new java.awt.Color(34, 66, 73));
@@ -334,14 +579,14 @@ public class MenuBebidas extends javax.swing.JFrame {
             }
         });
         getContentPane().add(menos6);
-        menos6.setBounds(400, 500, 20, 20);
+        menos6.setBounds(430, 430, 20, 20);
 
         val6.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
         val6.setForeground(new java.awt.Color(34, 66, 73));
         val6.setText("0");
         val6.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         getContentPane().add(val6);
-        val6.setBounds(430, 480, 40, 50);
+        val6.setBounds(460, 410, 40, 60);
 
         mas6.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         mas6.setForeground(new java.awt.Color(34, 66, 73));
@@ -352,101 +597,13 @@ public class MenuBebidas extends javax.swing.JFrame {
             }
         });
         getContentPane().add(mas6);
-        mas6.setBounds(470, 500, 20, 20);
-
-        bebida8.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
-        bebida8.setForeground(new java.awt.Color(34, 66, 73));
-        bebida8.setText("Jugo natural melon");
-        getContentPane().add(bebida8);
-        bebida8.setBounds(50, 580, 260, 60);
-
-        precioBebida8.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
-        precioBebida8.setForeground(new java.awt.Color(34, 66, 73));
-        precioBebida8.setText("$2000");
-        getContentPane().add(precioBebida8);
-        precioBebida8.setBounds(310, 590, 70, 40);
-
-        menos8.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
-        menos8.setForeground(new java.awt.Color(34, 66, 73));
-        menos8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/-.png"))); // NOI18N
-        menos8.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                menos8MouseClicked(evt);
-            }
-        });
-        getContentPane().add(menos8);
-        menos8.setBounds(400, 600, 20, 20);
-
-        val8.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
-        val8.setForeground(new java.awt.Color(34, 66, 73));
-        val8.setText("0");
-        val8.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        getContentPane().add(val8);
-        val8.setBounds(430, 580, 40, 50);
-
-        mas8.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
-        mas8.setForeground(new java.awt.Color(34, 66, 73));
-        mas8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/Imagen7.png"))); // NOI18N
-        mas8.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                mas8MouseClicked(evt);
-            }
-        });
-        getContentPane().add(mas8);
-        mas8.setBounds(470, 600, 20, 20);
-
-        bebida9.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
-        bebida9.setForeground(new java.awt.Color(34, 66, 73));
-        bebida9.setText("Jugo natural piña");
-        getContentPane().add(bebida9);
-        bebida9.setBounds(50, 630, 280, 60);
-
-        precioBebida9.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
-        precioBebida9.setForeground(new java.awt.Color(34, 66, 73));
-        precioBebida9.setText("$2000");
-        getContentPane().add(precioBebida9);
-        precioBebida9.setBounds(310, 640, 70, 40);
-
-        menos9.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
-        menos9.setForeground(new java.awt.Color(34, 66, 73));
-        menos9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/-.png"))); // NOI18N
-        menos9.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                menos9MouseClicked(evt);
-            }
-        });
-        getContentPane().add(menos9);
-        menos9.setBounds(400, 650, 20, 20);
-
-        val9.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
-        val9.setForeground(new java.awt.Color(34, 66, 73));
-        val9.setText("0");
-        val9.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        getContentPane().add(val9);
-        val9.setBounds(430, 630, 40, 50);
-
-        mas9.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
-        mas9.setForeground(new java.awt.Color(34, 66, 73));
-        mas9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/Imagen7.png"))); // NOI18N
-        mas9.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                mas9MouseClicked(evt);
-            }
-        });
-        getContentPane().add(mas9);
-        mas9.setBounds(470, 650, 20, 20);
-
-        bebida1.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
-        bebida1.setForeground(new java.awt.Color(34, 66, 73));
-        bebida1.setText("Coca-Cola (500 ml)");
-        getContentPane().add(bebida1);
-        bebida1.setBounds(50, 230, 220, 60);
+        mas6.setBounds(490, 430, 20, 20);
 
         precioBebida1.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
-        precioBebida1.setForeground(new java.awt.Color(34, 66, 73));
-        precioBebida1.setText("$1500");
+        precioBebida1.setForeground(new java.awt.Color(255, 102, 0));
+        precioBebida1.setText("1500");
         getContentPane().add(precioBebida1);
-        precioBebida1.setBounds(310, 240, 70, 40);
+        precioBebida1.setBounds(350, 170, 70, 40);
 
         menos1.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         menos1.setForeground(new java.awt.Color(34, 66, 73));
@@ -457,14 +614,14 @@ public class MenuBebidas extends javax.swing.JFrame {
             }
         });
         getContentPane().add(menos1);
-        menos1.setBounds(400, 250, 20, 20);
+        menos1.setBounds(430, 180, 20, 20);
 
         val1.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
         val1.setForeground(new java.awt.Color(34, 66, 73));
         val1.setText("0");
         val1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         getContentPane().add(val1);
-        val1.setBounds(430, 230, 40, 50);
+        val1.setBounds(460, 170, 40, 40);
 
         mas1.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         mas1.setForeground(new java.awt.Color(34, 66, 73));
@@ -475,19 +632,13 @@ public class MenuBebidas extends javax.swing.JFrame {
             }
         });
         getContentPane().add(mas1);
-        mas1.setBounds(470, 250, 20, 20);
-
-        bebida7.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
-        bebida7.setForeground(new java.awt.Color(34, 66, 73));
-        bebida7.setText("Jugo natural frambuesa");
-        getContentPane().add(bebida7);
-        bebida7.setBounds(50, 530, 240, 60);
+        mas1.setBounds(490, 180, 20, 20);
 
         precioBebida7.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
-        precioBebida7.setForeground(new java.awt.Color(34, 66, 73));
-        precioBebida7.setText("$2000");
+        precioBebida7.setForeground(new java.awt.Color(255, 102, 0));
+        precioBebida7.setText("1500");
         getContentPane().add(precioBebida7);
-        precioBebida7.setBounds(310, 540, 70, 40);
+        precioBebida7.setBounds(350, 470, 70, 40);
 
         menos7.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         menos7.setForeground(new java.awt.Color(34, 66, 73));
@@ -498,14 +649,14 @@ public class MenuBebidas extends javax.swing.JFrame {
             }
         });
         getContentPane().add(menos7);
-        menos7.setBounds(400, 550, 20, 20);
+        menos7.setBounds(430, 480, 20, 20);
 
         val7.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
         val7.setForeground(new java.awt.Color(34, 66, 73));
         val7.setText("0");
         val7.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         getContentPane().add(val7);
-        val7.setBounds(430, 530, 40, 50);
+        val7.setBounds(460, 460, 40, 60);
 
         mas7.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         mas7.setForeground(new java.awt.Color(34, 66, 73));
@@ -516,230 +667,396 @@ public class MenuBebidas extends javax.swing.JFrame {
             }
         });
         getContentPane().add(mas7);
-        mas7.setBounds(470, 550, 20, 20);
+        mas7.setBounds(490, 480, 20, 20);
 
-        jLabel60.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel60.setForeground(new java.awt.Color(34, 66, 73));
-        jLabel60.setText("6.");
-        getContentPane().add(jLabel60);
-        jLabel60.setBounds(20, 480, 50, 60);
+        simbolo1.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        simbolo1.setForeground(new java.awt.Color(255, 102, 0));
+        simbolo1.setText("$");
+        getContentPane().add(simbolo1);
+        simbolo1.setBounds(330, 220, 20, 40);
 
-        jLabel61.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel61.setForeground(new java.awt.Color(34, 66, 73));
-        jLabel61.setText("7.");
-        getContentPane().add(jLabel61);
-        jLabel61.setBounds(20, 530, 50, 60);
+        simbolo2.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        simbolo2.setForeground(new java.awt.Color(255, 102, 0));
+        simbolo2.setText("$");
+        getContentPane().add(simbolo2);
+        simbolo2.setBounds(330, 270, 20, 40);
 
-        jLabel62.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel62.setForeground(new java.awt.Color(34, 66, 73));
-        jLabel62.setText("8.");
-        getContentPane().add(jLabel62);
-        jLabel62.setBounds(20, 580, 60, 60);
+        simbolo3.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        simbolo3.setForeground(new java.awt.Color(255, 102, 0));
+        simbolo3.setText("$");
+        getContentPane().add(simbolo3);
+        simbolo3.setBounds(330, 320, 20, 40);
 
-        jLabel63.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel63.setForeground(new java.awt.Color(34, 66, 73));
-        jLabel63.setText("9.");
-        getContentPane().add(jLabel63);
-        jLabel63.setBounds(20, 630, 50, 60);
+        simbolo4.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        simbolo4.setForeground(new java.awt.Color(255, 102, 0));
+        simbolo4.setText("$");
+        getContentPane().add(simbolo4);
+        simbolo4.setBounds(330, 370, 20, 40);
+
+        simbolo5.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        simbolo5.setForeground(new java.awt.Color(255, 102, 0));
+        simbolo5.setText("$");
+        getContentPane().add(simbolo5);
+        simbolo5.setBounds(330, 420, 20, 40);
+
+        simbolo6.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        simbolo6.setForeground(new java.awt.Color(255, 102, 0));
+        simbolo6.setText("$");
+        getContentPane().add(simbolo6);
+        simbolo6.setBounds(330, 470, 20, 40);
+
+        simbolo7.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        simbolo7.setForeground(new java.awt.Color(255, 102, 0));
+        simbolo7.setText("$");
+        getContentPane().add(simbolo7);
+        simbolo7.setBounds(330, 170, 20, 40);
+
+        simbolo8.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        simbolo8.setForeground(new java.awt.Color(255, 102, 0));
+        simbolo8.setText("$");
+        getContentPane().add(simbolo8);
+        simbolo8.setBounds(330, 470, 20, 40);
+
+        precioBebida8.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        precioBebida8.setForeground(new java.awt.Color(255, 102, 0));
+        precioBebida8.setText("2000");
+        getContentPane().add(precioBebida8);
+        precioBebida8.setBounds(350, 520, 70, 40);
+
+        simbolo9.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        simbolo9.setForeground(new java.awt.Color(255, 102, 0));
+        simbolo9.setText("$");
+        getContentPane().add(simbolo9);
+        simbolo9.setBounds(330, 520, 20, 40);
+
+        precioBebida9.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        precioBebida9.setForeground(new java.awt.Color(255, 102, 0));
+        precioBebida9.setText("2000");
+        getContentPane().add(precioBebida9);
+        precioBebida9.setBounds(350, 570, 70, 40);
+
+        menos8.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
+        menos8.setForeground(new java.awt.Color(34, 66, 73));
+        menos8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/-.png"))); // NOI18N
+        menos8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menos8MouseClicked(evt);
+            }
+        });
+        getContentPane().add(menos8);
+        menos8.setBounds(430, 530, 20, 20);
+
+        val8.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        val8.setForeground(new java.awt.Color(34, 66, 73));
+        val8.setText("0");
+        val8.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        getContentPane().add(val8);
+        val8.setBounds(460, 510, 40, 60);
+
+        mas8.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
+        mas8.setForeground(new java.awt.Color(34, 66, 73));
+        mas8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/Imagen7.png"))); // NOI18N
+        mas8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                mas8MouseClicked(evt);
+            }
+        });
+        getContentPane().add(mas8);
+        mas8.setBounds(490, 530, 20, 20);
+
+        simbolo10.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        simbolo10.setForeground(new java.awt.Color(255, 102, 0));
+        simbolo10.setText("$");
+        getContentPane().add(simbolo10);
+        simbolo10.setBounds(330, 570, 20, 40);
+
+        menos9.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
+        menos9.setForeground(new java.awt.Color(34, 66, 73));
+        menos9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/-.png"))); // NOI18N
+        menos9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menos9MouseClicked(evt);
+            }
+        });
+        getContentPane().add(menos9);
+        menos9.setBounds(430, 580, 20, 20);
+
+        val9.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        val9.setForeground(new java.awt.Color(34, 66, 73));
+        val9.setText("0");
+        val9.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        getContentPane().add(val9);
+        val9.setBounds(460, 560, 40, 60);
+
+        mas9.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
+        mas9.setForeground(new java.awt.Color(34, 66, 73));
+        mas9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/Imagen7.png"))); // NOI18N
+        mas9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                mas9MouseClicked(evt);
+            }
+        });
+        getContentPane().add(mas9);
+        mas9.setBounds(490, 580, 20, 20);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/93b5f9913d2e4316cd6e541c67b9aed0.jpg"))); // NOI18N
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(-10, -10, 570, 1880);
+        jLabel1.setBounds(-10, -20, 690, 820);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void menos3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menos3MouseClicked
-        // TODO add your handling code here:   
+        // TODO add your handling code here:
         int i = 0;
+        c = Integer.parseInt(precioBebida3.getText());
         i = Integer.parseInt(val3.getText());
         if(i>0){
-            i = i-1;
+            i = i-1;   
             
             val3.setText(String.valueOf(i));
-    
+            c = i*c;
+            total1.setText(String.valueOf(a+b+c+d+e+f+g+h+j));
         }
     }//GEN-LAST:event_menos3MouseClicked
 
     private void mas2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mas2MouseClicked
         // TODO add your handling code here:
-            int i = 0;
-            i = Integer.parseInt(val2.getText());
-            if(i>=0 && i<=50){
+        int i = 0;
+        b = Integer.parseInt(precioBebida2.getText());
+        i = Integer.parseInt(val2.getText());
+        if(i>=0 && i<=50){
             i = i+1;
             val2.setText(String.valueOf(i));
-    
+            b=i*b;
+            total1.setText(String.valueOf(a+b+c+d+e+f+g+h+j));
+
         }
     }//GEN-LAST:event_mas2MouseClicked
 
     private void menos4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menos4MouseClicked
         // TODO add your handling code here:
-            int i = 0;
-            i = Integer.parseInt(val4.getText());
-            if(i>0){
+        int i = 0;
+        d = Integer.parseInt(precioBebida4.getText());
+        i = Integer.parseInt(val4.getText());
+        if(i>0){
             i = i-1;
             val4.setText(String.valueOf(i));
-    
+            d = i*d;
+            total1.setText(String.valueOf(a+b+c+d+e+f+g+h+j));
+
         }
     }//GEN-LAST:event_menos4MouseClicked
 
     private void mas3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mas3MouseClicked
         // TODO add your handling code here:
-            int i = 0;
-            i = Integer.parseInt(val3.getText());
-            if(i>=0 && i<=50){
+        int i = 0;
+        c = Integer.parseInt(precioBebida3.getText());
+        i = Integer.parseInt(val3.getText());
+        if(i>0 && i<=50){
             i = i+1;
             val3.setText(String.valueOf(i));
-    
+            c = i*c;
+            total1.setText(String.valueOf(a+b+c+d+e+f+g+h+j));
+
         }
     }//GEN-LAST:event_mas3MouseClicked
 
     private void menos2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menos2MouseClicked
         // TODO add your handling code here:
-            int i = 0;
-            i = Integer.parseInt(val2.getText());
-            if(i>0){
+        int i = 0;
+        b = Integer.parseInt(precioBebida2.getText());
+        i = Integer.parseInt(val2.getText());
+        if(i>0){
             i = i-1;
             val2.setText(String.valueOf(i));
+            b = i*b;
+            total1.setText(String.valueOf(a+b+c+d+e+f+g+h+j));
         }
     }//GEN-LAST:event_menos2MouseClicked
 
     private void mas4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mas4MouseClicked
         // TODO add your handling code here:
-            int i = 0;
-            i = Integer.parseInt(val4.getText());
-            if(i>=0 && i<=50){
+        int i = 0;
+        d = Integer.parseInt(precioBebida4.getText());
+        i = Integer.parseInt(val4.getText());
+        if(i>=0 && i<=50){
             i = i+1;
             val4.setText(String.valueOf(i));
-    
+            d = i*d;
+            total1.setText(String.valueOf(a+b+c+d+e+f+g+h+j));
+
         }
     }//GEN-LAST:event_mas4MouseClicked
 
     private void menos5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menos5MouseClicked
         // TODO add your handling code here:
-            int i = 0;
-            i = Integer.parseInt(val5.getText());
-            if(i>0){
+        int i = 0;
+        e = Integer.parseInt(precioBebida5.getText());
+        i = Integer.parseInt(val5.getText());
+        if(i>0){
             i = i-1;
             val5.setText(String.valueOf(i));
-    
+            e = i*e;
+            total1.setText(String.valueOf(a+b+c+d+e+f+g+h+j));
+
         }
     }//GEN-LAST:event_menos5MouseClicked
 
     private void mas5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mas5MouseClicked
-        // TODO add your handling code here:  
-            int i = 0;
-            i = Integer.parseInt(val5.getText());
-            if(i>=0 && i<=50){
+        // TODO add your handling code here:
+        int i = 0;
+        e = Integer.parseInt(precioBebida5.getText());
+        i = Integer.parseInt(val5.getText());
+        if(i>=0 && i<=50){
             i = i+1;
             val5.setText(String.valueOf(i));
+            e = i*e;
+            total1.setText(String.valueOf(a+b+c+d+e+f+g+h+j));
         }
     }//GEN-LAST:event_mas5MouseClicked
 
-    private void menos6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menos6MouseClicked
-        // TODO add your handling code here:
-            int i = 0;
-            i = Integer.parseInt(val6.getText());
-            if(i>0){
-            i = i-1;
-            val6.setText(String.valueOf(i));
-    
-        }
-    }//GEN-LAST:event_menos6MouseClicked
-
     private void mas6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mas6MouseClicked
         // TODO add your handling code here:
-            int i = 0;
-            i = Integer.parseInt(val6.getText());
-            if(i>=0 && i<=50){
+        int i = 0;
+        f = Integer.parseInt(precioBebida6.getText());
+        i = Integer.parseInt(val6.getText());
+        if(i>=0 && i<=50){
             i = i+1;
             val6.setText(String.valueOf(i));
-    
+            f = i*f;
+            total1.setText(String.valueOf(a+b+c+d+e+f+g+h+j));
+
         }
     }//GEN-LAST:event_mas6MouseClicked
 
-    private void menos8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menos8MouseClicked
-        // TODO add your handling code here:
-            int i = 0;
-            i = Integer.parseInt(val8.getText());
-            if(i>0){
-            i = i-1;
-            val8.setText(String.valueOf(i));
-    
-        }
-    }//GEN-LAST:event_menos8MouseClicked
-
-    private void mas8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mas8MouseClicked
-        // TODO add your handling code here:
-            int i = 0;
-            i = Integer.parseInt(val8.getText());
-            if(i>=0 && i<=50){
-            i = i+1;
-            val8.setText(String.valueOf(i));
-    
-        }
-    }//GEN-LAST:event_mas8MouseClicked
-
-    private void menos9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menos9MouseClicked
-        // TODO add your handling code here:
-            int i = 0;
-            i = Integer.parseInt(val9.getText());
-            if(i>0){
-            i = i-1;
-            val9.setText(String.valueOf(i));
-        }
-    }//GEN-LAST:event_menos9MouseClicked
-
-    private void mas9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mas9MouseClicked
-        // TODO add your handling code here:
-            int i = 0;
-            i = Integer.parseInt(val9.getText());
-            if(i>=0 && i<=50){
-            i = i+1;
-            val9.setText(String.valueOf(i));
-    
-        }
-    }//GEN-LAST:event_mas9MouseClicked
-
     private void menos1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menos1MouseClicked
         // TODO add your handling code here:
-            int i = 0;
-            i = Integer.parseInt(val1.getText());
-            if(i>0){
+        int i = 0;
+        a = Integer.parseInt(precioBebida1.getText());
+        i = Integer.parseInt(val1.getText());
+        if(i>0){
             i = i-1;
             val1.setText(String.valueOf(i));
+            a = i*a;
+            total1.setText(String.valueOf(a+b+c+d+e+f+g+h+j));
+
         }
     }//GEN-LAST:event_menos1MouseClicked
 
     private void mas1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mas1MouseClicked
         // TODO add your handling code here:
-            int i = 0;
-            i = Integer.parseInt(val1.getText());
-            if(i>=0 && i<=50){
+        int i = 0;
+        a = Integer.parseInt(precioBebida1.getText());
+        i = Integer.parseInt(val1.getText());
+        if(i>=0 && i<=50){
             i = i+1;
             val1.setText(String.valueOf(i));
+            a = i*a;
+            total1.setText(String.valueOf(a+b+c+d+e+f+g+h+j));
         }
     }//GEN-LAST:event_mas1MouseClicked
 
     private void menos7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menos7MouseClicked
         // TODO add your handling code here:
-            int i = 0;
-            i = Integer.parseInt(val7.getText());
-            if(i>0){
+        int i = 0;
+        g = Integer.parseInt(precioBebida7.getText());
+        i = Integer.parseInt(val7.getText());
+        if(i>0){
             i = i-1;
             val7.setText(String.valueOf(i));
+            g = i*g;
+           total1.setText(String.valueOf(a+b+c+d+e+f+g+h+j));
         }
     }//GEN-LAST:event_menos7MouseClicked
 
     private void mas7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mas7MouseClicked
         // TODO add your handling code here:
-            int i = 0;
-            i = Integer.parseInt(val7.getText());
-            if(i>=0 && i<=50){
+        int i = 0;
+        g = Integer.parseInt(precioBebida7.getText());
+        i = Integer.parseInt(val7.getText());
+        if(i>=0 && i<=50){
             i = i+1;
             val7.setText(String.valueOf(i));
-          }
+            g = i*g;
+            total1.setText(String.valueOf(a+b+c+d+e+f+g+h+j));
+        }
     }//GEN-LAST:event_mas7MouseClicked
+
+    private void menos8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menos8MouseClicked
+        // TODO add your handling code here:
+        int i = 0;
+        h = Integer.parseInt(precioBebida8.getText());
+        i = Integer.parseInt(val1.getText());
+        if(i>0){
+            i = i-1;
+            val1.setText(String.valueOf(i));
+            h = i*h;
+           total1.setText(String.valueOf(a+b+c+d+e+f+g+h+j));
+
+        }
+    }//GEN-LAST:event_menos8MouseClicked
+
+    private void mas8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mas8MouseClicked
+        // TODO add your handling code here:
+        int i = 0;
+        h = Integer.parseInt(precioBebida8.getText());
+        i = Integer.parseInt(val7.getText());
+        if(i>=0 && i<=50){
+            i = i+1;
+            val7.setText(String.valueOf(i));
+            h = i*h;
+            total1.setText(String.valueOf(a+b+c+d+e+f+g+h+j));
+        }
+    }//GEN-LAST:event_mas8MouseClicked
+
+    private void menos9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menos9MouseClicked
+        // TODO add your handling code here:
+        int i = 0;
+        j = Integer.parseInt(precioBebida1.getText());
+        i = Integer.parseInt(val1.getText());
+        if(i>0){
+            i = i-1;
+            val1.setText(String.valueOf(i));
+            j = i*j;
+            total1.setText(String.valueOf(a+b+c+d+e+f+g+h+j));
+
+        }
+    }//GEN-LAST:event_menos9MouseClicked
+
+    private void mas9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mas9MouseClicked
+        // TODO add your handling code here:
+        int i = 0;
+        j = Integer.parseInt(precioBebida7.getText());
+        i = Integer.parseInt(val7.getText());
+        if(i>=0 && i<=50){
+            i = i+1;
+            val7.setText(String.valueOf(i));
+            j = i*j;
+            total1.setText(String.valueOf(a+b+c+d+e+f+g+h+j));
+        }
+    }//GEN-LAST:event_mas9MouseClicked
+
+    private void menos6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menos6MouseClicked
+        // TODO add your handling code here:
+        int i = 0;
+        f = Integer.parseInt(precioBebida1.getText());
+        i = Integer.parseInt(val6.getText());
+        if(i>0){
+            i = i-1;
+            val6.setText(String.valueOf(i));
+            f = i*8990;
+            total1.setText(String.valueOf(a+b+c+d+e+f+g+h+j));
+
+        }
+    }//GEN-LAST:event_menos6MouseClicked
+
+    private void total2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_total2MouseClicked
+        // TODO add your handling code here:
+        Carta go = new Carta();
+        go.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_total2MouseClicked
 
     /**
      * @param args the command line arguments
@@ -827,6 +1144,28 @@ public class MenuBebidas extends javax.swing.JFrame {
     private javax.swing.JLabel precioBebida7;
     private javax.swing.JLabel precioBebida8;
     private javax.swing.JLabel precioBebida9;
+    private javax.swing.JLabel simbolo1;
+    private javax.swing.JLabel simbolo10;
+    private javax.swing.JLabel simbolo2;
+    private javax.swing.JLabel simbolo3;
+    private javax.swing.JLabel simbolo4;
+    private javax.swing.JLabel simbolo5;
+    private javax.swing.JLabel simbolo6;
+    private javax.swing.JLabel simbolo7;
+    private javax.swing.JLabel simbolo8;
+    private javax.swing.JLabel simbolo9;
+    private javax.swing.JTextArea subComida1;
+    private javax.swing.JTextArea subComida2;
+    private javax.swing.JTextArea subComida3;
+    private javax.swing.JTextArea subComida4;
+    private javax.swing.JTextArea subComida5;
+    private javax.swing.JTextArea subComida6;
+    private javax.swing.JTextArea subComida7;
+    private javax.swing.JTextArea subComida8;
+    private javax.swing.JTextArea subComida9;
+    private javax.swing.JLabel total;
+    private javax.swing.JLabel total1;
+    private javax.swing.JLabel total2;
     private javax.swing.JLabel val1;
     private javax.swing.JLabel val2;
     private javax.swing.JLabel val3;

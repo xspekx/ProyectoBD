@@ -14,8 +14,19 @@ public class MenuPostres extends javax.swing.JFrame {
     /**
      * Creates new form MenuPostres
      */
+    int a = 0;
+    int b = 0;
+    int c = 0;
+    int d = 0;
+    int e = 0;
+    int f = 0;
+    int g = 0;
+    
+    
     public MenuPostres() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.setFocusable(true);
     }
 
     /**
@@ -27,21 +38,800 @@ public class MenuPostres extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        postre1 = new javax.swing.JLabel();
+        postre2 = new javax.swing.JLabel();
+        postre3 = new javax.swing.JLabel();
+        postre4 = new javax.swing.JLabel();
+        postre5 = new javax.swing.JLabel();
+        postre6 = new javax.swing.JLabel();
+        postre7 = new javax.swing.JLabel();
+        total = new javax.swing.JLabel();
+        total1 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        subPostre7 = new javax.swing.JTextArea();
+        subPostre6 = new javax.swing.JTextArea();
+        subPostre5 = new javax.swing.JTextArea();
+        subPostre4 = new javax.swing.JTextArea();
+        subPostre3 = new javax.swing.JTextArea();
+        jLabel60 = new javax.swing.JLabel();
+        jLabel61 = new javax.swing.JLabel();
+        subPostre2 = new javax.swing.JTextArea();
+        total2 = new javax.swing.JLabel();
+        subPostre1 = new javax.swing.JTextArea();
+        menos3 = new javax.swing.JLabel();
+        val3 = new javax.swing.JLabel();
+        mas2 = new javax.swing.JLabel();
+        precioPostre3 = new javax.swing.JLabel();
+        precioPostre4 = new javax.swing.JLabel();
+        menos4 = new javax.swing.JLabel();
+        val4 = new javax.swing.JLabel();
+        mas3 = new javax.swing.JLabel();
+        precioPostre2 = new javax.swing.JLabel();
+        menos2 = new javax.swing.JLabel();
+        val2 = new javax.swing.JLabel();
+        mas4 = new javax.swing.JLabel();
+        precioPostre5 = new javax.swing.JLabel();
+        menos5 = new javax.swing.JLabel();
+        val5 = new javax.swing.JLabel();
+        mas5 = new javax.swing.JLabel();
+        precioPostre6 = new javax.swing.JLabel();
+        menos6 = new javax.swing.JLabel();
+        val6 = new javax.swing.JLabel();
+        mas6 = new javax.swing.JLabel();
+        precioPostre1 = new javax.swing.JLabel();
+        menos1 = new javax.swing.JLabel();
+        val1 = new javax.swing.JLabel();
+        mas1 = new javax.swing.JLabel();
+        precioPostre7 = new javax.swing.JLabel();
+        menos7 = new javax.swing.JLabel();
+        val7 = new javax.swing.JLabel();
+        mas7 = new javax.swing.JLabel();
+        simbolo1 = new javax.swing.JLabel();
+        simbolo2 = new javax.swing.JLabel();
+        simbolo3 = new javax.swing.JLabel();
+        simbolo4 = new javax.swing.JLabel();
+        simbolo5 = new javax.swing.JLabel();
+        simbolo6 = new javax.swing.JLabel();
+        simbolo7 = new javax.swing.JLabel();
+        simbolo8 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(635, 930));
+        getContentPane().setLayout(null);
+
+        postre1.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        postre1.setForeground(new java.awt.Color(255, 102, 0));
+        postre1.setText("MOUSSE DE CHOCOLATE");
+        getContentPane().add(postre1);
+        postre1.setBounds(60, 160, 250, 40);
+
+        postre2.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        postre2.setForeground(new java.awt.Color(255, 102, 0));
+        postre2.setText("PASTEL OPERA");
+        getContentPane().add(postre2);
+        postre2.setBounds(60, 250, 250, 40);
+
+        postre3.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        postre3.setForeground(new java.awt.Color(255, 102, 0));
+        postre3.setText("WAFFLES CON FRUTOS ROJOS");
+        getContentPane().add(postre3);
+        postre3.setBounds(60, 350, 310, 40);
+
+        postre4.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        postre4.setForeground(new java.awt.Color(255, 102, 0));
+        postre4.setText("BIZCOCHO DE PISTACHO");
+        getContentPane().add(postre4);
+        postre4.setBounds(60, 440, 300, 40);
+
+        postre5.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        postre5.setForeground(new java.awt.Color(255, 102, 0));
+        postre5.setText("BANANA SPLIT");
+        getContentPane().add(postre5);
+        postre5.setBounds(60, 540, 290, 40);
+
+        postre6.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        postre6.setForeground(new java.awt.Color(255, 102, 0));
+        postre6.setText("MACEDONIA");
+        getContentPane().add(postre6);
+        postre6.setBounds(60, 630, 340, 40);
+
+        postre7.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        postre7.setForeground(new java.awt.Color(255, 102, 0));
+        postre7.setText("COPA LIMON Y MENTA");
+        getContentPane().add(postre7);
+        postre7.setBounds(60, 730, 220, 40);
+
+        total.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        total.setForeground(new java.awt.Color(34, 66, 73));
+        total.setText("TOTAL  $");
+        getContentPane().add(total);
+        total.setBounds(30, 860, 130, 40);
+
+        total1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        total1.setForeground(new java.awt.Color(34, 66, 73));
+        getContentPane().add(total1);
+        total1.setBounds(140, 860, 190, 40);
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(34, 66, 73));
+        jLabel4.setText("5.");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(30, 530, 60, 60);
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 102, 0));
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/Imagen5.png"))); // NOI18N
+        getContentPane().add(jLabel7);
+        jLabel7.setBounds(60, 40, 130, 90);
+
+        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(34, 66, 73));
+        jLabel11.setText("1.");
+        getContentPane().add(jLabel11);
+        jLabel11.setBounds(30, 150, 50, 60);
+
+        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(34, 66, 73));
+        jLabel13.setText("2.");
+        getContentPane().add(jLabel13);
+        jLabel13.setBounds(30, 240, 50, 60);
+
+        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(34, 66, 73));
+        jLabel14.setText("3.");
+        getContentPane().add(jLabel14);
+        jLabel14.setBounds(30, 340, 60, 60);
+
+        jLabel15.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(34, 66, 73));
+        jLabel15.setText("4.");
+        getContentPane().add(jLabel15);
+        jLabel15.setBounds(30, 430, 50, 60);
+
+        subPostre7.setEditable(false);
+        subPostre7.setColumns(20);
+        subPostre7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        subPostre7.setForeground(new java.awt.Color(34, 66, 73));
+        subPostre7.setLineWrap(true);
+        subPostre7.setRows(5);
+        subPostre7.setText("Limon granizado, ron de caña y menta.");
+        subPostre7.setBorder(null);
+        subPostre7.setCaretColor(new java.awt.Color(34, 66, 73));
+        subPostre7.setDisabledTextColor(new java.awt.Color(34, 66, 73));
+        subPostre7.setMinimumSize(new java.awt.Dimension(150, 20));
+        subPostre7.setPreferredSize(new java.awt.Dimension(280, 100));
+        subPostre7.setSelectionColor(new java.awt.Color(34, 66, 73));
+        getContentPane().add(subPostre7);
+        subPostre7.setBounds(60, 760, 300, 110);
+
+        subPostre6.setEditable(false);
+        subPostre6.setColumns(20);
+        subPostre6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        subPostre6.setForeground(new java.awt.Color(34, 66, 73));
+        subPostre6.setLineWrap(true);
+        subPostre6.setRows(5);
+        subPostre6.setText("Helado de frambuesa, limon y frutilla \nsumergidas en frutas en almibar y nata.");
+        subPostre6.setBorder(null);
+        subPostre6.setCaretColor(new java.awt.Color(34, 66, 73));
+        subPostre6.setDisabledTextColor(new java.awt.Color(34, 66, 73));
+        subPostre6.setMinimumSize(new java.awt.Dimension(150, 20));
+        subPostre6.setPreferredSize(new java.awt.Dimension(280, 100));
+        subPostre6.setSelectionColor(new java.awt.Color(34, 66, 73));
+        getContentPane().add(subPostre6);
+        subPostre6.setBounds(60, 660, 300, 110);
+
+        subPostre5.setEditable(false);
+        subPostre5.setColumns(20);
+        subPostre5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        subPostre5.setForeground(new java.awt.Color(34, 66, 73));
+        subPostre5.setLineWrap(true);
+        subPostre5.setRows(5);
+        subPostre5.setText("Helado de fresa,chocolate, vainilla con nata montada en platanos naturales.");
+        subPostre5.setBorder(null);
+        subPostre5.setCaretColor(new java.awt.Color(34, 66, 73));
+        subPostre5.setDisabledTextColor(new java.awt.Color(34, 66, 73));
+        subPostre5.setMinimumSize(new java.awt.Dimension(150, 20));
+        subPostre5.setPreferredSize(new java.awt.Dimension(280, 100));
+        subPostre5.setSelectionColor(new java.awt.Color(34, 66, 73));
+        getContentPane().add(subPostre5);
+        subPostre5.setBounds(60, 570, 300, 110);
+
+        subPostre4.setEditable(false);
+        subPostre4.setColumns(20);
+        subPostre4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        subPostre4.setForeground(new java.awt.Color(34, 66, 73));
+        subPostre4.setLineWrap(true);
+        subPostre4.setRows(5);
+        subPostre4.setText("Esponjoso bizcocho de pistacho cubierto con\ncrema de chocolate blanco.");
+        subPostre4.setBorder(null);
+        subPostre4.setCaretColor(new java.awt.Color(34, 66, 73));
+        subPostre4.setDisabledTextColor(new java.awt.Color(34, 66, 73));
+        subPostre4.setMinimumSize(new java.awt.Dimension(150, 20));
+        subPostre4.setPreferredSize(new java.awt.Dimension(280, 100));
+        subPostre4.setSelectionColor(new java.awt.Color(34, 66, 73));
+        getContentPane().add(subPostre4);
+        subPostre4.setBounds(60, 470, 310, 110);
+
+        subPostre3.setEditable(false);
+        subPostre3.setColumns(20);
+        subPostre3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        subPostre3.setForeground(new java.awt.Color(34, 66, 73));
+        subPostre3.setLineWrap(true);
+        subPostre3.setRows(5);
+        subPostre3.setText("Waffles belgas con frutilla, mora y frambuesa decorados con crema batida y granillos de     chocolate.");
+        subPostre3.setBorder(null);
+        subPostre3.setCaretColor(new java.awt.Color(34, 66, 73));
+        subPostre3.setDisabledTextColor(new java.awt.Color(34, 66, 73));
+        subPostre3.setMinimumSize(new java.awt.Dimension(150, 20));
+        subPostre3.setPreferredSize(new java.awt.Dimension(280, 100));
+        subPostre3.setSelectionColor(new java.awt.Color(34, 66, 73));
+        getContentPane().add(subPostre3);
+        subPostre3.setBounds(60, 380, 310, 110);
+
+        jLabel60.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel60.setForeground(new java.awt.Color(34, 66, 73));
+        jLabel60.setText("6.");
+        getContentPane().add(jLabel60);
+        jLabel60.setBounds(30, 620, 50, 60);
+
+        jLabel61.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel61.setForeground(new java.awt.Color(34, 66, 73));
+        jLabel61.setText("7.");
+        getContentPane().add(jLabel61);
+        jLabel61.setBounds(30, 720, 50, 60);
+
+        subPostre2.setEditable(false);
+        subPostre2.setColumns(20);
+        subPostre2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        subPostre2.setForeground(new java.awt.Color(34, 66, 73));
+        subPostre2.setLineWrap(true);
+        subPostre2.setRows(5);
+        subPostre2.setText("Una base de biscuit, hojuelas crujientes y un mousse de chocolate amargo.");
+        subPostre2.setBorder(null);
+        subPostre2.setCaretColor(new java.awt.Color(34, 66, 73));
+        subPostre2.setDisabledTextColor(new java.awt.Color(34, 66, 73));
+        subPostre2.setMinimumSize(new java.awt.Dimension(150, 20));
+        subPostre2.setPreferredSize(new java.awt.Dimension(280, 100));
+        subPostre2.setSelectionColor(new java.awt.Color(34, 66, 73));
+        getContentPane().add(subPostre2);
+        subPostre2.setBounds(60, 280, 300, 110);
+
+        total2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        total2.setForeground(new java.awt.Color(34, 66, 73));
+        total2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/agregar.png"))); // NOI18N
+        total2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                total2MouseClicked(evt);
+            }
+        });
+        getContentPane().add(total2);
+        total2.setBounds(400, 840, 200, 80);
+
+        subPostre1.setEditable(false);
+        subPostre1.setColumns(20);
+        subPostre1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        subPostre1.setForeground(new java.awt.Color(34, 66, 73));
+        subPostre1.setLineWrap(true);
+        subPostre1.setRows(5);
+        subPostre1.setText("Bizcocho de chocolate almendrado con \nmousse de chocolate sobre un espejo de\nBailey´s.");
+        subPostre1.setBorder(null);
+        subPostre1.setCaretColor(new java.awt.Color(255, 255, 255));
+        subPostre1.setDisabledTextColor(new java.awt.Color(34, 66, 73));
+        subPostre1.setMinimumSize(new java.awt.Dimension(150, 20));
+        subPostre1.setPreferredSize(new java.awt.Dimension(280, 100));
+        subPostre1.setSelectionColor(new java.awt.Color(34, 66, 73));
+        getContentPane().add(subPostre1);
+        subPostre1.setBounds(60, 190, 320, 110);
+
+        menos3.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
+        menos3.setForeground(new java.awt.Color(34, 66, 73));
+        menos3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/-.png"))); // NOI18N
+        menos3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menos3MouseClicked(evt);
+            }
+        });
+        getContentPane().add(menos3);
+        menos3.setBounds(520, 360, 20, 20);
+
+        val3.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        val3.setForeground(new java.awt.Color(34, 66, 73));
+        val3.setText("0");
+        val3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        getContentPane().add(val3);
+        val3.setBounds(550, 340, 40, 60);
+
+        mas2.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
+        mas2.setForeground(new java.awt.Color(34, 66, 73));
+        mas2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/Imagen7.png"))); // NOI18N
+        mas2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                mas2MouseClicked(evt);
+            }
+        });
+        getContentPane().add(mas2);
+        mas2.setBounds(580, 260, 20, 20);
+
+        precioPostre3.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        precioPostre3.setForeground(new java.awt.Color(255, 102, 0));
+        precioPostre3.setText("3990");
+        getContentPane().add(precioPostre3);
+        precioPostre3.setBounds(440, 350, 70, 40);
+
+        precioPostre4.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        precioPostre4.setForeground(new java.awt.Color(255, 102, 0));
+        precioPostre4.setText("3990");
+        getContentPane().add(precioPostre4);
+        precioPostre4.setBounds(440, 440, 100, 40);
+
+        menos4.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
+        menos4.setForeground(new java.awt.Color(34, 66, 73));
+        menos4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/-.png"))); // NOI18N
+        menos4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menos4MouseClicked(evt);
+            }
+        });
+        getContentPane().add(menos4);
+        menos4.setBounds(520, 450, 30, 20);
+
+        val4.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        val4.setForeground(new java.awt.Color(34, 66, 73));
+        val4.setText("0");
+        val4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        getContentPane().add(val4);
+        val4.setBounds(550, 430, 50, 60);
+
+        mas3.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
+        mas3.setForeground(new java.awt.Color(34, 66, 73));
+        mas3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/Imagen7.png"))); // NOI18N
+        mas3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                mas3MouseClicked(evt);
+            }
+        });
+        getContentPane().add(mas3);
+        mas3.setBounds(580, 360, 20, 20);
+
+        precioPostre2.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        precioPostre2.setForeground(new java.awt.Color(255, 102, 0));
+        precioPostre2.setText("3990");
+        getContentPane().add(precioPostre2);
+        precioPostre2.setBounds(440, 250, 70, 40);
+
+        menos2.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
+        menos2.setForeground(new java.awt.Color(34, 66, 73));
+        menos2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/-.png"))); // NOI18N
+        menos2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menos2MouseClicked(evt);
+            }
+        });
+        getContentPane().add(menos2);
+        menos2.setBounds(520, 260, 20, 20);
+
+        val2.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        val2.setForeground(new java.awt.Color(34, 66, 73));
+        val2.setText("0");
+        val2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        getContentPane().add(val2);
+        val2.setBounds(550, 240, 40, 60);
+
+        mas4.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
+        mas4.setForeground(new java.awt.Color(34, 66, 73));
+        mas4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/Imagen7.png"))); // NOI18N
+        mas4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                mas4MouseClicked(evt);
+            }
+        });
+        getContentPane().add(mas4);
+        mas4.setBounds(580, 450, 30, 20);
+
+        precioPostre5.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        precioPostre5.setForeground(new java.awt.Color(255, 102, 0));
+        precioPostre5.setText("4990");
+        getContentPane().add(precioPostre5);
+        precioPostre5.setBounds(440, 540, 70, 40);
+
+        menos5.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
+        menos5.setForeground(new java.awt.Color(34, 66, 73));
+        menos5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/-.png"))); // NOI18N
+        menos5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menos5MouseClicked(evt);
+            }
+        });
+        getContentPane().add(menos5);
+        menos5.setBounds(520, 550, 20, 20);
+
+        val5.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        val5.setForeground(new java.awt.Color(34, 66, 73));
+        val5.setText("0");
+        val5.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        getContentPane().add(val5);
+        val5.setBounds(550, 530, 40, 60);
+
+        mas5.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
+        mas5.setForeground(new java.awt.Color(34, 66, 73));
+        mas5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/Imagen7.png"))); // NOI18N
+        mas5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                mas5MouseClicked(evt);
+            }
+        });
+        getContentPane().add(mas5);
+        mas5.setBounds(580, 550, 20, 20);
+
+        precioPostre6.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        precioPostre6.setForeground(new java.awt.Color(255, 102, 0));
+        precioPostre6.setText("4990");
+        getContentPane().add(precioPostre6);
+        precioPostre6.setBounds(440, 630, 70, 40);
+
+        menos6.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
+        menos6.setForeground(new java.awt.Color(34, 66, 73));
+        menos6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/-.png"))); // NOI18N
+        menos6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menos6MouseClicked(evt);
+            }
+        });
+        getContentPane().add(menos6);
+        menos6.setBounds(520, 640, 20, 20);
+
+        val6.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        val6.setForeground(new java.awt.Color(34, 66, 73));
+        val6.setText("0");
+        val6.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        getContentPane().add(val6);
+        val6.setBounds(550, 620, 40, 60);
+
+        mas6.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
+        mas6.setForeground(new java.awt.Color(34, 66, 73));
+        mas6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/Imagen7.png"))); // NOI18N
+        mas6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                mas6MouseClicked(evt);
+            }
+        });
+        getContentPane().add(mas6);
+        mas6.setBounds(580, 640, 20, 20);
+
+        precioPostre1.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        precioPostre1.setForeground(new java.awt.Color(255, 102, 0));
+        precioPostre1.setText("3990");
+        getContentPane().add(precioPostre1);
+        precioPostre1.setBounds(440, 160, 70, 40);
+
+        menos1.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
+        menos1.setForeground(new java.awt.Color(34, 66, 73));
+        menos1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/-.png"))); // NOI18N
+        menos1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menos1MouseClicked(evt);
+            }
+        });
+        getContentPane().add(menos1);
+        menos1.setBounds(520, 170, 20, 20);
+
+        val1.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        val1.setForeground(new java.awt.Color(34, 66, 73));
+        val1.setText("0");
+        val1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        getContentPane().add(val1);
+        val1.setBounds(550, 160, 40, 40);
+
+        mas1.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
+        mas1.setForeground(new java.awt.Color(34, 66, 73));
+        mas1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/Imagen7.png"))); // NOI18N
+        mas1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                mas1MouseClicked(evt);
+            }
+        });
+        getContentPane().add(mas1);
+        mas1.setBounds(580, 170, 20, 20);
+
+        precioPostre7.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        precioPostre7.setForeground(new java.awt.Color(255, 102, 0));
+        precioPostre7.setText("3990");
+        getContentPane().add(precioPostre7);
+        precioPostre7.setBounds(440, 730, 70, 40);
+
+        menos7.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
+        menos7.setForeground(new java.awt.Color(34, 66, 73));
+        menos7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/-.png"))); // NOI18N
+        menos7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menos7MouseClicked(evt);
+            }
+        });
+        getContentPane().add(menos7);
+        menos7.setBounds(520, 740, 20, 20);
+
+        val7.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        val7.setForeground(new java.awt.Color(34, 66, 73));
+        val7.setText("0");
+        val7.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        getContentPane().add(val7);
+        val7.setBounds(550, 720, 40, 60);
+
+        mas7.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
+        mas7.setForeground(new java.awt.Color(34, 66, 73));
+        mas7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/Imagen7.png"))); // NOI18N
+        mas7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                mas7MouseClicked(evt);
+            }
+        });
+        getContentPane().add(mas7);
+        mas7.setBounds(580, 740, 20, 20);
+
+        simbolo1.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        simbolo1.setForeground(new java.awt.Color(255, 102, 0));
+        simbolo1.setText("$");
+        getContentPane().add(simbolo1);
+        simbolo1.setBounds(420, 250, 20, 40);
+
+        simbolo2.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        simbolo2.setForeground(new java.awt.Color(255, 102, 0));
+        simbolo2.setText("$");
+        getContentPane().add(simbolo2);
+        simbolo2.setBounds(420, 350, 20, 40);
+
+        simbolo3.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        simbolo3.setForeground(new java.awt.Color(255, 102, 0));
+        simbolo3.setText("$");
+        getContentPane().add(simbolo3);
+        simbolo3.setBounds(420, 440, 20, 40);
+
+        simbolo4.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        simbolo4.setForeground(new java.awt.Color(255, 102, 0));
+        simbolo4.setText("$");
+        getContentPane().add(simbolo4);
+        simbolo4.setBounds(420, 540, 20, 40);
+
+        simbolo5.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        simbolo5.setForeground(new java.awt.Color(255, 102, 0));
+        simbolo5.setText("$");
+        getContentPane().add(simbolo5);
+        simbolo5.setBounds(420, 630, 20, 40);
+
+        simbolo6.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        simbolo6.setForeground(new java.awt.Color(255, 102, 0));
+        simbolo6.setText("$");
+        getContentPane().add(simbolo6);
+        simbolo6.setBounds(420, 730, 20, 40);
+
+        simbolo7.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        simbolo7.setForeground(new java.awt.Color(255, 102, 0));
+        simbolo7.setText("$");
+        getContentPane().add(simbolo7);
+        simbolo7.setBounds(420, 160, 20, 40);
+
+        simbolo8.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        simbolo8.setForeground(new java.awt.Color(255, 102, 0));
+        simbolo8.setText("$");
+        getContentPane().add(simbolo8);
+        simbolo8.setBounds(420, 160, 20, 40);
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 102, 0));
+        jLabel8.setText("POSTRES");
+        getContentPane().add(jLabel8);
+        jLabel8.setBounds(210, 60, 230, 60);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/93b5f9913d2e4316cd6e541c67b9aed0.jpg"))); // NOI18N
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(0, 0, 730, 1880);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void menos3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menos3MouseClicked
+        // TODO add your handling code here:
+        int i = 0;
+        c = Integer.parseInt(precioPostre3.getText());
+        i = Integer.parseInt(val3.getText());
+        if(i>0){
+            i = i-1;
+            val3.setText(String.valueOf(i));
+            c = i*c;
+            total1.setText(String.valueOf(a+b+c+d+e+f+g));
+        }
+    }//GEN-LAST:event_menos3MouseClicked
+
+    private void mas2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mas2MouseClicked
+        // TODO add your handling code here:
+        int i = 0;
+        b = Integer.parseInt(precioPostre2.getText());
+        i = Integer.parseInt(val2.getText());
+        if(i>=0 && i<=50){
+            i = i+1;
+            val2.setText(String.valueOf(i));
+            b=i*b;
+            total1.setText(String.valueOf(a+b+c+d+e+f+g));
+
+        }
+    }//GEN-LAST:event_mas2MouseClicked
+
+    private void menos4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menos4MouseClicked
+        // TODO add your handling code here:
+        int i = 0;
+        d = Integer.parseInt(precioPostre4.getText());
+        i = Integer.parseInt(val4.getText());
+        if(i>0){
+            i = i-1;
+            val4.setText(String.valueOf(i));
+            d = i*d;
+            total1.setText(String.valueOf(a+b+c+d+e+f+g));
+
+        }
+    }//GEN-LAST:event_menos4MouseClicked
+
+    private void mas3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mas3MouseClicked
+        // TODO add your handling code here:
+        int i = 0;
+        c = Integer.parseInt(precioPostre3.getText());
+        i = Integer.parseInt(val3.getText());
+        if(i>=0 && i<=50){
+            i = i+1;
+            val3.setText(String.valueOf(i));
+            c = i*c;
+            total1.setText(String.valueOf(a+b+c+d+e+f+g));
+
+        }
+    }//GEN-LAST:event_mas3MouseClicked
+
+    private void menos2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menos2MouseClicked
+        // TODO add your handling code here:
+        int i = 0;
+        b = Integer.parseInt(precioPostre2.getText());
+        i = Integer.parseInt(val2.getText());
+        if(i>0){
+            i = i-1;
+            val2.setText(String.valueOf(i));
+            b = i*b;
+            total1.setText(String.valueOf(a+b+c+d+e+f+g));
+        }
+    }//GEN-LAST:event_menos2MouseClicked
+
+    private void mas4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mas4MouseClicked
+        // TODO add your handling code here:
+        int i = 0;
+        d = Integer.parseInt(precioPostre4.getText());
+        i = Integer.parseInt(val4.getText());
+        if(i>=0 && i<=50){
+            i = i+1;
+            val4.setText(String.valueOf(i));
+            d = i*d;
+            total1.setText(String.valueOf(a+b+c+d+e+f+g));
+
+        }
+    }//GEN-LAST:event_mas4MouseClicked
+
+    private void menos5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menos5MouseClicked
+        // TODO add your handling code here:
+        int i = 0;
+        e = Integer.parseInt(precioPostre5.getText());
+        i = Integer.parseInt(val5.getText());
+        if(i>0){
+            i = i-1;
+            val5.setText(String.valueOf(i));
+            e = i*e;
+            total1.setText(String.valueOf(a+b+c+d+e+f+g));
+
+        }
+    }//GEN-LAST:event_menos5MouseClicked
+
+    private void mas5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mas5MouseClicked
+        // TODO add your handling code here:
+        int i = 0;
+        e = Integer.parseInt(precioPostre5.getText());
+        i = Integer.parseInt(val5.getText());
+        if(i>=0 && i<=50){
+            i = i+1;
+            val5.setText(String.valueOf(i));
+            e = i*e;
+            total1.setText(String.valueOf(a+b+c+d+e+f+g));
+        }
+    }//GEN-LAST:event_mas5MouseClicked
+
+    private void menos6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menos6MouseClicked
+        // TODO add your handling code here:
+        int i = 0;
+        f = Integer.parseInt(precioPostre6.getText());
+        i = Integer.parseInt(val6.getText());
+        if(i>0){
+            i = i-1;
+            val6.setText(String.valueOf(i));
+            f = i*f;
+            total1.setText(String.valueOf(a+b+c+d+e+f+g));
+
+        }
+    }//GEN-LAST:event_menos6MouseClicked
+
+    private void mas6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mas6MouseClicked
+        // TODO add your handling code here:
+        int i = 0;
+        f = Integer.parseInt(precioPostre6.getText());
+        i = Integer.parseInt(val6.getText());
+        if(i>=0 && i<=50){
+            i = i+1;
+            val6.setText(String.valueOf(i));
+            f = i*f;
+            total1.setText(String.valueOf(a+b+c+d+e+f+g));
+
+        }
+    }//GEN-LAST:event_mas6MouseClicked
+
+    private void menos1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menos1MouseClicked
+        // TODO add your handling code here:
+        int i = 0;
+        a = Integer.parseInt(precioPostre1.getText());
+        i = Integer.parseInt(val1.getText());
+        if(i>0){
+            i = i-1;
+            val1.setText(String.valueOf(i));
+            a = i*a;
+            total1.setText(String.valueOf(a+b+c+d+e+f+g));
+
+        }
+    }//GEN-LAST:event_menos1MouseClicked
+
+    private void mas1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mas1MouseClicked
+        // TODO add your handling code here:
+        int i = 0;
+        a = Integer.parseInt(precioPostre1.getText());
+        i = Integer.parseInt(val1.getText());
+        if(i>=0 && i<=50){
+            i = i+1;
+            val1.setText(String.valueOf(i));
+            a = i*a;
+            total1.setText(String.valueOf(a+b+c+d+e+f+g));
+        }
+    }//GEN-LAST:event_mas1MouseClicked
+
+    private void menos7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menos7MouseClicked
+        // TODO add your handling code here:
+        int i = 0;
+        g = Integer.parseInt(precioPostre7.getText());
+        i = Integer.parseInt(val7.getText());
+        if(i>0){
+            i = i-1;
+            val7.setText(String.valueOf(i));
+            g = i*g;
+            total1.setText(String.valueOf(a+b+c+d+e+f+g));
+        }
+    }//GEN-LAST:event_menos7MouseClicked
+
+    private void mas7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mas7MouseClicked
+        // TODO add your handling code here:
+        int i = 0;
+        g = Integer.parseInt(precioPostre7.getText());
+        i = Integer.parseInt(val7.getText());
+        if(i>=0 && i<=50){
+            i = i+1;
+            val7.setText(String.valueOf(i));
+            g = i*g;
+            total1.setText(String.valueOf(a+b+c+d+e+f+g));
+        }
+    }//GEN-LAST:event_mas7MouseClicked
+
+    private void total2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_total2MouseClicked
+        // TODO add your handling code here:
+        Carta go = new Carta();
+        go.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_total2MouseClicked
 
     /**
      * @param args the command line arguments
@@ -79,5 +869,68 @@ public class MenuPostres extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel60;
+    private javax.swing.JLabel jLabel61;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel mas1;
+    private javax.swing.JLabel mas2;
+    private javax.swing.JLabel mas3;
+    private javax.swing.JLabel mas4;
+    private javax.swing.JLabel mas5;
+    private javax.swing.JLabel mas6;
+    private javax.swing.JLabel mas7;
+    private javax.swing.JLabel menos1;
+    private javax.swing.JLabel menos2;
+    private javax.swing.JLabel menos3;
+    private javax.swing.JLabel menos4;
+    private javax.swing.JLabel menos5;
+    private javax.swing.JLabel menos6;
+    private javax.swing.JLabel menos7;
+    private javax.swing.JLabel postre1;
+    private javax.swing.JLabel postre2;
+    private javax.swing.JLabel postre3;
+    private javax.swing.JLabel postre4;
+    private javax.swing.JLabel postre5;
+    private javax.swing.JLabel postre6;
+    private javax.swing.JLabel postre7;
+    private javax.swing.JLabel precioPostre1;
+    private javax.swing.JLabel precioPostre2;
+    private javax.swing.JLabel precioPostre3;
+    private javax.swing.JLabel precioPostre4;
+    private javax.swing.JLabel precioPostre5;
+    private javax.swing.JLabel precioPostre6;
+    private javax.swing.JLabel precioPostre7;
+    private javax.swing.JLabel simbolo1;
+    private javax.swing.JLabel simbolo2;
+    private javax.swing.JLabel simbolo3;
+    private javax.swing.JLabel simbolo4;
+    private javax.swing.JLabel simbolo5;
+    private javax.swing.JLabel simbolo6;
+    private javax.swing.JLabel simbolo7;
+    private javax.swing.JLabel simbolo8;
+    private javax.swing.JTextArea subPostre1;
+    private javax.swing.JTextArea subPostre2;
+    private javax.swing.JTextArea subPostre3;
+    private javax.swing.JTextArea subPostre4;
+    private javax.swing.JTextArea subPostre5;
+    private javax.swing.JTextArea subPostre6;
+    private javax.swing.JTextArea subPostre7;
+    private javax.swing.JLabel total;
+    private javax.swing.JLabel total1;
+    private javax.swing.JLabel total2;
+    private javax.swing.JLabel val1;
+    private javax.swing.JLabel val2;
+    private javax.swing.JLabel val3;
+    private javax.swing.JLabel val4;
+    private javax.swing.JLabel val5;
+    private javax.swing.JLabel val6;
+    private javax.swing.JLabel val7;
     // End of variables declaration//GEN-END:variables
 }

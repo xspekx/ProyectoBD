@@ -63,7 +63,6 @@ public class MenuComida extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         val3 = new javax.swing.JLabel();
         mas2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         precioComida3 = new javax.swing.JLabel();
         precioComida4 = new javax.swing.JLabel();
         subComida7 = new javax.swing.JTextArea();
@@ -97,7 +96,16 @@ public class MenuComida extends javax.swing.JFrame {
         jLabel60 = new javax.swing.JLabel();
         jLabel61 = new javax.swing.JLabel();
         subComida2 = new javax.swing.JTextArea();
+        total2 = new javax.swing.JLabel();
         subComida1 = new javax.swing.JTextArea();
+        simbolo1 = new javax.swing.JLabel();
+        simbolo2 = new javax.swing.JLabel();
+        simbolo3 = new javax.swing.JLabel();
+        simbolo4 = new javax.swing.JLabel();
+        simbolo5 = new javax.swing.JLabel();
+        simbolo6 = new javax.swing.JLabel();
+        simbolo7 = new javax.swing.JLabel();
+        simbolo8 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -160,7 +168,7 @@ public class MenuComida extends javax.swing.JFrame {
         total1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         total1.setForeground(new java.awt.Color(34, 66, 73));
         getContentPane().add(total1);
-        total1.setBounds(140, 860, 190, 40);
+        total1.setBounds(140, 860, 230, 40);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(34, 66, 73));
@@ -183,13 +191,13 @@ public class MenuComida extends javax.swing.JFrame {
         jLabel9.setForeground(new java.awt.Color(34, 66, 73));
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/Imagen2.png"))); // NOI18N
         getContentPane().add(jLabel9);
-        jLabel9.setBounds(30, 20, 130, 130);
+        jLabel9.setBounds(40, 10, 130, 130);
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 102, 0));
         jLabel7.setText("COMIDA");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(180, 50, 230, 60);
+        jLabel7.setBounds(230, 50, 230, 60);
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(34, 66, 73));
@@ -233,26 +241,17 @@ public class MenuComida extends javax.swing.JFrame {
         getContentPane().add(mas2);
         mas2.setBounds(580, 260, 20, 20);
 
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton1);
-        jButton1.setBounds(450, 860, 110, 40);
-
         precioComida3.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
         precioComida3.setForeground(new java.awt.Color(255, 102, 0));
-        precioComida3.setText("$8.990");
+        precioComida3.setText("8990");
         getContentPane().add(precioComida3);
-        precioComida3.setBounds(430, 350, 70, 40);
+        precioComida3.setBounds(440, 350, 70, 40);
 
         precioComida4.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
         precioComida4.setForeground(new java.awt.Color(255, 102, 0));
-        precioComida4.setText("$11.990");
+        precioComida4.setText("11990");
         getContentPane().add(precioComida4);
-        precioComida4.setBounds(420, 440, 100, 40);
+        precioComida4.setBounds(440, 440, 100, 40);
 
         subComida7.setEditable(false);
         subComida7.setColumns(20);
@@ -317,9 +316,9 @@ public class MenuComida extends javax.swing.JFrame {
 
         precioComida2.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
         precioComida2.setForeground(new java.awt.Color(255, 102, 0));
-        precioComida2.setText("$9.990");
+        precioComida2.setText("9990");
         getContentPane().add(precioComida2);
-        precioComida2.setBounds(430, 250, 70, 40);
+        precioComida2.setBounds(440, 250, 70, 40);
 
         menos2.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         menos2.setForeground(new java.awt.Color(34, 66, 73));
@@ -352,9 +351,9 @@ public class MenuComida extends javax.swing.JFrame {
 
         precioComida5.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
         precioComida5.setForeground(new java.awt.Color(255, 102, 0));
-        precioComida5.setText("$7.990");
+        precioComida5.setText("7990");
         getContentPane().add(precioComida5);
-        precioComida5.setBounds(430, 540, 70, 40);
+        precioComida5.setBounds(440, 540, 70, 40);
 
         menos5.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         menos5.setForeground(new java.awt.Color(34, 66, 73));
@@ -403,9 +402,9 @@ public class MenuComida extends javax.swing.JFrame {
 
         precioComida6.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
         precioComida6.setForeground(new java.awt.Color(255, 102, 0));
-        precioComida6.setText("$8.990");
+        precioComida6.setText("8990");
         getContentPane().add(precioComida6);
-        precioComida6.setBounds(430, 630, 70, 40);
+        precioComida6.setBounds(440, 630, 70, 40);
 
         menos6.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         menos6.setForeground(new java.awt.Color(34, 66, 73));
@@ -454,9 +453,9 @@ public class MenuComida extends javax.swing.JFrame {
 
         precioComida1.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
         precioComida1.setForeground(new java.awt.Color(255, 102, 0));
-        precioComida1.setText("$10.990");
+        precioComida1.setText("10990");
         getContentPane().add(precioComida1);
-        precioComida1.setBounds(420, 160, 100, 40);
+        precioComida1.setBounds(440, 160, 70, 40);
 
         menos1.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         menos1.setForeground(new java.awt.Color(34, 66, 73));
@@ -505,9 +504,9 @@ public class MenuComida extends javax.swing.JFrame {
 
         precioComida7.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
         precioComida7.setForeground(new java.awt.Color(255, 102, 0));
-        precioComida7.setText("$9.990");
+        precioComida7.setText("9990");
         getContentPane().add(precioComida7);
-        precioComida7.setBounds(430, 730, 70, 40);
+        precioComida7.setBounds(440, 730, 70, 40);
 
         menos7.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         menos7.setForeground(new java.awt.Color(34, 66, 73));
@@ -566,6 +565,17 @@ public class MenuComida extends javax.swing.JFrame {
         getContentPane().add(subComida2);
         subComida2.setBounds(60, 280, 300, 110);
 
+        total2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        total2.setForeground(new java.awt.Color(34, 66, 73));
+        total2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/agregar.png"))); // NOI18N
+        total2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                total2MouseClicked(evt);
+            }
+        });
+        getContentPane().add(total2);
+        total2.setBounds(400, 840, 200, 80);
+
         subComida1.setEditable(false);
         subComida1.setColumns(20);
         subComida1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -582,6 +592,54 @@ public class MenuComida extends javax.swing.JFrame {
         getContentPane().add(subComida1);
         subComida1.setBounds(60, 190, 310, 110);
 
+        simbolo1.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        simbolo1.setForeground(new java.awt.Color(255, 102, 0));
+        simbolo1.setText("$");
+        getContentPane().add(simbolo1);
+        simbolo1.setBounds(420, 250, 20, 40);
+
+        simbolo2.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        simbolo2.setForeground(new java.awt.Color(255, 102, 0));
+        simbolo2.setText("$");
+        getContentPane().add(simbolo2);
+        simbolo2.setBounds(420, 350, 20, 40);
+
+        simbolo3.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        simbolo3.setForeground(new java.awt.Color(255, 102, 0));
+        simbolo3.setText("$");
+        getContentPane().add(simbolo3);
+        simbolo3.setBounds(420, 440, 20, 40);
+
+        simbolo4.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        simbolo4.setForeground(new java.awt.Color(255, 102, 0));
+        simbolo4.setText("$");
+        getContentPane().add(simbolo4);
+        simbolo4.setBounds(420, 540, 20, 40);
+
+        simbolo5.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        simbolo5.setForeground(new java.awt.Color(255, 102, 0));
+        simbolo5.setText("$");
+        getContentPane().add(simbolo5);
+        simbolo5.setBounds(420, 630, 20, 40);
+
+        simbolo6.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        simbolo6.setForeground(new java.awt.Color(255, 102, 0));
+        simbolo6.setText("$");
+        getContentPane().add(simbolo6);
+        simbolo6.setBounds(420, 730, 20, 40);
+
+        simbolo7.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        simbolo7.setForeground(new java.awt.Color(255, 102, 0));
+        simbolo7.setText("$");
+        getContentPane().add(simbolo7);
+        simbolo7.setBounds(420, 160, 20, 40);
+
+        simbolo8.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        simbolo8.setForeground(new java.awt.Color(255, 102, 0));
+        simbolo8.setText("$");
+        getContentPane().add(simbolo8);
+        simbolo8.setBounds(420, 160, 20, 40);
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/93b5f9913d2e4316cd6e541c67b9aed0.jpg"))); // NOI18N
         getContentPane().add(jLabel1);
         jLabel1.setBounds(0, 0, 730, 1880);
@@ -592,6 +650,7 @@ public class MenuComida extends javax.swing.JFrame {
     private void menos3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menos3MouseClicked
         // TODO add your handling code here:
         int i = 0;
+        c = Integer.parseInt(precioComida1.getText());
         i = Integer.parseInt(val3.getText());
         if(i>0){
             i = i-1;
@@ -604,6 +663,7 @@ public class MenuComida extends javax.swing.JFrame {
     private void mas2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mas2MouseClicked
         // TODO add your handling code here:
         int i = 0;
+        b = Integer.parseInt(precioComida1.getText());
         i = Integer.parseInt(val2.getText());
         if(i>=0 && i<=50){
             i = i+1;
@@ -617,6 +677,7 @@ public class MenuComida extends javax.swing.JFrame {
     private void menos4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menos4MouseClicked
         // TODO add your handling code here:
         int i = 0;
+        d = Integer.parseInt(precioComida1.getText());
         i = Integer.parseInt(val4.getText());
         if(i>0){
             i = i-1;
@@ -630,6 +691,7 @@ public class MenuComida extends javax.swing.JFrame {
     private void mas3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mas3MouseClicked
         // TODO add your handling code here:
         int i = 0;
+        c = Integer.parseInt(precioComida1.getText());
         i = Integer.parseInt(val3.getText());
         if(i>=0 && i<=50){
             i = i+1;
@@ -643,6 +705,7 @@ public class MenuComida extends javax.swing.JFrame {
     private void menos2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menos2MouseClicked
         // TODO add your handling code here:
         int i = 0;
+        b = Integer.parseInt(precioComida1.getText());
         i = Integer.parseInt(val2.getText());
         if(i>0){
             i = i-1;
@@ -655,6 +718,7 @@ public class MenuComida extends javax.swing.JFrame {
     private void mas4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mas4MouseClicked
         // TODO add your handling code here:
         int i = 0;
+        d = Integer.parseInt(precioComida1.getText());
         i = Integer.parseInt(val4.getText());
         if(i>=0 && i<=50){
             i = i+1;
@@ -668,6 +732,7 @@ public class MenuComida extends javax.swing.JFrame {
     private void menos5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menos5MouseClicked
         // TODO add your handling code here:
         int i = 0;
+        e = Integer.parseInt(precioComida1.getText());
         i = Integer.parseInt(val5.getText());
         if(i>0){
             i = i-1;
@@ -681,6 +746,7 @@ public class MenuComida extends javax.swing.JFrame {
     private void mas5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mas5MouseClicked
         // TODO add your handling code here:
         int i = 0;
+        e = Integer.parseInt(precioComida1.getText());
         i = Integer.parseInt(val5.getText());
         if(i>=0 && i<=50){
             i = i+1;
@@ -693,11 +759,12 @@ public class MenuComida extends javax.swing.JFrame {
     private void menos6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menos6MouseClicked
         // TODO add your handling code here:
         int i = 0;
+        f = Integer.parseInt(precioComida1.getText());
         i = Integer.parseInt(val6.getText());
         if(i>0){
             i = i-1;
             val6.setText(String.valueOf(i));
-            f = i*8990;
+            f = i*f;
             total1.setText(String.valueOf(a+b+c+d+e+f+g));
 
         }
@@ -705,12 +772,13 @@ public class MenuComida extends javax.swing.JFrame {
 
     private void mas6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mas6MouseClicked
         // TODO add your handling code here:
-        int i = 0;
+        int i = 0; 
+        f = Integer.parseInt(precioComida1.getText());
         i = Integer.parseInt(val6.getText());
         if(i>=0 && i<=50){
             i = i+1;
             val6.setText(String.valueOf(i));
-            f = i*8990;
+            f = i*f;
             total1.setText(String.valueOf(a+b+c+d+e+f+g));
 
         }
@@ -719,6 +787,7 @@ public class MenuComida extends javax.swing.JFrame {
     private void menos1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menos1MouseClicked
         // TODO add your handling code here:
         int i = 0;
+        a = Integer.parseInt(precioComida1.getText());
         i = Integer.parseInt(val1.getText());
         if(i>0){
             i = i-1;
@@ -732,6 +801,7 @@ public class MenuComida extends javax.swing.JFrame {
     private void mas1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mas1MouseClicked
         // TODO add your handling code here:
         int i = 0;
+        a = Integer.parseInt(precioComida1.getText());
         i = Integer.parseInt(val1.getText());
         if(i>=0 && i<=50){
             i = i+1;
@@ -744,6 +814,7 @@ public class MenuComida extends javax.swing.JFrame {
     private void menos7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menos7MouseClicked
         // TODO add your handling code here:
         int i = 0;
+        g = Integer.parseInt(precioComida1.getText());
         i = Integer.parseInt(val7.getText());
         if(i>0){
             i = i-1;
@@ -756,6 +827,7 @@ public class MenuComida extends javax.swing.JFrame {
     private void mas7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mas7MouseClicked
         // TODO add your handling code here:
         int i = 0;
+        g = Integer.parseInt(precioComida1.getText());
         i = Integer.parseInt(val7.getText());
         if(i>=0 && i<=50){
             i = i+1;
@@ -769,12 +841,12 @@ public class MenuComida extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_formMouseMoved
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void total2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_total2MouseClicked
         // TODO add your handling code here:
-        Login log = new Login();
-        log.setVisible(true);
+        Carta go = new Carta();
+        go.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_total2MouseClicked
 
     /**
      * @param args the command line arguments
@@ -820,7 +892,6 @@ public class MenuComida extends javax.swing.JFrame {
     private javax.swing.JLabel comida5;
     private javax.swing.JLabel comida6;
     private javax.swing.JLabel comida7;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel13;
@@ -852,6 +923,14 @@ public class MenuComida extends javax.swing.JFrame {
     private javax.swing.JLabel precioComida5;
     private javax.swing.JLabel precioComida6;
     private javax.swing.JLabel precioComida7;
+    private javax.swing.JLabel simbolo1;
+    private javax.swing.JLabel simbolo2;
+    private javax.swing.JLabel simbolo3;
+    private javax.swing.JLabel simbolo4;
+    private javax.swing.JLabel simbolo5;
+    private javax.swing.JLabel simbolo6;
+    private javax.swing.JLabel simbolo7;
+    private javax.swing.JLabel simbolo8;
     private javax.swing.JTextArea subComida1;
     private javax.swing.JTextArea subComida2;
     private javax.swing.JTextArea subComida3;
@@ -861,6 +940,7 @@ public class MenuComida extends javax.swing.JFrame {
     private javax.swing.JTextArea subComida7;
     private javax.swing.JLabel total;
     private javax.swing.JLabel total1;
+    private javax.swing.JLabel total2;
     private javax.swing.JLabel val1;
     private javax.swing.JLabel val2;
     private javax.swing.JLabel val3;
