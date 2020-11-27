@@ -5,6 +5,7 @@
  */
 package VISTA;
 
+import java.awt.Color;
 import javafx.scene.control.ScrollPane;
 
 /**
@@ -12,7 +13,16 @@ import javafx.scene.control.ScrollPane;
  * @author reyna
  */
 public class MenuComida extends javax.swing.JFrame {
-
+    int a = 0;
+    int b = 0;
+    int c = 0;
+    int d = 0;
+    int e = 0;
+    int f = 0;
+    int g = 0;
+    
+    
+    
     /**
      * Creates new form Menu
      */
@@ -21,8 +31,8 @@ public class MenuComida extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         this.setFocusable(true);
         
-
-
+       
+          
     }
 
     /**
@@ -34,6 +44,15 @@ public class MenuComida extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        comida1 = new javax.swing.JLabel();
+        comida2 = new javax.swing.JLabel();
+        comida3 = new javax.swing.JLabel();
+        comida4 = new javax.swing.JLabel();
+        comida5 = new javax.swing.JLabel();
+        comida6 = new javax.swing.JLabel();
+        comida7 = new javax.swing.JLabel();
+        total = new javax.swing.JLabel();
+        total1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         menos3 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -44,13 +63,12 @@ public class MenuComida extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         val3 = new javax.swing.JLabel();
         mas2 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         precioComida3 = new javax.swing.JLabel();
         precioComida4 = new javax.swing.JLabel();
-        comida7 = new javax.swing.JLabel();
-        comida6 = new javax.swing.JLabel();
-        jTextArea9 = new javax.swing.JTextArea();
+        subComida7 = new javax.swing.JTextArea();
         menos4 = new javax.swing.JLabel();
-        jTextArea8 = new javax.swing.JTextArea();
+        subComida6 = new javax.swing.JTextArea();
         val4 = new javax.swing.JLabel();
         mas3 = new javax.swing.JLabel();
         precioComida2 = new javax.swing.JLabel();
@@ -60,37 +78,89 @@ public class MenuComida extends javax.swing.JFrame {
         precioComida5 = new javax.swing.JLabel();
         menos5 = new javax.swing.JLabel();
         val5 = new javax.swing.JLabel();
-        comida5 = new javax.swing.JLabel();
-        jTextArea7 = new javax.swing.JTextArea();
+        subComida5 = new javax.swing.JTextArea();
         mas5 = new javax.swing.JLabel();
         precioComida6 = new javax.swing.JLabel();
         menos6 = new javax.swing.JLabel();
         val6 = new javax.swing.JLabel();
         mas6 = new javax.swing.JLabel();
-        comida4 = new javax.swing.JLabel();
-        jTextArea6 = new javax.swing.JTextArea();
-        comida1 = new javax.swing.JLabel();
+        subComida4 = new javax.swing.JTextArea();
         precioComida1 = new javax.swing.JLabel();
         menos1 = new javax.swing.JLabel();
         val1 = new javax.swing.JLabel();
         mas1 = new javax.swing.JLabel();
-        comida3 = new javax.swing.JLabel();
-        jTextArea5 = new javax.swing.JTextArea();
+        subComida3 = new javax.swing.JTextArea();
         precioComida7 = new javax.swing.JLabel();
         menos7 = new javax.swing.JLabel();
         val7 = new javax.swing.JLabel();
         mas7 = new javax.swing.JLabel();
-        comida2 = new javax.swing.JLabel();
         jLabel60 = new javax.swing.JLabel();
         jLabel61 = new javax.swing.JLabel();
-        jTextArea3 = new javax.swing.JTextArea();
-        jTextArea4 = new javax.swing.JTextArea();
-        jTextField1 = new javax.swing.JTextField();
+        subComida2 = new javax.swing.JTextArea();
+        subComida1 = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(550, 770));
+        setMinimumSize(new java.awt.Dimension(625, 945));
+        addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                formMouseMoved(evt);
+            }
+        });
         getContentPane().setLayout(null);
+
+        comida1.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        comida1.setForeground(new java.awt.Color(255, 102, 0));
+        comida1.setText("LOMO MANTARO");
+        getContentPane().add(comida1);
+        comida1.setBounds(60, 160, 220, 40);
+
+        comida2.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        comida2.setForeground(new java.awt.Color(255, 102, 0));
+        comida2.setText("LOMO GIUSEPPI VERDI");
+        getContentPane().add(comida2);
+        comida2.setBounds(60, 250, 250, 40);
+
+        comida3.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        comida3.setForeground(new java.awt.Color(255, 102, 0));
+        comida3.setText("BIFE BRAVO");
+        getContentPane().add(comida3);
+        comida3.setBounds(60, 350, 220, 40);
+
+        comida4.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        comida4.setForeground(new java.awt.Color(255, 102, 0));
+        comida4.setText("BIFE CORLEONE");
+        getContentPane().add(comida4);
+        comida4.setBounds(60, 440, 220, 40);
+
+        comida5.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        comida5.setForeground(new java.awt.Color(255, 102, 0));
+        comida5.setText("PECHUGA PARRILLERA");
+        getContentPane().add(comida5);
+        comida5.setBounds(60, 540, 290, 40);
+
+        comida6.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        comida6.setForeground(new java.awt.Color(255, 102, 0));
+        comida6.setText("POLLO A LA BRASA");
+        getContentPane().add(comida6);
+        comida6.setBounds(60, 630, 340, 40);
+
+        comida7.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        comida7.setForeground(new java.awt.Color(255, 102, 0));
+        comida7.setText("PARRILLA PERSONAL");
+        getContentPane().add(comida7);
+        comida7.setBounds(60, 730, 220, 40);
+
+        total.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        total.setForeground(new java.awt.Color(34, 66, 73));
+        total.setText("TOTAL  $");
+        getContentPane().add(total);
+        total.setBounds(30, 860, 130, 40);
+
+        total1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        total1.setForeground(new java.awt.Color(34, 66, 73));
+        getContentPane().add(total1);
+        total1.setBounds(140, 860, 190, 40);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(34, 66, 73));
@@ -113,7 +183,7 @@ public class MenuComida extends javax.swing.JFrame {
         jLabel9.setForeground(new java.awt.Color(34, 66, 73));
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/Imagen2.png"))); // NOI18N
         getContentPane().add(jLabel9);
-        jLabel9.setBounds(30, 10, 130, 130);
+        jLabel9.setBounds(30, 20, 130, 130);
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 102, 0));
@@ -163,6 +233,15 @@ public class MenuComida extends javax.swing.JFrame {
         getContentPane().add(mas2);
         mas2.setBounds(580, 260, 20, 20);
 
+        jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1);
+        jButton1.setBounds(450, 860, 110, 40);
+
         precioComida3.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
         precioComida3.setForeground(new java.awt.Color(255, 102, 0));
         precioComida3.setText("$8.990");
@@ -175,33 +254,21 @@ public class MenuComida extends javax.swing.JFrame {
         getContentPane().add(precioComida4);
         precioComida4.setBounds(420, 440, 100, 40);
 
-        comida7.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
-        comida7.setForeground(new java.awt.Color(255, 102, 0));
-        comida7.setText("PARRILLA PERSONAL");
-        getContentPane().add(comida7);
-        comida7.setBounds(60, 730, 220, 40);
-
-        comida6.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
-        comida6.setForeground(new java.awt.Color(255, 102, 0));
-        comida6.setText("POLLO A LA BRASA");
-        getContentPane().add(comida6);
-        comida6.setBounds(60, 630, 340, 40);
-
-        jTextArea9.setColumns(20);
-        jTextArea9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jTextArea9.setForeground(new java.awt.Color(1, 30, 68));
-        jTextArea9.setLineWrap(true);
-        jTextArea9.setRows(5);
-        jTextArea9.setText("Nuestra deliciosa parrilla incluye bife ancho de res, pechuga de pollo, carne de cerdo, \nsalchicha farnkfuter y papas fritas.");
-        jTextArea9.setBorder(null);
-        jTextArea9.setCaretColor(new java.awt.Color(1, 30, 68));
-        jTextArea9.setDisabledTextColor(new java.awt.Color(34, 66, 73));
-        jTextArea9.setEnabled(false);
-        jTextArea9.setMinimumSize(new java.awt.Dimension(150, 20));
-        jTextArea9.setPreferredSize(new java.awt.Dimension(280, 100));
-        jTextArea9.setSelectionColor(new java.awt.Color(1, 30, 68));
-        getContentPane().add(jTextArea9);
-        jTextArea9.setBounds(60, 760, 300, 110);
+        subComida7.setEditable(false);
+        subComida7.setColumns(20);
+        subComida7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        subComida7.setForeground(new java.awt.Color(34, 66, 73));
+        subComida7.setLineWrap(true);
+        subComida7.setRows(5);
+        subComida7.setText("Nuestra deliciosa parrilla incluye bife ancho de res, pechuga de pollo, carne de cerdo, \nsalchicha farnkfuter y papas fritas.");
+        subComida7.setBorder(null);
+        subComida7.setCaretColor(new java.awt.Color(34, 66, 73));
+        subComida7.setDisabledTextColor(new java.awt.Color(34, 66, 73));
+        subComida7.setMinimumSize(new java.awt.Dimension(150, 20));
+        subComida7.setPreferredSize(new java.awt.Dimension(280, 100));
+        subComida7.setSelectionColor(new java.awt.Color(34, 66, 73));
+        getContentPane().add(subComida7);
+        subComida7.setBounds(60, 760, 300, 110);
 
         menos4.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         menos4.setForeground(new java.awt.Color(34, 66, 73));
@@ -214,21 +281,21 @@ public class MenuComida extends javax.swing.JFrame {
         getContentPane().add(menos4);
         menos4.setBounds(520, 450, 30, 20);
 
-        jTextArea8.setColumns(20);
-        jTextArea8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jTextArea8.setForeground(new java.awt.Color(1, 30, 68));
-        jTextArea8.setLineWrap(true);
-        jTextArea8.setRows(5);
-        jTextArea8.setText("1/4 de pollo acompañado con papas fritas.");
-        jTextArea8.setBorder(null);
-        jTextArea8.setCaretColor(new java.awt.Color(1, 30, 68));
-        jTextArea8.setDisabledTextColor(new java.awt.Color(34, 66, 73));
-        jTextArea8.setEnabled(false);
-        jTextArea8.setMinimumSize(new java.awt.Dimension(150, 20));
-        jTextArea8.setPreferredSize(new java.awt.Dimension(280, 100));
-        jTextArea8.setSelectionColor(new java.awt.Color(1, 30, 68));
-        getContentPane().add(jTextArea8);
-        jTextArea8.setBounds(60, 660, 300, 110);
+        subComida6.setEditable(false);
+        subComida6.setColumns(20);
+        subComida6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        subComida6.setForeground(new java.awt.Color(34, 66, 73));
+        subComida6.setLineWrap(true);
+        subComida6.setRows(5);
+        subComida6.setText("1/4 de pollo acompañado con papas fritas.");
+        subComida6.setBorder(null);
+        subComida6.setCaretColor(new java.awt.Color(34, 66, 73));
+        subComida6.setDisabledTextColor(new java.awt.Color(34, 66, 73));
+        subComida6.setMinimumSize(new java.awt.Dimension(150, 20));
+        subComida6.setPreferredSize(new java.awt.Dimension(280, 100));
+        subComida6.setSelectionColor(new java.awt.Color(34, 66, 73));
+        getContentPane().add(subComida6);
+        subComida6.setBounds(60, 660, 300, 110);
 
         val4.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
         val4.setForeground(new java.awt.Color(34, 66, 73));
@@ -307,27 +374,21 @@ public class MenuComida extends javax.swing.JFrame {
         getContentPane().add(val5);
         val5.setBounds(550, 530, 40, 60);
 
-        comida5.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
-        comida5.setForeground(new java.awt.Color(255, 102, 0));
-        comida5.setText("PECHUGA PARRILLERA");
-        getContentPane().add(comida5);
-        comida5.setBounds(60, 540, 290, 40);
-
-        jTextArea7.setColumns(20);
-        jTextArea7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jTextArea7.setForeground(new java.awt.Color(1, 30, 68));
-        jTextArea7.setLineWrap(true);
-        jTextArea7.setRows(5);
-        jTextArea7.setText("Pechuga acompañada con arroz y ensalada\nmixta.");
-        jTextArea7.setBorder(null);
-        jTextArea7.setCaretColor(new java.awt.Color(1, 30, 68));
-        jTextArea7.setDisabledTextColor(new java.awt.Color(34, 66, 73));
-        jTextArea7.setEnabled(false);
-        jTextArea7.setMinimumSize(new java.awt.Dimension(150, 20));
-        jTextArea7.setPreferredSize(new java.awt.Dimension(280, 100));
-        jTextArea7.setSelectionColor(new java.awt.Color(1, 30, 68));
-        getContentPane().add(jTextArea7);
-        jTextArea7.setBounds(60, 570, 300, 110);
+        subComida5.setEditable(false);
+        subComida5.setColumns(20);
+        subComida5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        subComida5.setForeground(new java.awt.Color(34, 66, 73));
+        subComida5.setLineWrap(true);
+        subComida5.setRows(5);
+        subComida5.setText("Pechuga acompañada con arroz y ensalada\nmixta.");
+        subComida5.setBorder(null);
+        subComida5.setCaretColor(new java.awt.Color(34, 66, 73));
+        subComida5.setDisabledTextColor(new java.awt.Color(34, 66, 73));
+        subComida5.setMinimumSize(new java.awt.Dimension(150, 20));
+        subComida5.setPreferredSize(new java.awt.Dimension(280, 100));
+        subComida5.setSelectionColor(new java.awt.Color(34, 66, 73));
+        getContentPane().add(subComida5);
+        subComida5.setBounds(60, 570, 300, 110);
 
         mas5.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         mas5.setForeground(new java.awt.Color(34, 66, 73));
@@ -375,33 +436,21 @@ public class MenuComida extends javax.swing.JFrame {
         getContentPane().add(mas6);
         mas6.setBounds(580, 640, 20, 20);
 
-        comida4.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
-        comida4.setForeground(new java.awt.Color(255, 102, 0));
-        comida4.setText("BIFE CORLEONE");
-        getContentPane().add(comida4);
-        comida4.setBounds(60, 440, 220, 40);
-
-        jTextArea6.setColumns(20);
-        jTextArea6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jTextArea6.setForeground(new java.awt.Color(1, 30, 68));
-        jTextArea6.setLineWrap(true);
-        jTextArea6.setRows(5);
-        jTextArea6.setText("Bife ancho de res, bañado en nuestra cremosa\nsalsa de pimienta negra y fetuccinnis bañados en mantequilla y salvia.");
-        jTextArea6.setBorder(null);
-        jTextArea6.setCaretColor(new java.awt.Color(1, 30, 68));
-        jTextArea6.setDisabledTextColor(new java.awt.Color(34, 66, 73));
-        jTextArea6.setEnabled(false);
-        jTextArea6.setMinimumSize(new java.awt.Dimension(150, 20));
-        jTextArea6.setPreferredSize(new java.awt.Dimension(280, 100));
-        jTextArea6.setSelectionColor(new java.awt.Color(1, 30, 68));
-        getContentPane().add(jTextArea6);
-        jTextArea6.setBounds(60, 470, 310, 110);
-
-        comida1.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
-        comida1.setForeground(new java.awt.Color(255, 102, 0));
-        comida1.setText("LOMO MANTARO");
-        getContentPane().add(comida1);
-        comida1.setBounds(60, 160, 220, 40);
+        subComida4.setEditable(false);
+        subComida4.setColumns(20);
+        subComida4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        subComida4.setForeground(new java.awt.Color(34, 66, 73));
+        subComida4.setLineWrap(true);
+        subComida4.setRows(5);
+        subComida4.setText("Bife ancho de res, bañado en nuestra cremosa\nsalsa de pimienta negra y fetuccinnis bañados en mantequilla y salvia.");
+        subComida4.setBorder(null);
+        subComida4.setCaretColor(new java.awt.Color(34, 66, 73));
+        subComida4.setDisabledTextColor(new java.awt.Color(34, 66, 73));
+        subComida4.setMinimumSize(new java.awt.Dimension(150, 20));
+        subComida4.setPreferredSize(new java.awt.Dimension(280, 100));
+        subComida4.setSelectionColor(new java.awt.Color(34, 66, 73));
+        getContentPane().add(subComida4);
+        subComida4.setBounds(60, 470, 310, 110);
 
         precioComida1.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
         precioComida1.setForeground(new java.awt.Color(255, 102, 0));
@@ -438,27 +487,21 @@ public class MenuComida extends javax.swing.JFrame {
         getContentPane().add(mas1);
         mas1.setBounds(580, 170, 20, 20);
 
-        comida3.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
-        comida3.setForeground(new java.awt.Color(255, 102, 0));
-        comida3.setText("BIFE BRAVO");
-        getContentPane().add(comida3);
-        comida3.setBounds(60, 350, 220, 40);
-
-        jTextArea5.setColumns(20);
-        jTextArea5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jTextArea5.setForeground(new java.awt.Color(1, 30, 68));
-        jTextArea5.setLineWrap(true);
-        jTextArea5.setRows(5);
-        jTextArea5.setText("Bife ancho de res acompañado de nuestras   inigualables papas bravas.");
-        jTextArea5.setBorder(null);
-        jTextArea5.setCaretColor(new java.awt.Color(1, 30, 68));
-        jTextArea5.setDisabledTextColor(new java.awt.Color(34, 66, 73));
-        jTextArea5.setEnabled(false);
-        jTextArea5.setMinimumSize(new java.awt.Dimension(150, 20));
-        jTextArea5.setPreferredSize(new java.awt.Dimension(280, 100));
-        jTextArea5.setSelectionColor(new java.awt.Color(1, 30, 68));
-        getContentPane().add(jTextArea5);
-        jTextArea5.setBounds(60, 380, 300, 110);
+        subComida3.setEditable(false);
+        subComida3.setColumns(20);
+        subComida3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        subComida3.setForeground(new java.awt.Color(34, 66, 73));
+        subComida3.setLineWrap(true);
+        subComida3.setRows(5);
+        subComida3.setText("Bife ancho de res acompañado de nuestras   inigualables papas bravas.");
+        subComida3.setBorder(null);
+        subComida3.setCaretColor(new java.awt.Color(34, 66, 73));
+        subComida3.setDisabledTextColor(new java.awt.Color(34, 66, 73));
+        subComida3.setMinimumSize(new java.awt.Dimension(150, 20));
+        subComida3.setPreferredSize(new java.awt.Dimension(280, 100));
+        subComida3.setSelectionColor(new java.awt.Color(34, 66, 73));
+        getContentPane().add(subComida3);
+        subComida3.setBounds(60, 380, 300, 110);
 
         precioComida7.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
         precioComida7.setForeground(new java.awt.Color(255, 102, 0));
@@ -495,12 +538,6 @@ public class MenuComida extends javax.swing.JFrame {
         getContentPane().add(mas7);
         mas7.setBounds(580, 740, 20, 20);
 
-        comida2.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
-        comida2.setForeground(new java.awt.Color(255, 102, 0));
-        comida2.setText("LOMO GIUSEPPI VERDI");
-        getContentPane().add(comida2);
-        comida2.setBounds(60, 250, 250, 40);
-
         jLabel60.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel60.setForeground(new java.awt.Color(34, 66, 73));
         jLabel60.setText("6.");
@@ -513,47 +550,37 @@ public class MenuComida extends javax.swing.JFrame {
         getContentPane().add(jLabel61);
         jLabel61.setBounds(30, 720, 50, 60);
 
-        jTextArea3.setColumns(20);
-        jTextArea3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jTextArea3.setForeground(new java.awt.Color(1, 30, 68));
-        jTextArea3.setLineWrap(true);
-        jTextArea3.setRows(5);
-        jTextArea3.setText("Lomo acompañado de deliciosos fetuccinnis \nbañados en una clasica salsa italiana.");
-        jTextArea3.setBorder(null);
-        jTextArea3.setCaretColor(new java.awt.Color(1, 30, 68));
-        jTextArea3.setDisabledTextColor(new java.awt.Color(34, 66, 73));
-        jTextArea3.setEnabled(false);
-        jTextArea3.setMinimumSize(new java.awt.Dimension(150, 20));
-        jTextArea3.setOpaque(false);
-        jTextArea3.setPreferredSize(new java.awt.Dimension(280, 100));
-        jTextArea3.setSelectionColor(new java.awt.Color(1, 30, 68));
-        getContentPane().add(jTextArea3);
-        jTextArea3.setBounds(60, 280, 320, 110);
+        subComida2.setEditable(false);
+        subComida2.setColumns(20);
+        subComida2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        subComida2.setForeground(new java.awt.Color(34, 66, 73));
+        subComida2.setLineWrap(true);
+        subComida2.setRows(5);
+        subComida2.setText("Lomo acompañado de deliciosos fetuccinnis \nbañados en una clasica salsa italiana. ");
+        subComida2.setBorder(null);
+        subComida2.setCaretColor(new java.awt.Color(34, 66, 73));
+        subComida2.setDisabledTextColor(new java.awt.Color(34, 66, 73));
+        subComida2.setMinimumSize(new java.awt.Dimension(150, 20));
+        subComida2.setPreferredSize(new java.awt.Dimension(280, 100));
+        subComida2.setSelectionColor(new java.awt.Color(34, 66, 73));
+        getContentPane().add(subComida2);
+        subComida2.setBounds(60, 280, 300, 110);
 
-        jTextArea4.setColumns(20);
-        jTextArea4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jTextArea4.setForeground(new java.awt.Color(255, 255, 255));
-        jTextArea4.setLineWrap(true);
-        jTextArea4.setRows(5);
-        jTextArea4.setText("Una version distinta pero igual de deliciosa \nacompañada con fetuccinnis en salsa hungara.");
-        jTextArea4.setBorder(null);
-        jTextArea4.setCaretColor(new java.awt.Color(255, 255, 255));
-        jTextArea4.setDisabledTextColor(new java.awt.Color(34, 66, 73));
-        jTextArea4.setEnabled(false);
-        jTextArea4.setMinimumSize(new java.awt.Dimension(150, 20));
-        jTextArea4.setPreferredSize(new java.awt.Dimension(280, 100));
-        jTextArea4.setSelectionColor(new java.awt.Color(1, 30, 68));
-        getContentPane().add(jTextArea4);
-        jTextArea4.setBounds(60, 190, 310, 110);
-
-        jTextField1.setText("jTextField1");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jTextField1);
-        jTextField1.setBounds(40, 870, 59, 20);
+        subComida1.setEditable(false);
+        subComida1.setColumns(20);
+        subComida1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        subComida1.setForeground(new java.awt.Color(34, 66, 73));
+        subComida1.setLineWrap(true);
+        subComida1.setRows(5);
+        subComida1.setText("Una version distinta pero igual de deliciosa \nacompañada con fetuccinnis en salsa hungara.");
+        subComida1.setBorder(null);
+        subComida1.setCaretColor(new java.awt.Color(255, 255, 255));
+        subComida1.setDisabledTextColor(new java.awt.Color(34, 66, 73));
+        subComida1.setMinimumSize(new java.awt.Dimension(150, 20));
+        subComida1.setPreferredSize(new java.awt.Dimension(280, 100));
+        subComida1.setSelectionColor(new java.awt.Color(34, 66, 73));
+        getContentPane().add(subComida1);
+        subComida1.setBounds(60, 190, 310, 110);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/93b5f9913d2e4316cd6e541c67b9aed0.jpg"))); // NOI18N
         getContentPane().add(jLabel1);
@@ -568,9 +595,9 @@ public class MenuComida extends javax.swing.JFrame {
         i = Integer.parseInt(val3.getText());
         if(i>0){
             i = i-1;
-
             val3.setText(String.valueOf(i));
-
+            c = i*8990;
+            total1.setText(String.valueOf(a+b+c+d+e+f+g));
         }
     }//GEN-LAST:event_menos3MouseClicked
 
@@ -581,6 +608,8 @@ public class MenuComida extends javax.swing.JFrame {
         if(i>=0 && i<=50){
             i = i+1;
             val2.setText(String.valueOf(i));
+            b=i*9990;
+            total1.setText(String.valueOf(a+b+c+d+e+f+g));
 
         }
     }//GEN-LAST:event_mas2MouseClicked
@@ -592,6 +621,8 @@ public class MenuComida extends javax.swing.JFrame {
         if(i>0){
             i = i-1;
             val4.setText(String.valueOf(i));
+            d = i*11990;
+            total1.setText(String.valueOf(a+b+c+d+e+f+g));
 
         }
     }//GEN-LAST:event_menos4MouseClicked
@@ -603,6 +634,8 @@ public class MenuComida extends javax.swing.JFrame {
         if(i>=0 && i<=50){
             i = i+1;
             val3.setText(String.valueOf(i));
+            c = i*8990;
+            total1.setText(String.valueOf(a+b+c+d+e+f+g));
 
         }
     }//GEN-LAST:event_mas3MouseClicked
@@ -614,6 +647,8 @@ public class MenuComida extends javax.swing.JFrame {
         if(i>0){
             i = i-1;
             val2.setText(String.valueOf(i));
+            b = i*9990;
+            total1.setText(String.valueOf(a+b+c+d+e+f+g));
         }
     }//GEN-LAST:event_menos2MouseClicked
 
@@ -624,6 +659,8 @@ public class MenuComida extends javax.swing.JFrame {
         if(i>=0 && i<=50){
             i = i+1;
             val4.setText(String.valueOf(i));
+            d = i*11990;
+            total1.setText(String.valueOf(a+b+c+d+e+f+g));
 
         }
     }//GEN-LAST:event_mas4MouseClicked
@@ -635,6 +672,8 @@ public class MenuComida extends javax.swing.JFrame {
         if(i>0){
             i = i-1;
             val5.setText(String.valueOf(i));
+            e = i*7990;
+            total1.setText(String.valueOf(a+b+c+d+e+f+g));
 
         }
     }//GEN-LAST:event_menos5MouseClicked
@@ -646,6 +685,8 @@ public class MenuComida extends javax.swing.JFrame {
         if(i>=0 && i<=50){
             i = i+1;
             val5.setText(String.valueOf(i));
+            e = i*7990;
+            total1.setText(String.valueOf(a+b+c+d+e+f+g));
         }
     }//GEN-LAST:event_mas5MouseClicked
 
@@ -656,6 +697,8 @@ public class MenuComida extends javax.swing.JFrame {
         if(i>0){
             i = i-1;
             val6.setText(String.valueOf(i));
+            f = i*8990;
+            total1.setText(String.valueOf(a+b+c+d+e+f+g));
 
         }
     }//GEN-LAST:event_menos6MouseClicked
@@ -667,6 +710,8 @@ public class MenuComida extends javax.swing.JFrame {
         if(i>=0 && i<=50){
             i = i+1;
             val6.setText(String.valueOf(i));
+            f = i*8990;
+            total1.setText(String.valueOf(a+b+c+d+e+f+g));
 
         }
     }//GEN-LAST:event_mas6MouseClicked
@@ -678,6 +723,9 @@ public class MenuComida extends javax.swing.JFrame {
         if(i>0){
             i = i-1;
             val1.setText(String.valueOf(i));
+            a = i*10990;
+            total1.setText(String.valueOf(a+b+c+d+e+f+g));
+            
         }
     }//GEN-LAST:event_menos1MouseClicked
 
@@ -688,6 +736,8 @@ public class MenuComida extends javax.swing.JFrame {
         if(i>=0 && i<=50){
             i = i+1;
             val1.setText(String.valueOf(i));
+            a = i*10990;
+            total1.setText(String.valueOf(a+b+c+d+e+f+g));
         }
     }//GEN-LAST:event_mas1MouseClicked
 
@@ -698,6 +748,8 @@ public class MenuComida extends javax.swing.JFrame {
         if(i>0){
             i = i-1;
             val7.setText(String.valueOf(i));
+            g = i*9990;
+            total1.setText(String.valueOf(a+b+c+d+e+f+g));
         }
     }//GEN-LAST:event_menos7MouseClicked
 
@@ -708,12 +760,21 @@ public class MenuComida extends javax.swing.JFrame {
         if(i>=0 && i<=50){
             i = i+1;
             val7.setText(String.valueOf(i));
+            g = i*9990;
+            total1.setText(String.valueOf(a+b+c+d+e+f+g));
         }
     }//GEN-LAST:event_mas7MouseClicked
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void formMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseMoved
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_formMouseMoved
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        Login log = new Login();
+        log.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -759,6 +820,7 @@ public class MenuComida extends javax.swing.JFrame {
     private javax.swing.JLabel comida5;
     private javax.swing.JLabel comida6;
     private javax.swing.JLabel comida7;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel13;
@@ -769,14 +831,6 @@ public class MenuComida extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel61;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JTextArea jTextArea3;
-    private javax.swing.JTextArea jTextArea4;
-    private javax.swing.JTextArea jTextArea5;
-    private javax.swing.JTextArea jTextArea6;
-    private javax.swing.JTextArea jTextArea7;
-    private javax.swing.JTextArea jTextArea8;
-    private javax.swing.JTextArea jTextArea9;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel mas1;
     private javax.swing.JLabel mas2;
     private javax.swing.JLabel mas3;
@@ -798,6 +852,15 @@ public class MenuComida extends javax.swing.JFrame {
     private javax.swing.JLabel precioComida5;
     private javax.swing.JLabel precioComida6;
     private javax.swing.JLabel precioComida7;
+    private javax.swing.JTextArea subComida1;
+    private javax.swing.JTextArea subComida2;
+    private javax.swing.JTextArea subComida3;
+    private javax.swing.JTextArea subComida4;
+    private javax.swing.JTextArea subComida5;
+    private javax.swing.JTextArea subComida6;
+    private javax.swing.JTextArea subComida7;
+    private javax.swing.JLabel total;
+    private javax.swing.JLabel total1;
     private javax.swing.JLabel val1;
     private javax.swing.JLabel val2;
     private javax.swing.JLabel val3;
