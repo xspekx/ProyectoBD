@@ -39,6 +39,7 @@ public class Carta extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -71,7 +72,7 @@ public class Carta extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jLabel12);
-        jLabel12.setBounds(190, 560, 240, 60);
+        jLabel12.setBounds(190, 550, 240, 60);
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(34, 66, 73));
@@ -120,6 +121,17 @@ public class Carta extends javax.swing.JFrame {
         getContentPane().add(jLabel13);
         jLabel13.setBounds(50, 30, 140, 110);
 
+        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(255, 102, 0));
+        jLabel14.setText("admin}");
+        jLabel14.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel14MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jLabel14);
+        jLabel14.setBounds(190, 640, 240, 60);
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/93b5f9913d2e4316cd6e541c67b9aed0.jpg"))); // NOI18N
         getContentPane().add(jLabel1);
         jLabel1.setBounds(0, 0, 570, 1880);
@@ -147,6 +159,13 @@ public class Carta extends javax.swing.JFrame {
         go.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jLabel12MouseClicked
+
+    private void jLabel14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseClicked
+        // TODO add your handling code here:
+        AdminMenu go = new AdminMenu();
+        go.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jLabel14MouseClicked
 
     /**
      * @param args the command line arguments
@@ -189,6 +208,7 @@ public class Carta extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
