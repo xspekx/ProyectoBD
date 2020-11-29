@@ -16,6 +16,8 @@ public class AdminMenu extends javax.swing.JFrame {
      */
     public AdminMenu() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.setFocusable(true);
     }
 
     /**

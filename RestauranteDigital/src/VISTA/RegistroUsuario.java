@@ -18,18 +18,19 @@ import javax.swing.JOptionPane;
  *
  * @author reyna
  */
-public class Login extends javax.swing.JFrame {
+public class RegistroUsuario extends javax.swing.JFrame {
     Connection con = null;
     Statement stnt = null;
     /**
-     * Creates new form Login
+     * Creates new form RegistroUsuario
      */
-    public Login() {
+    public RegistroUsuario() {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setFocusable(true);
         
-         try {
+        
+    try {
     String url = "jdbc:mysql://localhost:3306/restaurante"; // direccion donde se encuentra la base de datos
     String usuario = "root"; // usuario de la gestion de base de datos
     String contraseña = "123"; // contraseña para entrar a la base de datos
@@ -56,17 +57,23 @@ public class Login extends javax.swing.JFrame {
     private void initComponents() {
 
         jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
+        jTextField4 = new javax.swing.JTextField();
         jPasswordField1 = new javax.swing.JPasswordField();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(460, 710));
+        setMinimumSize(new java.awt.Dimension(420, 550));
+        setPreferredSize(new java.awt.Dimension(420, 550));
         getContentPane().setLayout(null);
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
@@ -75,100 +82,107 @@ public class Login extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTextField1);
-        jTextField1.setBounds(160, 290, 210, 30);
+        jTextField1.setBounds(130, 250, 210, 30);
+        getContentPane().add(jTextField2);
+        jTextField2.setBounds(130, 290, 210, 30);
+        getContentPane().add(jTextField3);
+        jTextField3.setBounds(130, 330, 210, 30);
+        getContentPane().add(jTextField4);
+        jTextField4.setBounds(130, 370, 210, 30);
         getContentPane().add(jPasswordField1);
-        jPasswordField1.setBounds(160, 330, 210, 30);
+        jPasswordField1.setBounds(130, 410, 210, 30);
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(34, 66, 73));
-        jLabel5.setText("ELIMINAR CUENTA");
+        jLabel5.setText("RUT");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(60, 530, 230, 30);
+        jLabel5.setBounds(30, 260, 80, 20);
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(34, 66, 73));
-        jLabel6.setText("CONTRASEÑA");
-        getContentPane().add(jLabel6);
-        jLabel6.setBounds(50, 330, 140, 30);
-
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(34, 66, 73));
-        jLabel4.setText("REGISTRAR");
-        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel4MouseClicked(evt);
-            }
-        });
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(60, 490, 140, 30);
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/Imagen3.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/registrar.png"))); // NOI18N
         jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel3MouseClicked(evt);
             }
         });
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(60, 390, 326, 120);
+        jLabel3.setBounds(50, 440, 360, 120);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/Imagen1.png"))); // NOI18N
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(130, 20, 190, 178);
+        jLabel2.setBounds(120, 0, 190, 178);
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(34, 66, 73));
+        jLabel6.setText("NOMBRES");
+        getContentPane().add(jLabel6);
+        jLabel6.setBounds(30, 300, 120, 20);
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(34, 66, 73));
-        jLabel7.setText("USUARIO");
+        jLabel7.setText("APELLIDOS");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(50, 290, 140, 30);
+        jLabel7.setBounds(30, 340, 160, 20);
+
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(34, 66, 73));
+        jLabel8.setText("CORREO");
+        getContentPane().add(jLabel8);
+        jLabel8.setBounds(30, 380, 160, 20);
+
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(34, 66, 73));
+        jLabel9.setText("CONTRASEÑA");
+        getContentPane().add(jLabel9);
+        jLabel9.setBounds(30, 420, 160, 20);
+
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 102, 0));
+        jLabel10.setText("BIENVENIDO");
+        getContentPane().add(jLabel10);
+        jLabel10.setBounds(140, 190, 160, 20);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/93b5f9913d2e4316cd6e541c67b9aed0.jpg"))); // NOI18N
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 570, 1880);
+        jLabel1.setBounds(-20, -10, 460, 570);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
         // TODO add your handling code here:
-
-        String usuario = "";
-        try {
+        String rut,nombres,apellidos,correo,pass;
+         rut = jTextField1.getText();
+         nombres = jTextField2.getText();
+         apellidos = jTextField3.getText();
+         correo = jTextField4.getText();
+         pass = jPasswordField1.getText();
+         try { // condicion en caso de error
                 stnt = con.createStatement();
                 ResultSet rs = null;
   
-                rs = stnt.executeQuery("SELECT * FROM usuario WHERE rut = '" + jTextField1.getText() + "' && pass = SHA2('" +jPasswordField1.getText() + "',0)"); // comando para buscar datos dento de la base de datos
-               
-                    while(rs.next()){
-                        usuario = rs.getString("tipoUsuario_id_fk");
-                    }if(usuario.equals("1")){
-                        AdminMenu go = new AdminMenu();
-                        go.setVisible(true);
-                        this.setVisible(false);
-                    }if(usuario.equals("2")){
-                        Carta go = new Carta();
-                        go.setVisible(true);
-                        this.setVisible(false);   
-                    }if(!usuario.equals("1") && !usuario.equals("2")){
-                        JOptionPane.showMessageDialog(this,"Usuario no existente","Error",2);
-                    }
+                rs = stnt.executeQuery("SELECT * FROM usuario WHERE rut = '" + rut + "'");
                 
-        }catch(Exception e){
-            
+                if(!rs.next()){ 
+                if (jTextField1.getText().equals("") || (jTextField2.getText().equals("")) || (jTextField3.getText().equals("")) 
+                        || (jTextField4.getText().equals("")) || (jPasswordField1.getText().equals(""))){
+                    JOptionPane.showMessageDialog(this, "Debe ingresar todos los datos", "Error", 2); // 
+                }else{ 
+                    stnt.executeUpdate("INSERT INTO usuario VALUES(NULL,2,'"+ rut + "','"+nombres+"','"+apellidos+"','"+correo+"',SHA2('"+pass+"',0))"); 
+                    JOptionPane.showMessageDialog(this, "Usuario registrado con exito", "Ingreso Correcto", 1);
+                } 
+                }else{
+                    JOptionPane.showMessageDialog(this, "Usuario ya registrado", "Error", 2);
+                }
+           
+        } catch (SQLException ex) {// excepciones en el caso de haber un error
         }
-                
-    
+       
+
     }//GEN-LAST:event_jLabel3MouseClicked
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
-
-    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-        // TODO add your handling code here:
-        RegistroUsuario go = new RegistroUsuario();
-        go.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_jLabel4MouseClicked
 
     /**
      * @param args the command line arguments
@@ -187,33 +201,38 @@ public class Login extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RegistroUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RegistroUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RegistroUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RegistroUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Login().setVisible(true);
+                new RegistroUsuario().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPasswordField jPasswordField1;
-    public static javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
     // End of variables declaration//GEN-END:variables
 }
