@@ -8,6 +8,7 @@ package VISTA;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -25,15 +26,12 @@ public class MenuBebidas extends javax.swing.JFrame {
     /**
      * Creates new form MenuBebidas
      */
-    public MenuBebidas() {
+    public MenuBebidas() throws SQLException {
         initComponents(); 
         this.setLocationRelativeTo(null);
         this.setFocusable(true);
         limpiar();
-
-        
-        
-                 try {
+    try {
     String url = "jdbc:mysql://localhost:3306/restaurante"; // direccion donde se encuentra la base de datos
     String usuario = "root"; // usuario de la gestion de base de datos
     String contraseña = "123"; // contraseña para entrar a la base de datos
@@ -48,6 +46,48 @@ public class MenuBebidas extends javax.swing.JFrame {
     }catch(Exception e){// excepciones en el caso de haber un error
          Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null,e); 
     }
+    
+    stnt = con.createStatement(); 
+    ResultSet rsl = stnt.executeQuery("SELECT * FROM producto");
+    if(rsl.next()){ 
+    bebida1.setText(rsl.getString("nombre"));
+    subBebida1.setText(rsl.getString("subNombre"));
+    precioBebida1.setText(String.valueOf(rsl.getInt("precio")));
+    }if(rsl.next()){ 
+    bebida2.setText(rsl.getString("nombre"));
+    subBebida2.setText(rsl.getString("subNombre"));
+    precioBebida2.setText(String.valueOf(rsl.getInt("precio")));
+    }if(rsl.next()){ 
+    bebida3.setText(rsl.getString("nombre"));
+    subBebida3.setText(rsl.getString("subNombre"));
+    precioBebida3.setText(String.valueOf(rsl.getInt("precio")));
+    }if(rsl.next()){ 
+    bebida4.setText(rsl.getString("nombre"));
+    subBebida4.setText(rsl.getString("subNombre"));
+    precioBebida4.setText(String.valueOf(rsl.getInt("precio")));
+    }if(rsl.next()){ 
+    bebida5.setText(rsl.getString("nombre"));
+    subBebida5.setText(rsl.getString("subNombre"));
+    precioBebida5.setText(String.valueOf(rsl.getInt("precio")));
+    }if(rsl.next()){ 
+    bebida6.setText(rsl.getString("nombre"));
+    subBebida6.setText(rsl.getString("subNombre"));
+    precioBebida6.setText(String.valueOf(rsl.getInt("precio")));
+    }if(rsl.next()){ 
+    bebida7.setText(rsl.getString("nombre"));
+    subBebida7.setText(rsl.getString("subNombre"));
+    precioBebida7.setText(String.valueOf(rsl.getInt("precio")));
+    }if(rsl.next()){ 
+    bebida8.setText(rsl.getString("nombre"));
+    subBebida8.setText(rsl.getString("subNombre"));
+    precioBebida8.setText(String.valueOf(rsl.getInt("precio")));
+    }if(rsl.next()){ 
+    bebida9.setText(rsl.getString("nombre"));
+    subBebida9.setText(rsl.getString("subNombre"));
+    precioBebida9.setText(String.valueOf(rsl.getInt("precio")));
+    }
+    
+                 
         
        
     }
@@ -70,42 +110,51 @@ public class MenuBebidas extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        bebida3 = new javax.swing.JLabel();
-        bebida4 = new javax.swing.JLabel();
-        bebida2 = new javax.swing.JLabel();
-        bebida5 = new javax.swing.JLabel();
-        agregar = new javax.swing.JLabel();
-        bebida6 = new javax.swing.JLabel();
-        bebida8 = new javax.swing.JLabel();
-        bebida9 = new javax.swing.JLabel();
-        bebida1 = new javax.swing.JLabel();
-        bebida7 = new javax.swing.JLabel();
         total1 = new javax.swing.JLabel();
         total = new javax.swing.JLabel();
-        subComida1 = new javax.swing.JTextArea();
-        subComida2 = new javax.swing.JTextArea();
-        subComida3 = new javax.swing.JTextArea();
-        subComida4 = new javax.swing.JTextArea();
-        subComida5 = new javax.swing.JTextArea();
-        subComida6 = new javax.swing.JTextArea();
-        subComida7 = new javax.swing.JTextArea();
-        subComida8 = new javax.swing.JTextArea();
-        subComida9 = new javax.swing.JTextArea();
+        bebida1 = new javax.swing.JLabel();
+        bebida2 = new javax.swing.JLabel();
+        bebida3 = new javax.swing.JLabel();
+        bebida4 = new javax.swing.JLabel();
+        bebida5 = new javax.swing.JLabel();
+        bebida6 = new javax.swing.JLabel();
+        bebida7 = new javax.swing.JLabel();
+        bebida8 = new javax.swing.JLabel();
+        bebida9 = new javax.swing.JLabel();
+        agregar = new javax.swing.JLabel();
+        subBebida1 = new javax.swing.JTextArea();
+        subBebida2 = new javax.swing.JTextArea();
+        subBebida3 = new javax.swing.JTextArea();
+        subBebida4 = new javax.swing.JTextArea();
+        subBebida5 = new javax.swing.JTextArea();
+        subBebida6 = new javax.swing.JTextArea();
+        subBebida7 = new javax.swing.JTextArea();
+        subBebida8 = new javax.swing.JTextArea();
+        subBebida9 = new javax.swing.JTextArea();
         cantidad1 = new javax.swing.JTextField();
+        cantidad2 = new javax.swing.JTextField();
+        cantidad3 = new javax.swing.JTextField();
+        cantidad4 = new javax.swing.JTextField();
+        cantidad5 = new javax.swing.JTextField();
+        cantidad6 = new javax.swing.JTextField();
+        cantidad7 = new javax.swing.JTextField();
+        cantidad8 = new javax.swing.JTextField();
+        cantidad9 = new javax.swing.JTextField();
+        precioBebida1 = new javax.swing.JLabel();
+        precioBebida2 = new javax.swing.JLabel();
+        precioBebida3 = new javax.swing.JLabel();
+        precioBebida4 = new javax.swing.JLabel();
+        precioBebida5 = new javax.swing.JLabel();
+        precioBebida6 = new javax.swing.JLabel();
+        precioBebida7 = new javax.swing.JLabel();
+        precioBebida8 = new javax.swing.JLabel();
+        precioBebida9 = new javax.swing.JLabel();
         cant1 = new javax.swing.JLabel();
         cant2 = new javax.swing.JLabel();
-        cantidad2 = new javax.swing.JTextField();
         jLabel60 = new javax.swing.JLabel();
         jLabel61 = new javax.swing.JLabel();
         jLabel62 = new javax.swing.JLabel();
         jLabel63 = new javax.swing.JLabel();
-        precioBebida3 = new javax.swing.JLabel();
-        precioBebida4 = new javax.swing.JLabel();
-        precioBebida2 = new javax.swing.JLabel();
-        precioBebida5 = new javax.swing.JLabel();
-        precioBebida6 = new javax.swing.JLabel();
-        precioBebida1 = new javax.swing.JLabel();
-        precioBebida7 = new javax.swing.JLabel();
         simbolo1 = new javax.swing.JLabel();
         simbolo2 = new javax.swing.JLabel();
         simbolo3 = new javax.swing.JLabel();
@@ -114,24 +163,15 @@ public class MenuBebidas extends javax.swing.JFrame {
         simbolo6 = new javax.swing.JLabel();
         simbolo7 = new javax.swing.JLabel();
         simbolo8 = new javax.swing.JLabel();
-        precioBebida8 = new javax.swing.JLabel();
         simbolo9 = new javax.swing.JLabel();
-        precioBebida9 = new javax.swing.JLabel();
         simbolo10 = new javax.swing.JLabel();
         cant3 = new javax.swing.JLabel();
-        cantidad3 = new javax.swing.JTextField();
         cant4 = new javax.swing.JLabel();
-        cantidad4 = new javax.swing.JTextField();
         cant5 = new javax.swing.JLabel();
-        cantidad5 = new javax.swing.JTextField();
         cant6 = new javax.swing.JLabel();
-        cantidad6 = new javax.swing.JTextField();
         cant7 = new javax.swing.JLabel();
-        cantidad7 = new javax.swing.JTextField();
         cant8 = new javax.swing.JLabel();
-        cantidad8 = new javax.swing.JTextField();
         cant9 = new javax.swing.JLabel();
-        cantidad9 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -202,6 +242,29 @@ public class MenuBebidas extends javax.swing.JFrame {
         getContentPane().add(jLabel15);
         jLabel15.setBounds(20, 310, 50, 60);
 
+        total1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        total1.setForeground(new java.awt.Color(34, 66, 73));
+        getContentPane().add(total1);
+        total1.setBounds(130, 670, 140, 40);
+
+        total.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        total.setForeground(new java.awt.Color(34, 66, 73));
+        total.setText("TOTAL  $");
+        getContentPane().add(total);
+        total.setBounds(20, 670, 130, 40);
+
+        bebida1.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        bebida1.setForeground(new java.awt.Color(255, 102, 0));
+        bebida1.setText("Coca-Cola");
+        getContentPane().add(bebida1);
+        bebida1.setBounds(50, 160, 220, 60);
+
+        bebida2.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        bebida2.setForeground(new java.awt.Color(255, 102, 0));
+        bebida2.setText("Coca-Cola Zero");
+        getContentPane().add(bebida2);
+        bebida2.setBounds(50, 210, 250, 60);
+
         bebida3.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
         bebida3.setForeground(new java.awt.Color(255, 102, 0));
         bebida3.setText("Fanta");
@@ -214,34 +277,23 @@ public class MenuBebidas extends javax.swing.JFrame {
         getContentPane().add(bebida4);
         bebida4.setBounds(50, 310, 200, 60);
 
-        bebida2.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
-        bebida2.setForeground(new java.awt.Color(255, 102, 0));
-        bebida2.setText("Coca-Cola Zero");
-        getContentPane().add(bebida2);
-        bebida2.setBounds(50, 210, 250, 60);
-
         bebida5.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
         bebida5.setForeground(new java.awt.Color(255, 102, 0));
         bebida5.setText("Sprite");
         getContentPane().add(bebida5);
         bebida5.setBounds(50, 360, 180, 60);
 
-        agregar.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        agregar.setForeground(new java.awt.Color(34, 66, 73));
-        agregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/agregar.png"))); // NOI18N
-        agregar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                agregarMouseClicked(evt);
-            }
-        });
-        getContentPane().add(agregar);
-        agregar.setBounds(310, 660, 200, 80);
-
         bebida6.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
         bebida6.setForeground(new java.awt.Color(255, 102, 0));
         bebida6.setText("Sprite Zero");
         getContentPane().add(bebida6);
         bebida6.setBounds(50, 410, 200, 60);
+
+        bebida7.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        bebida7.setForeground(new java.awt.Color(255, 102, 0));
+        bebida7.setText("Jugo natural frambuesa");
+        getContentPane().add(bebida7);
+        bebida7.setBounds(50, 470, 230, 40);
 
         bebida8.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
         bebida8.setForeground(new java.awt.Color(255, 102, 0));
@@ -255,172 +307,160 @@ public class MenuBebidas extends javax.swing.JFrame {
         getContentPane().add(bebida9);
         bebida9.setBounds(50, 570, 280, 40);
 
-        bebida1.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
-        bebida1.setForeground(new java.awt.Color(255, 102, 0));
-        bebida1.setText("Coca-Cola");
-        getContentPane().add(bebida1);
-        bebida1.setBounds(50, 160, 220, 60);
+        agregar.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        agregar.setForeground(new java.awt.Color(34, 66, 73));
+        agregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/agregar.png"))); // NOI18N
+        agregar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                agregarMouseClicked(evt);
+            }
+        });
+        getContentPane().add(agregar);
+        agregar.setBounds(310, 660, 200, 80);
 
-        bebida7.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
-        bebida7.setForeground(new java.awt.Color(255, 102, 0));
-        bebida7.setText("Jugo natural frambuesa");
-        getContentPane().add(bebida7);
-        bebida7.setBounds(50, 470, 230, 40);
+        subBebida1.setEditable(false);
+        subBebida1.setColumns(20);
+        subBebida1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        subBebida1.setForeground(new java.awt.Color(34, 66, 73));
+        subBebida1.setLineWrap(true);
+        subBebida1.setRows(5);
+        subBebida1.setText("500 ml");
+        subBebida1.setBorder(null);
+        subBebida1.setCaretColor(new java.awt.Color(255, 255, 255));
+        subBebida1.setDisabledTextColor(new java.awt.Color(34, 66, 73));
+        subBebida1.setMinimumSize(new java.awt.Dimension(150, 20));
+        subBebida1.setPreferredSize(new java.awt.Dimension(280, 100));
+        subBebida1.setSelectionColor(new java.awt.Color(34, 66, 73));
+        getContentPane().add(subBebida1);
+        subBebida1.setBounds(50, 200, 250, 50);
 
-        total1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        total1.setForeground(new java.awt.Color(34, 66, 73));
-        getContentPane().add(total1);
-        total1.setBounds(130, 670, 140, 40);
+        subBebida2.setEditable(false);
+        subBebida2.setColumns(20);
+        subBebida2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        subBebida2.setForeground(new java.awt.Color(34, 66, 73));
+        subBebida2.setLineWrap(true);
+        subBebida2.setRows(5);
+        subBebida2.setText("500ml\n");
+        subBebida2.setBorder(null);
+        subBebida2.setCaretColor(new java.awt.Color(255, 255, 255));
+        subBebida2.setDisabledTextColor(new java.awt.Color(34, 66, 73));
+        subBebida2.setMinimumSize(new java.awt.Dimension(150, 20));
+        subBebida2.setPreferredSize(new java.awt.Dimension(280, 100));
+        subBebida2.setSelectionColor(new java.awt.Color(34, 66, 73));
+        getContentPane().add(subBebida2);
+        subBebida2.setBounds(50, 250, 250, 40);
 
-        total.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        total.setForeground(new java.awt.Color(34, 66, 73));
-        total.setText("TOTAL  $");
-        getContentPane().add(total);
-        total.setBounds(20, 670, 130, 40);
+        subBebida3.setEditable(false);
+        subBebida3.setColumns(20);
+        subBebida3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        subBebida3.setForeground(new java.awt.Color(34, 66, 73));
+        subBebida3.setLineWrap(true);
+        subBebida3.setRows(5);
+        subBebida3.setText("500 ml");
+        subBebida3.setBorder(null);
+        subBebida3.setCaretColor(new java.awt.Color(255, 255, 255));
+        subBebida3.setDisabledTextColor(new java.awt.Color(34, 66, 73));
+        subBebida3.setMinimumSize(new java.awt.Dimension(150, 20));
+        subBebida3.setPreferredSize(new java.awt.Dimension(280, 100));
+        subBebida3.setSelectionColor(new java.awt.Color(34, 66, 73));
+        getContentPane().add(subBebida3);
+        subBebida3.setBounds(50, 300, 250, 50);
 
-        subComida1.setEditable(false);
-        subComida1.setColumns(20);
-        subComida1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        subComida1.setForeground(new java.awt.Color(34, 66, 73));
-        subComida1.setLineWrap(true);
-        subComida1.setRows(5);
-        subComida1.setText("500 ml");
-        subComida1.setBorder(null);
-        subComida1.setCaretColor(new java.awt.Color(255, 255, 255));
-        subComida1.setDisabledTextColor(new java.awt.Color(34, 66, 73));
-        subComida1.setMinimumSize(new java.awt.Dimension(150, 20));
-        subComida1.setPreferredSize(new java.awt.Dimension(280, 100));
-        subComida1.setSelectionColor(new java.awt.Color(34, 66, 73));
-        getContentPane().add(subComida1);
-        subComida1.setBounds(50, 200, 250, 50);
+        subBebida4.setEditable(false);
+        subBebida4.setColumns(20);
+        subBebida4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        subBebida4.setForeground(new java.awt.Color(34, 66, 73));
+        subBebida4.setLineWrap(true);
+        subBebida4.setRows(5);
+        subBebida4.setText("500 ml");
+        subBebida4.setBorder(null);
+        subBebida4.setCaretColor(new java.awt.Color(255, 255, 255));
+        subBebida4.setDisabledTextColor(new java.awt.Color(34, 66, 73));
+        subBebida4.setMinimumSize(new java.awt.Dimension(150, 20));
+        subBebida4.setPreferredSize(new java.awt.Dimension(280, 100));
+        subBebida4.setSelectionColor(new java.awt.Color(34, 66, 73));
+        getContentPane().add(subBebida4);
+        subBebida4.setBounds(50, 350, 250, 40);
 
-        subComida2.setEditable(false);
-        subComida2.setColumns(20);
-        subComida2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        subComida2.setForeground(new java.awt.Color(34, 66, 73));
-        subComida2.setLineWrap(true);
-        subComida2.setRows(5);
-        subComida2.setText("500ml\n");
-        subComida2.setBorder(null);
-        subComida2.setCaretColor(new java.awt.Color(255, 255, 255));
-        subComida2.setDisabledTextColor(new java.awt.Color(34, 66, 73));
-        subComida2.setMinimumSize(new java.awt.Dimension(150, 20));
-        subComida2.setPreferredSize(new java.awt.Dimension(280, 100));
-        subComida2.setSelectionColor(new java.awt.Color(34, 66, 73));
-        getContentPane().add(subComida2);
-        subComida2.setBounds(50, 250, 250, 40);
+        subBebida5.setEditable(false);
+        subBebida5.setColumns(20);
+        subBebida5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        subBebida5.setForeground(new java.awt.Color(34, 66, 73));
+        subBebida5.setLineWrap(true);
+        subBebida5.setRows(5);
+        subBebida5.setText("500 ml");
+        subBebida5.setBorder(null);
+        subBebida5.setCaretColor(new java.awt.Color(255, 255, 255));
+        subBebida5.setDisabledTextColor(new java.awt.Color(34, 66, 73));
+        subBebida5.setMinimumSize(new java.awt.Dimension(150, 20));
+        subBebida5.setPreferredSize(new java.awt.Dimension(280, 100));
+        subBebida5.setSelectionColor(new java.awt.Color(34, 66, 73));
+        getContentPane().add(subBebida5);
+        subBebida5.setBounds(50, 400, 250, 40);
 
-        subComida3.setEditable(false);
-        subComida3.setColumns(20);
-        subComida3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        subComida3.setForeground(new java.awt.Color(34, 66, 73));
-        subComida3.setLineWrap(true);
-        subComida3.setRows(5);
-        subComida3.setText("500 ml");
-        subComida3.setBorder(null);
-        subComida3.setCaretColor(new java.awt.Color(255, 255, 255));
-        subComida3.setDisabledTextColor(new java.awt.Color(34, 66, 73));
-        subComida3.setMinimumSize(new java.awt.Dimension(150, 20));
-        subComida3.setPreferredSize(new java.awt.Dimension(280, 100));
-        subComida3.setSelectionColor(new java.awt.Color(34, 66, 73));
-        getContentPane().add(subComida3);
-        subComida3.setBounds(50, 300, 250, 50);
+        subBebida6.setEditable(false);
+        subBebida6.setColumns(20);
+        subBebida6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        subBebida6.setForeground(new java.awt.Color(34, 66, 73));
+        subBebida6.setLineWrap(true);
+        subBebida6.setRows(5);
+        subBebida6.setText("500 ml");
+        subBebida6.setBorder(null);
+        subBebida6.setCaretColor(new java.awt.Color(255, 255, 255));
+        subBebida6.setDisabledTextColor(new java.awt.Color(34, 66, 73));
+        subBebida6.setMinimumSize(new java.awt.Dimension(150, 20));
+        subBebida6.setPreferredSize(new java.awt.Dimension(280, 100));
+        subBebida6.setSelectionColor(new java.awt.Color(34, 66, 73));
+        getContentPane().add(subBebida6);
+        subBebida6.setBounds(50, 450, 250, 50);
 
-        subComida4.setEditable(false);
-        subComida4.setColumns(20);
-        subComida4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        subComida4.setForeground(new java.awt.Color(34, 66, 73));
-        subComida4.setLineWrap(true);
-        subComida4.setRows(5);
-        subComida4.setText("500 ml");
-        subComida4.setBorder(null);
-        subComida4.setCaretColor(new java.awt.Color(255, 255, 255));
-        subComida4.setDisabledTextColor(new java.awt.Color(34, 66, 73));
-        subComida4.setMinimumSize(new java.awt.Dimension(150, 20));
-        subComida4.setPreferredSize(new java.awt.Dimension(280, 100));
-        subComida4.setSelectionColor(new java.awt.Color(34, 66, 73));
-        getContentPane().add(subComida4);
-        subComida4.setBounds(50, 350, 250, 40);
+        subBebida7.setEditable(false);
+        subBebida7.setColumns(20);
+        subBebida7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        subBebida7.setForeground(new java.awt.Color(34, 66, 73));
+        subBebida7.setLineWrap(true);
+        subBebida7.setRows(5);
+        subBebida7.setText("500 ml");
+        subBebida7.setBorder(null);
+        subBebida7.setCaretColor(new java.awt.Color(255, 255, 255));
+        subBebida7.setDisabledTextColor(new java.awt.Color(34, 66, 73));
+        subBebida7.setMinimumSize(new java.awt.Dimension(150, 20));
+        subBebida7.setPreferredSize(new java.awt.Dimension(280, 100));
+        subBebida7.setSelectionColor(new java.awt.Color(34, 66, 73));
+        getContentPane().add(subBebida7);
+        subBebida7.setBounds(50, 500, 250, 40);
 
-        subComida5.setEditable(false);
-        subComida5.setColumns(20);
-        subComida5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        subComida5.setForeground(new java.awt.Color(34, 66, 73));
-        subComida5.setLineWrap(true);
-        subComida5.setRows(5);
-        subComida5.setText("500 ml");
-        subComida5.setBorder(null);
-        subComida5.setCaretColor(new java.awt.Color(255, 255, 255));
-        subComida5.setDisabledTextColor(new java.awt.Color(34, 66, 73));
-        subComida5.setMinimumSize(new java.awt.Dimension(150, 20));
-        subComida5.setPreferredSize(new java.awt.Dimension(280, 100));
-        subComida5.setSelectionColor(new java.awt.Color(34, 66, 73));
-        getContentPane().add(subComida5);
-        subComida5.setBounds(50, 400, 250, 40);
+        subBebida8.setEditable(false);
+        subBebida8.setColumns(20);
+        subBebida8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        subBebida8.setForeground(new java.awt.Color(34, 66, 73));
+        subBebida8.setLineWrap(true);
+        subBebida8.setRows(5);
+        subBebida8.setText("500 ml");
+        subBebida8.setBorder(null);
+        subBebida8.setCaretColor(new java.awt.Color(255, 255, 255));
+        subBebida8.setDisabledTextColor(new java.awt.Color(34, 66, 73));
+        subBebida8.setMinimumSize(new java.awt.Dimension(150, 20));
+        subBebida8.setPreferredSize(new java.awt.Dimension(280, 100));
+        subBebida8.setSelectionColor(new java.awt.Color(34, 66, 73));
+        getContentPane().add(subBebida8);
+        subBebida8.setBounds(50, 550, 250, 40);
 
-        subComida6.setEditable(false);
-        subComida6.setColumns(20);
-        subComida6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        subComida6.setForeground(new java.awt.Color(34, 66, 73));
-        subComida6.setLineWrap(true);
-        subComida6.setRows(5);
-        subComida6.setText("500 ml");
-        subComida6.setBorder(null);
-        subComida6.setCaretColor(new java.awt.Color(255, 255, 255));
-        subComida6.setDisabledTextColor(new java.awt.Color(34, 66, 73));
-        subComida6.setMinimumSize(new java.awt.Dimension(150, 20));
-        subComida6.setPreferredSize(new java.awt.Dimension(280, 100));
-        subComida6.setSelectionColor(new java.awt.Color(34, 66, 73));
-        getContentPane().add(subComida6);
-        subComida6.setBounds(50, 450, 250, 50);
-
-        subComida7.setEditable(false);
-        subComida7.setColumns(20);
-        subComida7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        subComida7.setForeground(new java.awt.Color(34, 66, 73));
-        subComida7.setLineWrap(true);
-        subComida7.setRows(5);
-        subComida7.setText("500 ml");
-        subComida7.setBorder(null);
-        subComida7.setCaretColor(new java.awt.Color(255, 255, 255));
-        subComida7.setDisabledTextColor(new java.awt.Color(34, 66, 73));
-        subComida7.setMinimumSize(new java.awt.Dimension(150, 20));
-        subComida7.setPreferredSize(new java.awt.Dimension(280, 100));
-        subComida7.setSelectionColor(new java.awt.Color(34, 66, 73));
-        getContentPane().add(subComida7);
-        subComida7.setBounds(50, 500, 250, 40);
-
-        subComida8.setEditable(false);
-        subComida8.setColumns(20);
-        subComida8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        subComida8.setForeground(new java.awt.Color(34, 66, 73));
-        subComida8.setLineWrap(true);
-        subComida8.setRows(5);
-        subComida8.setText("500 ml");
-        subComida8.setBorder(null);
-        subComida8.setCaretColor(new java.awt.Color(255, 255, 255));
-        subComida8.setDisabledTextColor(new java.awt.Color(34, 66, 73));
-        subComida8.setMinimumSize(new java.awt.Dimension(150, 20));
-        subComida8.setPreferredSize(new java.awt.Dimension(280, 100));
-        subComida8.setSelectionColor(new java.awt.Color(34, 66, 73));
-        getContentPane().add(subComida8);
-        subComida8.setBounds(50, 550, 250, 40);
-
-        subComida9.setEditable(false);
-        subComida9.setColumns(20);
-        subComida9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        subComida9.setForeground(new java.awt.Color(34, 66, 73));
-        subComida9.setLineWrap(true);
-        subComida9.setRows(5);
-        subComida9.setText("500 ml");
-        subComida9.setBorder(null);
-        subComida9.setCaretColor(new java.awt.Color(255, 255, 255));
-        subComida9.setDisabledTextColor(new java.awt.Color(34, 66, 73));
-        subComida9.setMinimumSize(new java.awt.Dimension(150, 20));
-        subComida9.setPreferredSize(new java.awt.Dimension(280, 100));
-        subComida9.setSelectionColor(new java.awt.Color(34, 66, 73));
-        getContentPane().add(subComida9);
-        subComida9.setBounds(50, 600, 250, 40);
+        subBebida9.setEditable(false);
+        subBebida9.setColumns(20);
+        subBebida9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        subBebida9.setForeground(new java.awt.Color(34, 66, 73));
+        subBebida9.setLineWrap(true);
+        subBebida9.setRows(5);
+        subBebida9.setText("500 ml");
+        subBebida9.setBorder(null);
+        subBebida9.setCaretColor(new java.awt.Color(255, 255, 255));
+        subBebida9.setDisabledTextColor(new java.awt.Color(34, 66, 73));
+        subBebida9.setMinimumSize(new java.awt.Dimension(150, 20));
+        subBebida9.setPreferredSize(new java.awt.Dimension(280, 100));
+        subBebida9.setSelectionColor(new java.awt.Color(34, 66, 73));
+        getContentPane().add(subBebida9);
+        subBebida9.setBounds(50, 600, 250, 40);
 
         cantidad1.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -438,18 +478,6 @@ public class MenuBebidas extends javax.swing.JFrame {
         getContentPane().add(cantidad1);
         cantidad1.setBounds(490, 180, 60, 30);
 
-        cant1.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
-        cant1.setForeground(new java.awt.Color(34, 66, 73));
-        cant1.setText("Cant.");
-        getContentPane().add(cant1);
-        cant1.setBounds(430, 170, 70, 40);
-
-        cant2.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
-        cant2.setForeground(new java.awt.Color(34, 66, 73));
-        cant2.setText("Cant.");
-        getContentPane().add(cant2);
-        cant2.setBounds(430, 220, 70, 40);
-
         cantidad2.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 cantidad2FocusGained(evt);
@@ -465,6 +493,184 @@ public class MenuBebidas extends javax.swing.JFrame {
         });
         getContentPane().add(cantidad2);
         cantidad2.setBounds(490, 230, 60, 30);
+
+        cantidad3.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                cantidad3FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                cantidad3FocusLost(evt);
+            }
+        });
+        cantidad3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cantidad3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(cantidad3);
+        cantidad3.setBounds(490, 280, 60, 30);
+
+        cantidad4.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                cantidad4FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                cantidad4FocusLost(evt);
+            }
+        });
+        cantidad4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cantidad4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(cantidad4);
+        cantidad4.setBounds(490, 330, 60, 30);
+
+        cantidad5.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                cantidad5FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                cantidad5FocusLost(evt);
+            }
+        });
+        cantidad5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cantidad5ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(cantidad5);
+        cantidad5.setBounds(490, 380, 60, 30);
+
+        cantidad6.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                cantidad6FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                cantidad6FocusLost(evt);
+            }
+        });
+        cantidad6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cantidad6ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(cantidad6);
+        cantidad6.setBounds(490, 430, 60, 30);
+
+        cantidad7.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                cantidad7FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                cantidad7FocusLost(evt);
+            }
+        });
+        cantidad7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cantidad7ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(cantidad7);
+        cantidad7.setBounds(490, 480, 60, 30);
+
+        cantidad8.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                cantidad8FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                cantidad8FocusLost(evt);
+            }
+        });
+        cantidad8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cantidad8ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(cantidad8);
+        cantidad8.setBounds(490, 530, 60, 30);
+
+        cantidad9.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                cantidad9FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                cantidad9FocusLost(evt);
+            }
+        });
+        cantidad9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cantidad9ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(cantidad9);
+        cantidad9.setBounds(490, 580, 60, 30);
+
+        precioBebida1.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        precioBebida1.setForeground(new java.awt.Color(255, 102, 0));
+        precioBebida1.setText("1500");
+        getContentPane().add(precioBebida1);
+        precioBebida1.setBounds(350, 170, 70, 40);
+
+        precioBebida2.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        precioBebida2.setForeground(new java.awt.Color(255, 102, 0));
+        precioBebida2.setText("1500");
+        getContentPane().add(precioBebida2);
+        precioBebida2.setBounds(350, 220, 70, 40);
+
+        precioBebida3.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        precioBebida3.setForeground(new java.awt.Color(255, 102, 0));
+        precioBebida3.setText("1500");
+        getContentPane().add(precioBebida3);
+        precioBebida3.setBounds(350, 270, 70, 40);
+
+        precioBebida4.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        precioBebida4.setForeground(new java.awt.Color(255, 102, 0));
+        precioBebida4.setText("1500");
+        getContentPane().add(precioBebida4);
+        precioBebida4.setBounds(350, 320, 70, 40);
+
+        precioBebida5.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        precioBebida5.setForeground(new java.awt.Color(255, 102, 0));
+        precioBebida5.setText("1500");
+        getContentPane().add(precioBebida5);
+        precioBebida5.setBounds(350, 370, 70, 40);
+
+        precioBebida6.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        precioBebida6.setForeground(new java.awt.Color(255, 102, 0));
+        precioBebida6.setText("1500");
+        getContentPane().add(precioBebida6);
+        precioBebida6.setBounds(350, 420, 70, 40);
+
+        precioBebida7.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        precioBebida7.setForeground(new java.awt.Color(255, 102, 0));
+        precioBebida7.setText("1500");
+        getContentPane().add(precioBebida7);
+        precioBebida7.setBounds(350, 470, 70, 40);
+
+        precioBebida8.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        precioBebida8.setForeground(new java.awt.Color(255, 102, 0));
+        precioBebida8.setText("2000");
+        getContentPane().add(precioBebida8);
+        precioBebida8.setBounds(350, 520, 70, 40);
+
+        precioBebida9.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        precioBebida9.setForeground(new java.awt.Color(255, 102, 0));
+        precioBebida9.setText("2000");
+        getContentPane().add(precioBebida9);
+        precioBebida9.setBounds(350, 570, 70, 40);
+
+        cant1.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        cant1.setForeground(new java.awt.Color(34, 66, 73));
+        cant1.setText("Cant.");
+        getContentPane().add(cant1);
+        cant1.setBounds(430, 170, 70, 40);
+
+        cant2.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        cant2.setForeground(new java.awt.Color(34, 66, 73));
+        cant2.setText("Cant.");
+        getContentPane().add(cant2);
+        cant2.setBounds(430, 220, 70, 40);
 
         jLabel60.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel60.setForeground(new java.awt.Color(34, 66, 73));
@@ -489,48 +695,6 @@ public class MenuBebidas extends javax.swing.JFrame {
         jLabel63.setText("9.");
         getContentPane().add(jLabel63);
         jLabel63.setBounds(20, 560, 50, 60);
-
-        precioBebida3.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
-        precioBebida3.setForeground(new java.awt.Color(255, 102, 0));
-        precioBebida3.setText("1500");
-        getContentPane().add(precioBebida3);
-        precioBebida3.setBounds(350, 270, 70, 40);
-
-        precioBebida4.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
-        precioBebida4.setForeground(new java.awt.Color(255, 102, 0));
-        precioBebida4.setText("1500");
-        getContentPane().add(precioBebida4);
-        precioBebida4.setBounds(350, 320, 70, 40);
-
-        precioBebida2.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
-        precioBebida2.setForeground(new java.awt.Color(255, 102, 0));
-        precioBebida2.setText("1500");
-        getContentPane().add(precioBebida2);
-        precioBebida2.setBounds(350, 220, 70, 40);
-
-        precioBebida5.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
-        precioBebida5.setForeground(new java.awt.Color(255, 102, 0));
-        precioBebida5.setText("1500");
-        getContentPane().add(precioBebida5);
-        precioBebida5.setBounds(350, 370, 70, 40);
-
-        precioBebida6.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
-        precioBebida6.setForeground(new java.awt.Color(255, 102, 0));
-        precioBebida6.setText("1500");
-        getContentPane().add(precioBebida6);
-        precioBebida6.setBounds(350, 420, 70, 40);
-
-        precioBebida1.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
-        precioBebida1.setForeground(new java.awt.Color(255, 102, 0));
-        precioBebida1.setText("1500");
-        getContentPane().add(precioBebida1);
-        precioBebida1.setBounds(350, 170, 70, 40);
-
-        precioBebida7.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
-        precioBebida7.setForeground(new java.awt.Color(255, 102, 0));
-        precioBebida7.setText("1500");
-        getContentPane().add(precioBebida7);
-        precioBebida7.setBounds(350, 470, 70, 40);
 
         simbolo1.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
         simbolo1.setForeground(new java.awt.Color(255, 102, 0));
@@ -580,23 +744,11 @@ public class MenuBebidas extends javax.swing.JFrame {
         getContentPane().add(simbolo8);
         simbolo8.setBounds(330, 470, 20, 40);
 
-        precioBebida8.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
-        precioBebida8.setForeground(new java.awt.Color(255, 102, 0));
-        precioBebida8.setText("2000");
-        getContentPane().add(precioBebida8);
-        precioBebida8.setBounds(350, 520, 70, 40);
-
         simbolo9.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
         simbolo9.setForeground(new java.awt.Color(255, 102, 0));
         simbolo9.setText("$");
         getContentPane().add(simbolo9);
         simbolo9.setBounds(330, 520, 20, 40);
-
-        precioBebida9.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
-        precioBebida9.setForeground(new java.awt.Color(255, 102, 0));
-        precioBebida9.setText("2000");
-        getContentPane().add(precioBebida9);
-        precioBebida9.setBounds(350, 570, 70, 40);
 
         simbolo10.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
         simbolo10.setForeground(new java.awt.Color(255, 102, 0));
@@ -610,43 +762,11 @@ public class MenuBebidas extends javax.swing.JFrame {
         getContentPane().add(cant3);
         cant3.setBounds(430, 270, 70, 40);
 
-        cantidad3.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                cantidad3FocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                cantidad3FocusLost(evt);
-            }
-        });
-        cantidad3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cantidad3ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(cantidad3);
-        cantidad3.setBounds(490, 280, 60, 30);
-
         cant4.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
         cant4.setForeground(new java.awt.Color(34, 66, 73));
         cant4.setText("Cant.");
         getContentPane().add(cant4);
         cant4.setBounds(430, 320, 70, 40);
-
-        cantidad4.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                cantidad4FocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                cantidad4FocusLost(evt);
-            }
-        });
-        cantidad4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cantidad4ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(cantidad4);
-        cantidad4.setBounds(490, 330, 60, 30);
 
         cant5.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
         cant5.setForeground(new java.awt.Color(34, 66, 73));
@@ -654,43 +774,11 @@ public class MenuBebidas extends javax.swing.JFrame {
         getContentPane().add(cant5);
         cant5.setBounds(430, 370, 70, 40);
 
-        cantidad5.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                cantidad5FocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                cantidad5FocusLost(evt);
-            }
-        });
-        cantidad5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cantidad5ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(cantidad5);
-        cantidad5.setBounds(490, 380, 60, 30);
-
         cant6.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
         cant6.setForeground(new java.awt.Color(34, 66, 73));
         cant6.setText("Cant.");
         getContentPane().add(cant6);
         cant6.setBounds(430, 420, 70, 40);
-
-        cantidad6.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                cantidad6FocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                cantidad6FocusLost(evt);
-            }
-        });
-        cantidad6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cantidad6ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(cantidad6);
-        cantidad6.setBounds(490, 430, 60, 30);
 
         cant7.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
         cant7.setForeground(new java.awt.Color(34, 66, 73));
@@ -698,65 +786,17 @@ public class MenuBebidas extends javax.swing.JFrame {
         getContentPane().add(cant7);
         cant7.setBounds(430, 470, 70, 40);
 
-        cantidad7.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                cantidad7FocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                cantidad7FocusLost(evt);
-            }
-        });
-        cantidad7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cantidad7ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(cantidad7);
-        cantidad7.setBounds(490, 480, 60, 30);
-
         cant8.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
         cant8.setForeground(new java.awt.Color(34, 66, 73));
         cant8.setText("Cant.");
         getContentPane().add(cant8);
         cant8.setBounds(430, 520, 70, 40);
 
-        cantidad8.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                cantidad8FocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                cantidad8FocusLost(evt);
-            }
-        });
-        cantidad8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cantidad8ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(cantidad8);
-        cantidad8.setBounds(490, 530, 60, 30);
-
         cant9.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
         cant9.setForeground(new java.awt.Color(34, 66, 73));
         cant9.setText("Cant.");
         getContentPane().add(cant9);
         cant9.setBounds(430, 570, 70, 40);
-
-        cantidad9.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                cantidad9FocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                cantidad9FocusLost(evt);
-            }
-        });
-        cantidad9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cantidad9ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(cantidad9);
-        cantidad9.setBounds(490, 580, 60, 30);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/93b5f9913d2e4316cd6e541c67b9aed0.jpg"))); // NOI18N
         getContentPane().add(jLabel1);
@@ -767,79 +807,88 @@ public class MenuBebidas extends javax.swing.JFrame {
 
     private void agregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_agregarMouseClicked
         // TODO add your handling code here:
-        int precioTotal = ((Integer.parseInt(precioBebida1.getText())*Integer.parseInt(cantidad1.getText())));
+        int precioTotal1 = ((Integer.parseInt(precioBebida1.getText())*Integer.parseInt(cantidad1.getText())));
+        int precioTotal2 = ((Integer.parseInt(precioBebida2.getText())*Integer.parseInt(cantidad2.getText())));
+        int precioTotal3 = ((Integer.parseInt(precioBebida3.getText())*Integer.parseInt(cantidad3.getText())));
+        int precioTotal4 = ((Integer.parseInt(precioBebida4.getText())*Integer.parseInt(cantidad4.getText())));
+        int precioTotal5 = ((Integer.parseInt(precioBebida5.getText())*Integer.parseInt(cantidad5.getText())));
+        int precioTotal6 = ((Integer.parseInt(precioBebida6.getText())*Integer.parseInt(cantidad6.getText())));
+        int precioTotal7 = ((Integer.parseInt(precioBebida7.getText())*Integer.parseInt(cantidad7.getText())));
+        int precioTotal8 = ((Integer.parseInt(precioBebida8.getText())*Integer.parseInt(cantidad8.getText())));
+        int precioTotal9 = ((Integer.parseInt(precioBebida9.getText())*Integer.parseInt(cantidad9.getText())));
+        
                 try {
                 stnt = con.createStatement();
                 ResultSet rs = null;
-                if(Integer.parseInt(cantidad1.getText())>=0){
-                rs = stnt.executeQuery("SELECT * FROM producto WHERE id = 1 && stock<"+cantidad1.getText()+"");               
+                if(Integer.parseInt(cantidad1.getText())>0){
+                    rs = stnt.executeQuery("SELECT * FROM producto WHERE id = 1 && stock<"+cantidad1.getText()+"");               
                     if(rs.next()){
-                         JOptionPane.showMessageDialog(this,"Disculpe el inconveniente pero tenemos un stock de " + rs.getInt("stock") + "en " + rs.getString("nombre"),"Error",2);
-                    }else
-                    {rs = stnt.executeQuery("CALL registroVen((SELECT MAX(factura.id) FROM usuario INNER JOIN factura ON factura.usuario_id_fk = usuario.id WHERE usuario.rut = '"+rut+"'),1,"
-                                             +cantidad1.getText()+","+precioTotal+")");            
-                    }
+                    JOptionPane.showMessageDialog(this,"Disculpe el inconveniente pero tenemos un stock de " + rs.getInt("stock") + "en " + rs.getString("nombre"),"Error",2);
+                    }else{
+                    rs = stnt.executeQuery("CALL registroVen((SELECT MAX(factura.id) FROM usuario INNER JOIN factura ON factura.usuario_id_fk = usuario.id WHERE usuario.rut = '"+rut+"'),1,"
+                                             +cantidad1.getText()+","+precioTotal1+")");}
+                }if(Integer.parseInt(cantidad2.getText())>0){
                     rs = stnt.executeQuery("SELECT * FROM producto WHERE id = 2 && stock<"+cantidad2.getText()+"");               
                     if(rs.next()){
-                         JOptionPane.showMessageDialog(this,"Disculpe el inconveniente pero tenemos un stock de " + rs.getInt("stock") + "en " + rs.getString("nombre"),"Error",2);
-                    }else
-                    {rs = stnt.executeQuery("CALL registroVen((SELECT MAX(factura.id) FROM usuario INNER JOIN factura ON factura.usuario_id_fk = usuario.id WHERE usuario.rut = '"+rut+"'),1,"
-                                             +cantidad2.getText()+","+precioTotal+")");            
-                    }
-                                  rs = stnt.executeQuery("SELECT * FROM producto WHERE id = 3 && stock<"+cantidad3.getText()+"");               
+                    JOptionPane.showMessageDialog(this,"Disculpe el inconveniente pero tenemos un stock de " + rs.getInt("stock") + "en " + rs.getString("nombre"),"Error",2);
+                    }else{
+                    rs = stnt.executeQuery("CALL registroVen((SELECT MAX(factura.id) FROM usuario INNER JOIN factura ON factura.usuario_id_fk = usuario.id WHERE usuario.rut = '"+rut+"'),2,"
+                                             +cantidad2.getText()+","+precioTotal2+")");} 
+                }if(Integer.parseInt(cantidad3.getText())>0){
+                    rs = stnt.executeQuery("SELECT * FROM producto WHERE id = 3 && stock<"+cantidad3.getText()+"");               
                     if(rs.next()){
-                         JOptionPane.showMessageDialog(this,"Disculpe el inconveniente pero tenemos un stock de " + rs.getInt("stock") + "en " + rs.getString("nombre"),"Error",2);
-                    }else
-                    {rs = stnt.executeQuery("CALL registroVen((SELECT MAX(factura.id) FROM usuario INNER JOIN factura ON factura.usuario_id_fk = usuario.id WHERE usuario.rut = '"+rut+"'),1,"
-                                             +cantidad3.getText()+","+precioTotal+")");            
-                    }
-                                  rs = stnt.executeQuery("SELECT * FROM producto WHERE id = 4 && stock<"+cantidad4.getText()+"");               
+                    JOptionPane.showMessageDialog(this,"Disculpe el inconveniente pero tenemos un stock de " + rs.getInt("stock") + "en " + rs.getString("nombre"),"Error",2);
+                    }else{
+                     rs = stnt.executeQuery("CALL registroVen((SELECT MAX(factura.id) FROM usuario INNER JOIN factura ON factura.usuario_id_fk = usuario.id WHERE usuario.rut = '"+rut+"'),3,"
+                                             +cantidad3.getText()+","+precioTotal3+")");}          
+                }if(Integer.parseInt(cantidad4.getText())>0){
+                    rs = stnt.executeQuery("SELECT * FROM producto WHERE id = 4 && stock<"+cantidad4.getText()+"");               
                     if(rs.next()){
-                         JOptionPane.showMessageDialog(this,"Disculpe el inconveniente pero tenemos un stock de " + rs.getInt("stock") + "en " + rs.getString("nombre"),"Error",2);
-                    }else
-                    {rs = stnt.executeQuery("CALL registroVen((SELECT MAX(factura.id) FROM usuario INNER JOIN factura ON factura.usuario_id_fk = usuario.id WHERE usuario.rut = '"+rut+"'),1,"
-                                             +cantidad4.getText()+","+precioTotal+")");            
-                    }
-                                  rs = stnt.executeQuery("SELECT * FROM producto WHERE id = 5 && stock<"+cantidad5.getText()+"");               
+                    JOptionPane.showMessageDialog(this,"Disculpe el inconveniente pero tenemos un stock de " + rs.getInt("stock") + "en " + rs.getString("nombre"),"Error",2);
+                    }else{
+                    rs = stnt.executeQuery("CALL registroVen((SELECT MAX(factura.id) FROM usuario INNER JOIN factura ON factura.usuario_id_fk = usuario.id WHERE usuario.rut = '"+rut+"'),4,"
+                                             +cantidad4.getText()+","+precioTotal4+")");}           
+                }if(Integer.parseInt(cantidad5.getText())>0){
+                    rs = stnt.executeQuery("SELECT * FROM producto WHERE id = 5 && stock<"+cantidad5.getText()+"");               
                     if(rs.next()){
-                         JOptionPane.showMessageDialog(this,"Disculpe el inconveniente pero tenemos un stock de " + rs.getInt("stock") + "en " + rs.getString("nombre"),"Error",2);
-                    }else
-                    {rs = stnt.executeQuery("CALL registroVen((SELECT MAX(factura.id) FROM usuario INNER JOIN factura ON factura.usuario_id_fk = usuario.id WHERE usuario.rut = '"+rut+"'),1,"
-                                             +cantidad5.getText()+","+precioTotal+")");            
-                    }
-                                  rs = stnt.executeQuery("SELECT * FROM producto WHERE id = 6 && stock<"+cantidad6.getText()+"");               
+                    JOptionPane.showMessageDialog(this,"Disculpe el inconveniente pero tenemos un stock de " + rs.getInt("stock") + "en " + rs.getString("nombre"),"Error",2);
+                    }else{
+                    rs = stnt.executeQuery("CALL registroVen((SELECT MAX(factura.id) FROM usuario INNER JOIN factura ON factura.usuario_id_fk = usuario.id WHERE usuario.rut = '"+rut+"'),5,"
+                                             +cantidad5.getText()+","+precioTotal5+")");}           
+                }if(Integer.parseInt(cantidad6.getText())>0){
+                    rs = stnt.executeQuery("SELECT * FROM producto WHERE id = 6 && stock<"+cantidad6.getText()+"");               
                     if(rs.next()){
-                         JOptionPane.showMessageDialog(this,"Disculpe el inconveniente pero tenemos un stock de " + rs.getInt("stock") + "en " + rs.getString("nombre"),"Error",2);
-                    }else
-                    {rs = stnt.executeQuery("CALL registroVen((SELECT MAX(factura.id) FROM usuario INNER JOIN factura ON factura.usuario_id_fk = usuario.id WHERE usuario.rut = '"+rut+"'),1,"
-                                             +cantidad6.getText()+","+precioTotal+")");            
-                    }
-                                  rs = stnt.executeQuery("SELECT * FROM producto WHERE id = 7 && stock<"+cantidad7.getText()+"");               
+                    JOptionPane.showMessageDialog(this,"Disculpe el inconveniente pero tenemos un stock de " + rs.getInt("stock") + "en " + rs.getString("nombre"),"Error",2);
+                    }else{
+                    rs = stnt.executeQuery("CALL registroVen((SELECT MAX(factura.id) FROM usuario INNER JOIN factura ON factura.usuario_id_fk = usuario.id WHERE usuario.rut = '"+rut+"'),6,"
+                                             +cantidad6.getText()+","+precioTotal6+")");}           
+                }if(Integer.parseInt(cantidad7.getText())>0){
+                    rs = stnt.executeQuery("SELECT * FROM producto WHERE id = 7 && stock<"+cantidad7.getText()+"");               
                     if(rs.next()){
-                         JOptionPane.showMessageDialog(this,"Disculpe el inconveniente pero tenemos un stock de " + rs.getInt("stock") + "en " + rs.getString("nombre"),"Error",2);
-                    }else
-                    {rs = stnt.executeQuery("CALL registroVen((SELECT MAX(factura.id) FROM usuario INNER JOIN factura ON factura.usuario_id_fk = usuario.id WHERE usuario.rut = '"+rut+"'),1,"
-                                             +cantidad7.getText()+","+precioTotal+")");            
-                    }            
+                    JOptionPane.showMessageDialog(this,"Disculpe el inconveniente pero tenemos un stock de " + rs.getInt("stock") + "en " + rs.getString("nombre"),"Error",2);
+                    }else{
+                    rs = stnt.executeQuery("CALL registroVen((SELECT MAX(factura.id) FROM usuario INNER JOIN factura ON factura.usuario_id_fk = usuario.id WHERE usuario.rut = '"+rut+"'),7,"
+                                             +cantidad7.getText()+","+precioTotal7+")");}        
+                }if(Integer.parseInt(cantidad8.getText())>0){            
                     rs = stnt.executeQuery("SELECT * FROM producto WHERE id = 8 && stock<"+cantidad8.getText()+"");               
                     if(rs.next()){
-                         JOptionPane.showMessageDialog(this,"Disculpe el inconveniente pero tenemos un stock de " + rs.getInt("stock") + "en " + rs.getString("nombre"),"Error",2);
-                    }else
-                    {rs = stnt.executeQuery("CALL registroVen((SELECT MAX(factura.id) FROM usuario INNER JOIN factura ON factura.usuario_id_fk = usuario.id WHERE usuario.rut = '"+rut+"'),1,"
-                                             +cantidad8.getText()+","+precioTotal+")");            
-                    }
+                    JOptionPane.showMessageDialog(this,"Disculpe el inconveniente pero tenemos un stock de " + rs.getInt("stock") + "en " + rs.getString("nombre"),"Error",2);
+                    }else{
+                    rs = stnt.executeQuery("CALL registroVen((SELECT MAX(factura.id) FROM usuario INNER JOIN factura ON factura.usuario_id_fk = usuario.id WHERE usuario.rut = '"+rut+"'),8,"
+                                             +cantidad8.getText()+","+precioTotal8+")");}          
+                }if(Integer.parseInt(cantidad9.getText())>0){
                     rs = stnt.executeQuery("SELECT * FROM producto WHERE id = 9 && stock<"+cantidad9.getText()+"");               
                     if(rs.next()){
-                         JOptionPane.showMessageDialog(this,"Disculpe el inconveniente pero tenemos un stock de " + rs.getInt("stock") + "en " + rs.getString("nombre"),"Error",2);
-                    }else
-                    {rs = stnt.executeQuery("CALL registroVen((SELECT MAX(factura.id) FROM usuario INNER JOIN factura ON factura.usuario_id_fk = usuario.id WHERE usuario.rut = '"+rut+"'),1,"
-                                             +cantidad9.getText()+","+precioTotal+")");            
-                    }
+                    JOptionPane.showMessageDialog(this,"Disculpe el inconveniente pero tenemos un stock de " + rs.getInt("stock") + "en " + rs.getString("nombre"),"Error",2);
+                    }else{
+                    rs = stnt.executeQuery("CALL registroVen((SELECT MAX(factura.id) FROM usuario INNER JOIN factura ON factura.usuario_id_fk = usuario.id WHERE usuario.rut = '"+rut+"'),9,"
+                                             +cantidad9.getText()+","+precioTotal9+")");}
                     }
                 
         }catch(Exception e){
             
         }
+                
         
         
         
@@ -1101,22 +1150,26 @@ public class MenuBebidas extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MenuBebidas().setVisible(true);
+                try {
+                    new MenuBebidas().setVisible(true);
+                } catch (SQLException ex) {
+                    Logger.getLogger(MenuBebidas.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel agregar;
-    private javax.swing.JLabel bebida1;
-    private javax.swing.JLabel bebida2;
-    private javax.swing.JLabel bebida3;
-    private javax.swing.JLabel bebida4;
-    private javax.swing.JLabel bebida5;
-    private javax.swing.JLabel bebida6;
-    private javax.swing.JLabel bebida7;
-    private javax.swing.JLabel bebida8;
-    private javax.swing.JLabel bebida9;
+    public static javax.swing.JLabel bebida1;
+    public static javax.swing.JLabel bebida2;
+    public static javax.swing.JLabel bebida3;
+    public static javax.swing.JLabel bebida4;
+    public static javax.swing.JLabel bebida5;
+    public static javax.swing.JLabel bebida6;
+    public static javax.swing.JLabel bebida7;
+    public static javax.swing.JLabel bebida8;
+    public static javax.swing.JLabel bebida9;
     private javax.swing.JLabel cant1;
     private javax.swing.JLabel cant2;
     private javax.swing.JLabel cant3;
@@ -1126,15 +1179,15 @@ public class MenuBebidas extends javax.swing.JFrame {
     private javax.swing.JLabel cant7;
     private javax.swing.JLabel cant8;
     private javax.swing.JLabel cant9;
-    private javax.swing.JTextField cantidad1;
-    private javax.swing.JTextField cantidad2;
-    private javax.swing.JTextField cantidad3;
-    private javax.swing.JTextField cantidad4;
-    private javax.swing.JTextField cantidad5;
-    private javax.swing.JTextField cantidad6;
-    private javax.swing.JTextField cantidad7;
-    private javax.swing.JTextField cantidad8;
-    private javax.swing.JTextField cantidad9;
+    public static javax.swing.JTextField cantidad1;
+    public static javax.swing.JTextField cantidad2;
+    public static javax.swing.JTextField cantidad3;
+    public static javax.swing.JTextField cantidad4;
+    public static javax.swing.JTextField cantidad5;
+    public static javax.swing.JTextField cantidad6;
+    public static javax.swing.JTextField cantidad7;
+    public static javax.swing.JTextField cantidad8;
+    public static javax.swing.JTextField cantidad9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel13;
@@ -1149,15 +1202,15 @@ public class MenuBebidas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JLabel precioBebida1;
-    private javax.swing.JLabel precioBebida2;
-    private javax.swing.JLabel precioBebida3;
-    private javax.swing.JLabel precioBebida4;
-    private javax.swing.JLabel precioBebida5;
-    private javax.swing.JLabel precioBebida6;
-    private javax.swing.JLabel precioBebida7;
-    private javax.swing.JLabel precioBebida8;
-    private javax.swing.JLabel precioBebida9;
+    public static javax.swing.JLabel precioBebida1;
+    public static javax.swing.JLabel precioBebida2;
+    public static javax.swing.JLabel precioBebida3;
+    public static javax.swing.JLabel precioBebida4;
+    public static javax.swing.JLabel precioBebida5;
+    public static javax.swing.JLabel precioBebida6;
+    public static javax.swing.JLabel precioBebida7;
+    public static javax.swing.JLabel precioBebida8;
+    public static javax.swing.JLabel precioBebida9;
     private javax.swing.JLabel simbolo1;
     private javax.swing.JLabel simbolo10;
     private javax.swing.JLabel simbolo2;
@@ -1168,15 +1221,15 @@ public class MenuBebidas extends javax.swing.JFrame {
     private javax.swing.JLabel simbolo7;
     private javax.swing.JLabel simbolo8;
     private javax.swing.JLabel simbolo9;
-    private javax.swing.JTextArea subComida1;
-    private javax.swing.JTextArea subComida2;
-    private javax.swing.JTextArea subComida3;
-    private javax.swing.JTextArea subComida4;
-    private javax.swing.JTextArea subComida5;
-    private javax.swing.JTextArea subComida6;
-    private javax.swing.JTextArea subComida7;
-    private javax.swing.JTextArea subComida8;
-    private javax.swing.JTextArea subComida9;
+    public static javax.swing.JTextArea subBebida1;
+    public static javax.swing.JTextArea subBebida2;
+    public static javax.swing.JTextArea subBebida3;
+    public static javax.swing.JTextArea subBebida4;
+    public static javax.swing.JTextArea subBebida5;
+    public static javax.swing.JTextArea subBebida6;
+    public static javax.swing.JTextArea subBebida7;
+    public static javax.swing.JTextArea subBebida8;
+    public static javax.swing.JTextArea subBebida9;
     private javax.swing.JLabel total;
     private javax.swing.JLabel total1;
     // End of variables declaration//GEN-END:variables

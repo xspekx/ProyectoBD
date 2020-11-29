@@ -5,19 +5,104 @@
  */
 package VISTA;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author reyna
  */
 public class AdminBebida extends javax.swing.JFrame {
-
+    Connection con = null;
+    Statement stnt = null;
     /**
      * Creates new form AdminBebida
      */
-    public AdminBebida() {
+    public AdminBebida() throws SQLException {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setFocusable(true);
+        
+    try {
+    String url = "jdbc:mysql://localhost:3306/restaurante"; // direccion donde se encuentra la base de datos
+    String usuario = "root"; // usuario de la gestion de base de datos
+    String contraseña = "123"; // contraseña para entrar a la base de datos
+                
+    Class.forName("com.mysql.jdbc.Driver").newInstance(); // carga el driver para conectarce
+    con = (Connection) DriverManager.getConnection(url,usuario,contraseña); // se conecta a la base de datos nuestro programa 
+    if(con != null){
+                System.out.println("Conexion Exitosa!");
+            }else{
+                System.out.println("Conexion Fallida!");                
+            }
+    }catch(Exception e){// excepciones en el caso de haber un error
+         Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null,e); 
+    }
+
+    stnt = con.createStatement(); 
+    ResultSet rsl = stnt.executeQuery("SELECT * FROM producto");
+    if(rsl.next()){ 
+    bebida1.setText(rsl.getString("nombre"));
+    subBebida1.setText(rsl.getString("subNombre"));
+    precioBebida1.setText(String.valueOf(rsl.getInt("precio")));
+    }if(rsl.next()){ 
+    bebida2.setText(rsl.getString("nombre"));
+    subBebida2.setText(rsl.getString("subNombre"));
+    precioBebida2.setText(String.valueOf(rsl.getInt("precio")));
+    }if(rsl.next()){ 
+    bebida3.setText(rsl.getString("nombre"));
+    subBebida3.setText(rsl.getString("subNombre"));
+    precioBebida3.setText(String.valueOf(rsl.getInt("precio")));
+    }if(rsl.next()){ 
+    bebida4.setText(rsl.getString("nombre"));
+    subBebida4.setText(rsl.getString("subNombre"));
+    precioBebida4.setText(String.valueOf(rsl.getInt("precio")));
+    }if(rsl.next()){ 
+    bebida5.setText(rsl.getString("nombre"));
+    subBebida5.setText(rsl.getString("subNombre"));
+    precioBebida5.setText(String.valueOf(rsl.getInt("precio")));
+    }if(rsl.next()){ 
+    bebida6.setText(rsl.getString("nombre"));
+    subBebida6.setText(rsl.getString("subNombre"));
+    precioBebida6.setText(String.valueOf(rsl.getInt("precio")));
+    }if(rsl.next()){ 
+    bebida7.setText(rsl.getString("nombre"));
+    subBebida7.setText(rsl.getString("subNombre"));
+    precioBebida7.setText(String.valueOf(rsl.getInt("precio")));
+    }if(rsl.next()){ 
+    bebida8.setText(rsl.getString("nombre"));
+    subBebida8.setText(rsl.getString("subNombre"));
+    precioBebida8.setText(String.valueOf(rsl.getInt("precio")));
+    }if(rsl.next()){ 
+    bebida9.setText(rsl.getString("nombre"));
+    subBebida9.setText(rsl.getString("subNombre"));
+    precioBebida9.setText(String.valueOf(rsl.getInt("precio")));
+    }
+    
+    if(cantidad1.getText().equals("")){
+            cantidad1.setText("0");
+            }if(cantidad2.getText().equals("")){
+            cantidad2.setText("0");
+            }if(cantidad3.getText().equals("")){
+            cantidad3.setText("0");
+            }if(cantidad4.getText().equals("")){
+            cantidad4.setText("0");
+            }if(cantidad5.getText().equals("")){
+            cantidad5.setText("0");
+            }if(cantidad6.getText().equals("")){
+            cantidad6.setText("0");
+            }if(cantidad7.getText().equals("")){
+            cantidad7.setText("0");
+            }if(cantidad8.getText().equals("")){
+            cantidad8.setText("0");
+            }if(cantidad9.getText().equals("")){
+            cantidad9.setText("0");}
     }
 
     /**
@@ -92,17 +177,17 @@ public class AdminBebida extends javax.swing.JFrame {
         simbolo9 = new javax.swing.JLabel();
         simbolo10 = new javax.swing.JLabel();
         cant3 = new javax.swing.JLabel();
+        cant10 = new javax.swing.JLabel();
+        cant11 = new javax.swing.JLabel();
+        cant12 = new javax.swing.JLabel();
+        cant13 = new javax.swing.JLabel();
+        cant14 = new javax.swing.JLabel();
+        cant15 = new javax.swing.JLabel();
         cant4 = new javax.swing.JLabel();
-        cant5 = new javax.swing.JLabel();
-        cant6 = new javax.swing.JLabel();
-        cant7 = new javax.swing.JLabel();
-        cant8 = new javax.swing.JLabel();
-        cant9 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(580, 730));
-        setPreferredSize(new java.awt.Dimension(580, 730));
         getContentPane().setLayout(null);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -127,7 +212,7 @@ public class AdminBebida extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(255, 102, 0));
         jLabel7.setText("BEBIDAS");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(160, 50, 230, 60);
+        jLabel7.setBounds(180, 40, 230, 60);
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(34, 66, 73));
@@ -701,17 +786,17 @@ public class AdminBebida extends javax.swing.JFrame {
         getContentPane().add(agregar);
         agregar.setBounds(360, 640, 200, 80);
 
-        cant1.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        cant1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         cant1.setForeground(new java.awt.Color(34, 66, 73));
-        cant1.setText("Stock");
+        cant1.setText("Agregar al inventario");
         getContentPane().add(cant1);
-        cant1.setBounds(430, 170, 70, 40);
+        cant1.setBounds(430, 130, 150, 40);
 
         cant2.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
         cant2.setForeground(new java.awt.Color(34, 66, 73));
-        cant2.setText("Stock");
+        cant2.setText("Cant.");
         getContentPane().add(cant2);
-        cant2.setBounds(430, 220, 70, 40);
+        cant2.setBounds(430, 170, 70, 40);
 
         jLabel60.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel60.setForeground(new java.awt.Color(34, 66, 73));
@@ -799,45 +884,51 @@ public class AdminBebida extends javax.swing.JFrame {
 
         cant3.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
         cant3.setForeground(new java.awt.Color(34, 66, 73));
-        cant3.setText("Stock");
+        cant3.setText("Cant.");
         getContentPane().add(cant3);
-        cant3.setBounds(430, 270, 70, 40);
+        cant3.setBounds(430, 220, 70, 40);
+
+        cant10.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        cant10.setForeground(new java.awt.Color(34, 66, 73));
+        cant10.setText("Cant.");
+        getContentPane().add(cant10);
+        cant10.setBounds(430, 320, 70, 40);
+
+        cant11.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        cant11.setForeground(new java.awt.Color(34, 66, 73));
+        cant11.setText("Cant.");
+        getContentPane().add(cant11);
+        cant11.setBounds(430, 370, 70, 40);
+
+        cant12.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        cant12.setForeground(new java.awt.Color(34, 66, 73));
+        cant12.setText("Cant.");
+        getContentPane().add(cant12);
+        cant12.setBounds(430, 420, 70, 40);
+
+        cant13.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        cant13.setForeground(new java.awt.Color(34, 66, 73));
+        cant13.setText("Cant.");
+        getContentPane().add(cant13);
+        cant13.setBounds(430, 470, 70, 40);
+
+        cant14.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        cant14.setForeground(new java.awt.Color(34, 66, 73));
+        cant14.setText("Cant.");
+        getContentPane().add(cant14);
+        cant14.setBounds(430, 520, 70, 40);
+
+        cant15.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        cant15.setForeground(new java.awt.Color(34, 66, 73));
+        cant15.setText("Cant.");
+        getContentPane().add(cant15);
+        cant15.setBounds(430, 570, 70, 40);
 
         cant4.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
         cant4.setForeground(new java.awt.Color(34, 66, 73));
-        cant4.setText("Stock");
+        cant4.setText("Cant.");
         getContentPane().add(cant4);
-        cant4.setBounds(430, 320, 70, 40);
-
-        cant5.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
-        cant5.setForeground(new java.awt.Color(34, 66, 73));
-        cant5.setText("Stock");
-        getContentPane().add(cant5);
-        cant5.setBounds(430, 370, 70, 40);
-
-        cant6.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
-        cant6.setForeground(new java.awt.Color(34, 66, 73));
-        cant6.setText("Stock");
-        getContentPane().add(cant6);
-        cant6.setBounds(430, 420, 70, 40);
-
-        cant7.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
-        cant7.setForeground(new java.awt.Color(34, 66, 73));
-        cant7.setText("Stock");
-        getContentPane().add(cant7);
-        cant7.setBounds(430, 470, 70, 40);
-
-        cant8.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
-        cant8.setForeground(new java.awt.Color(34, 66, 73));
-        cant8.setText("Stock");
-        getContentPane().add(cant8);
-        cant8.setBounds(430, 520, 70, 40);
-
-        cant9.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
-        cant9.setForeground(new java.awt.Color(34, 66, 73));
-        cant9.setText("Stock");
-        getContentPane().add(cant9);
-        cant9.setBounds(430, 570, 70, 40);
+        cant4.setBounds(430, 270, 70, 40);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/93b5f9913d2e4316cd6e541c67b9aed0.jpg"))); // NOI18N
         getContentPane().add(jLabel1);
@@ -847,10 +938,79 @@ public class AdminBebida extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void agregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_agregarMouseClicked
-        // TODO add your handling code here:
+        try {
+            // TODO add your handling code here:
+            stnt = con.createStatement();
+            
+            ResultSet rsl = stnt.executeQuery("SELECT * FROM producto WHERE nombre =  '"+ bebida1.getText()+"' AND subNombre = '"+subBebida1.getText()+"' AND precio = "+ precioBebida1.getText()+ "");
+            if(!rsl.next()){
+            stnt.executeUpdate("UPDATE producto SET nombre = '"+ bebida1.getText()+"', subNombre = '"+subBebida1.getText()+"', precio = "+ precioBebida1.getText()+ " WHERE id = 1");               
+            JOptionPane.showMessageDialog(this, "cambio realizado con exito");
+            }
+            
+           
+            ResultSet rs2 = stnt.executeQuery("SELECT * FROM producto WHERE nombre =  '"+ bebida2.getText()+"' AND subNombre = '"+subBebida2.getText()+"' AND precio = "+ precioBebida2.getText()+ "");
+            if(!rs2.first()){
+            stnt.executeUpdate("UPDATE producto SET nombre = '"+ bebida2.getText()+"', subNombre = '"+subBebida2.getText()+"', precio = "+ precioBebida2.getText()+ " WHERE id = 2");               
+            JOptionPane.showMessageDialog(this, "cambio realizado con exito");
+            }
+            
+            
+            ResultSet rs3 = stnt.executeQuery("SELECT * FROM producto WHERE nombre = '"+ bebida3.getText()+"' AND subNombre = '"+subBebida3.getText()+"' AND precio = "+ precioBebida3.getText()+ "");
+            if(!rs3.first()){
+            stnt.executeUpdate("UPDATE producto SET nombre = '"+ bebida3.getText()+"', subNombre = '"+subBebida3.getText()+"', precio = "+ precioBebida3.getText()+ " WHERE id = 3");               
+            JOptionPane.showMessageDialog(this, "cambio realizado con exito");
+            }
+            
+            
+            ResultSet rs4 = stnt.executeQuery("SELECT * FROM producto WHERE nombre ='"+ bebida4.getText()+"' AND subNombre = '"+subBebida4.getText()+"' AND precio = "+ precioBebida4.getText()+ "");
+            if(!rs4.first()){
+            stnt.executeUpdate("UPDATE producto SET nombre = '"+ bebida4.getText()+"', subNombre = '"+subBebida4.getText()+"', precio = "+ precioBebida4.getText()+ " WHERE id = 4");               
+            JOptionPane.showMessageDialog(this, "cambio realizado con exito");
+            }
+            
+            
+            ResultSet rs5 = stnt.executeQuery("SELECT * FROM producto WHERE nombre = '"+ bebida5.getText()+"' AND subNombre = '"+subBebida5.getText()+"' AND precio = "+ precioBebida5.getText()+ "");
+            if(!rs5.first()){
+            stnt.executeUpdate("UPDATE producto SET nombre = '"+ bebida5.getText()+"', subNombre = '"+subBebida5.getText()+"', precio = "+ precioBebida5.getText()+ " WHERE id = 5");               
+            JOptionPane.showMessageDialog(this, "cambio realizado con exito");
+            }
+            
+            ResultSet rs6 = stnt.executeQuery("SELECT * FROM producto WHERE nombre = '"+ bebida6.getText()+"' AND subNombre = '"+subBebida6.getText()+"' AND precio = "+ precioBebida6.getText()+ "");
+            if(!rs6.first()){
+            stnt.executeUpdate("UPDATE producto SET nombre = '"+ bebida6.getText()+"', subNombre = '"+subBebida6.getText()+"', precio = "+ precioBebida6.getText()+ " WHERE id = 6");               
+            JOptionPane.showMessageDialog(this, "cambio realizado con exito");
+            }
+            
+            ResultSet rs7 = stnt.executeQuery("SELECT * FROM producto WHERE nombre = '"+ bebida7.getText()+"' AND subNombre = '"+subBebida7.getText()+"' AND precio = "+ precioBebida7.getText()+ "");
+            if(!rs7.first()){
+            stnt.executeUpdate("UPDATE producto SET nombre = '"+ bebida7.getText()+"', subNombre = '"+subBebida7.getText()+"', precio = "+ precioBebida7.getText()+ " WHERE id = 7");               
+            JOptionPane.showMessageDialog(this, "cambio realizado con exito");
+            }
+            
+            ResultSet rs8 = stnt.executeQuery("SELECT * FROM producto WHERE nombre = '"+ bebida8.getText()+"' AND subNombre = '"+subBebida8.getText()+"' AND precio = "+ precioBebida8.getText()+ "");
+            if(!rs8.first()){
+            stnt.executeUpdate("UPDATE producto SET nombre = '"+ bebida8.getText()+"', subNombre = '"+subBebida8.getText()+"', precio = "+ precioBebida8.getText()+ " WHERE id = 8");               
+            JOptionPane.showMessageDialog(this, "cambio realizado con exito");
+            }
+            
+            ResultSet rs9 = stnt.executeQuery("SELECT * FROM producto WHERE nombre = '"+ bebida9.getText()+"' AND subNombre = '"+subBebida9.getText()+"' AND precio = "+ precioBebida9.getText()+ "");
+            if(!rs9.first()){
+            stnt.executeUpdate("UPDATE producto SET nombre = '"+ bebida9.getText()+"', subNombre = '"+subBebida9.getText()+"', precio = "+ precioBebida9.getText()+ " WHERE id = 9");               
+            JOptionPane.showMessageDialog(this, "cambio realizado con exito");
+            }
+            
+           
+            stnt.executeUpdate("");
+        } catch (SQLException ex) {
+            Logger.getLogger(AdminBebida.class.getName()).log(Level.SEVERE, null, ex);           
+                    
+        
+        
         Carta go = new Carta();
         go.setVisible(true);
         this.setVisible(false);
+        }
     }//GEN-LAST:event_agregarMouseClicked
 
     private void cantidad1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cantidad1FocusGained
@@ -1047,31 +1207,38 @@ public class AdminBebida extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AdminBebida().setVisible(true);
+          
+                try {
+                    new AdminBebida().setVisible(true);
+                } catch (SQLException ex) {
+                    Logger.getLogger(AdminBebida.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
 
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel agregar;
-    private javax.swing.JTextArea bebida1;
-    private javax.swing.JTextArea bebida2;
-    private javax.swing.JTextArea bebida3;
-    private javax.swing.JTextArea bebida4;
-    private javax.swing.JTextArea bebida5;
-    private javax.swing.JTextArea bebida6;
-    private javax.swing.JTextArea bebida7;
-    private javax.swing.JTextArea bebida8;
-    private javax.swing.JTextArea bebida9;
+    public static javax.swing.JTextArea bebida1;
+    public static javax.swing.JTextArea bebida2;
+    public static javax.swing.JTextArea bebida3;
+    public static javax.swing.JTextArea bebida4;
+    public static javax.swing.JTextArea bebida5;
+    public static javax.swing.JTextArea bebida6;
+    public static javax.swing.JTextArea bebida7;
+    public static javax.swing.JTextArea bebida8;
+    public static javax.swing.JTextArea bebida9;
     private javax.swing.JLabel cant1;
+    private javax.swing.JLabel cant10;
+    private javax.swing.JLabel cant11;
+    private javax.swing.JLabel cant12;
+    private javax.swing.JLabel cant13;
+    private javax.swing.JLabel cant14;
+    private javax.swing.JLabel cant15;
     private javax.swing.JLabel cant2;
     private javax.swing.JLabel cant3;
     private javax.swing.JLabel cant4;
-    private javax.swing.JLabel cant5;
-    private javax.swing.JLabel cant6;
-    private javax.swing.JLabel cant7;
-    private javax.swing.JLabel cant8;
-    private javax.swing.JLabel cant9;
     private javax.swing.JTextField cantidad1;
     private javax.swing.JTextField cantidad2;
     private javax.swing.JTextField cantidad3;
@@ -1095,15 +1262,15 @@ public class AdminBebida extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JTextArea precioBebida1;
-    private javax.swing.JTextArea precioBebida2;
-    private javax.swing.JTextArea precioBebida3;
-    private javax.swing.JTextArea precioBebida4;
-    private javax.swing.JTextArea precioBebida5;
-    private javax.swing.JTextArea precioBebida6;
-    private javax.swing.JTextArea precioBebida7;
-    private javax.swing.JTextArea precioBebida8;
-    private javax.swing.JTextArea precioBebida9;
+    public static javax.swing.JTextArea precioBebida1;
+    public static javax.swing.JTextArea precioBebida2;
+    public static javax.swing.JTextArea precioBebida3;
+    public static javax.swing.JTextArea precioBebida4;
+    public static javax.swing.JTextArea precioBebida5;
+    public static javax.swing.JTextArea precioBebida6;
+    public static javax.swing.JTextArea precioBebida7;
+    public static javax.swing.JTextArea precioBebida8;
+    public static javax.swing.JTextArea precioBebida9;
     private javax.swing.JLabel simbolo1;
     private javax.swing.JLabel simbolo10;
     private javax.swing.JLabel simbolo2;
@@ -1114,14 +1281,14 @@ public class AdminBebida extends javax.swing.JFrame {
     private javax.swing.JLabel simbolo7;
     private javax.swing.JLabel simbolo8;
     private javax.swing.JLabel simbolo9;
-    private javax.swing.JTextArea subBebida1;
-    private javax.swing.JTextArea subBebida2;
-    private javax.swing.JTextArea subBebida3;
-    private javax.swing.JTextArea subBebida4;
-    private javax.swing.JTextArea subBebida5;
-    private javax.swing.JTextArea subBebida6;
-    private javax.swing.JTextArea subBebida7;
-    private javax.swing.JTextArea subBebida8;
-    private javax.swing.JTextArea subBebida9;
+    public static javax.swing.JTextArea subBebida1;
+    public static javax.swing.JTextArea subBebida2;
+    public static javax.swing.JTextArea subBebida3;
+    public static javax.swing.JTextArea subBebida4;
+    public static javax.swing.JTextArea subBebida5;
+    public static javax.swing.JTextArea subBebida6;
+    public static javax.swing.JTextArea subBebida7;
+    public static javax.swing.JTextArea subBebida8;
+    public static javax.swing.JTextArea subBebida9;
     // End of variables declaration//GEN-END:variables
 }

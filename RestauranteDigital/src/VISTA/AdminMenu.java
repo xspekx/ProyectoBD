@@ -5,6 +5,10 @@
  */
 package VISTA;
 
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author reyna
@@ -29,6 +33,7 @@ public class AdminMenu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel14 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
@@ -45,6 +50,17 @@ public class AdminMenu extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(470, 700));
         getContentPane().setLayout(null);
 
+        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel14.setText("Cerrar sesion");
+        jLabel14.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel14MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jLabel14);
+        jLabel14.setBounds(290, 590, 160, 60);
+
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 102, 0));
         jLabel4.setText("BEBIDAS");
@@ -54,13 +70,13 @@ public class AdminMenu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(190, 300, 230, 60);
+        jLabel4.setBounds(190, 240, 230, 60);
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(34, 66, 73));
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/Imagen4.png"))); // NOI18N
         getContentPane().add(jLabel8);
-        jLabel8.setBounds(60, 280, 80, 100);
+        jLabel8.setBounds(60, 220, 80, 100);
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 102, 0));
@@ -71,13 +87,13 @@ public class AdminMenu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jLabel12);
-        jLabel12.setBounds(190, 550, 240, 60);
+        jLabel12.setBounds(190, 510, 240, 60);
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(34, 66, 73));
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/Imagen4.png"))); // NOI18N
         getContentPane().add(jLabel9);
-        jLabel9.setBounds(80, 270, 70, 100);
+        jLabel9.setBounds(80, 210, 70, 100);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 102, 0));
@@ -88,7 +104,7 @@ public class AdminMenu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(190, 430, 220, 60);
+        jLabel6.setBounds(190, 370, 220, 60);
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 54)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 102, 0));
@@ -100,19 +116,19 @@ public class AdminMenu extends javax.swing.JFrame {
         jLabel11.setForeground(new java.awt.Color(34, 66, 73));
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/Imagen5.png"))); // NOI18N
         getContentPane().add(jLabel11);
-        jLabel11.setBounds(30, 540, 100, 110);
+        jLabel11.setBounds(40, 490, 100, 110);
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(34, 66, 73));
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/Imagen3_1.png"))); // NOI18N
         getContentPane().add(jLabel10);
-        jLabel10.setBounds(40, 410, 90, 90);
+        jLabel10.setBounds(40, 360, 90, 90);
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(34, 66, 73));
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/Imagen4.png"))); // NOI18N
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(40, 270, 80, 100);
+        jLabel5.setBounds(40, 210, 80, 100);
 
         jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(34, 66, 73));
@@ -129,7 +145,12 @@ public class AdminMenu extends javax.swing.JFrame {
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
         // TODO add your handling code here:
-        AdminBebida go = new AdminBebida();
+        AdminBebida go = null;
+        try {
+            go = new AdminBebida();
+        } catch (SQLException ex) {
+            Logger.getLogger(AdminMenu.class.getName()).log(Level.SEVERE, null, ex);
+        }
         go.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jLabel4MouseClicked
@@ -147,6 +168,13 @@ public class AdminMenu extends javax.swing.JFrame {
         go.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jLabel6MouseClicked
+
+    private void jLabel14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseClicked
+        // TODO add your handling code here:
+        Login go = new Login();
+        go.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jLabel14MouseClicked
 
     /**
      * @param args the command line arguments
@@ -189,6 +217,7 @@ public class AdminMenu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
