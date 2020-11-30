@@ -5,17 +5,70 @@
  */
 package VISTA;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author reyna
  */
 public class Factura extends javax.swing.JFrame {
-
+    Connection con = null;
+    Statement stnt = null;
+    String rut = Login.jTextField1.getText();
     /**
      * Creates new form Factura
      */
     public Factura() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.setFocusable(true);      
+        
+    try {
+    String url = "jdbc:mysql://localhost:3306/restaurante"; // direccion donde se encuentra la base de datos
+    String usuario = "root"; // usuario de la gestion de base de datos
+    String contraseña = "123"; // contraseña para entrar a la base de datos
+                
+    Class.forName("com.mysql.jdbc.Driver").newInstance(); // carga el driver para conectarce
+    con = (Connection) DriverManager.getConnection(url,usuario,contraseña); // se conecta a la base de datos nuestro programa 
+    if(con != null){
+                System.out.println("Conexion Exitosa!");
+            }else{
+                System.out.println("Conexion Fallida!");                
+            }
+    
+    
+    }catch(Exception e){// excepciones en el caso de haber un error
+         Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null,e); 
+    }
+    
+    
+        DefaultTableModel modeloTabla = new DefaultTableModel();
+        jTable1.setModel(modeloTabla);
+        modeloTabla.setColumnIdentifiers(new Object[]{"UNIDAD","DETALLE","PRECIO UND.","PRECIO TOTAL"});//
+     
+        try { // condicion en caso de error
+        stnt = con.createStatement();
+        ResultSet rsl = stnt.executeQuery("SELECT detalle.cantidad, producto.nombre, producto.precio, detalle.precio AS 'total'" +
+                                          " FROM detalle" +
+                                          " INNER JOIN producto ON producto.id = detalle.producto_id_fk" +
+                                          " WHERE detalle.factura_id_fk = (SELECT MAX(factura.id)" +
+                                          " FROM usuario INNER JOIN factura ON factura.usuario_id_fk = usuario.id WHERE usuario.rut = '"+rut+"')");
+            while(rsl.next()){
+                modeloTabla.addRow(new Object[]{rsl.getInt("detalle.cantidad"),rsl.getString("nombre"),rsl.getInt("precio"),rsl.getInt("total")});}
+            }catch (SQLException ex) {
+        }
+            
+        
+        
+ 
+        
     }
 
     /**
@@ -27,21 +80,61 @@ public class Factura extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jLabel7 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 537, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 662, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(570, 700));
+        setPreferredSize(new java.awt.Dimension(570, 700));
+        getContentPane().setLayout(null);
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 54)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 102, 0));
+        jLabel7.setText("DETALLE");
+        getContentPane().add(jLabel7);
+        jLabel7.setBounds(160, 40, 260, 60);
+
+        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(255, 102, 0));
+        jLabel14.setText("PAGAR");
+        jLabel14.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel14MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jLabel14);
+        jLabel14.setBounds(200, 570, 190, 60);
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        getContentPane().add(jScrollPane1);
+        jScrollPane1.setBounds(70, 100, 452, 320);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/93b5f9913d2e4316cd6e541c67b9aed0.jpg"))); // NOI18N
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(0, 0, 570, 770);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jLabel14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseClicked
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_jLabel14MouseClicked
 
     /**
      * @param args the command line arguments
@@ -77,7 +170,13 @@ public class Factura extends javax.swing.JFrame {
             }
         });
     }
+       
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JScrollPane jScrollPane1;
+    public static javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }

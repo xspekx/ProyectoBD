@@ -200,7 +200,7 @@ public class AdminBebida extends javax.swing.JFrame {
         jLabel8.setForeground(new java.awt.Color(34, 66, 73));
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/Imagen4.png"))); // NOI18N
         getContentPane().add(jLabel8);
-        jLabel8.setBounds(70, 10, 40, 100);
+        jLabel8.setBounds(70, 20, 40, 100);
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(34, 66, 73));
@@ -998,14 +998,39 @@ public class AdminBebida extends javax.swing.JFrame {
             if(!rs9.first()){
             stnt.executeUpdate("UPDATE producto SET nombre = '"+ bebida9.getText()+"', subNombre = '"+subBebida9.getText()+"', precio = "+ precioBebida9.getText()+ " WHERE id = 9");               
             JOptionPane.showMessageDialog(this, "cambio realizado con exito");
-            }
-            
-           
-            stnt.executeUpdate("");
-        } catch (SQLException ex) {
-            Logger.getLogger(AdminBebida.class.getName()).log(Level.SEVERE, null, ex);           
+            }        
+          
                     
-        
+            if(Integer.parseInt(cantidad1.getText())>0){
+            ResultSet rsa = stnt.executeQuery("CALL ingresoInventario("+cantidad1.getText()+",1)");
+            }
+            if(Integer.parseInt(cantidad2.getText())>0){
+            ResultSet rsb = stnt.executeQuery("CALL ingresoInventario("+cantidad2.getText()+",2)");
+            }
+            if(Integer.parseInt(cantidad3.getText())>0){
+            ResultSet rsc = stnt.executeQuery("CALL ingresoInventario("+cantidad3.getText()+",3)");
+            }
+           if(Integer.parseInt(cantidad4.getText())>0){
+            ResultSet rsd = stnt.executeQuery("CALL ingresoInventario("+cantidad4.getText()+",4)");
+            }                       
+           if(Integer.parseInt(cantidad5.getText())>0){
+            ResultSet rse = stnt.executeQuery("CALL ingresoInventario("+cantidad5.getText()+",5)");
+            }            
+           if(Integer.parseInt(cantidad6.getText())>0){
+            ResultSet rsf = stnt.executeQuery("CALL ingresoInventario("+cantidad6.getText()+",6)");
+            }
+           if(Integer.parseInt(cantidad7.getText())>0){
+            ResultSet rsg = stnt.executeQuery("CALL ingresoInventario("+cantidad7.getText()+",7)");
+            } 
+           if(Integer.parseInt(cantidad8.getText())>0){
+            ResultSet rsh = stnt.executeQuery("CALL ingresoInventario("+cantidad8.getText()+",8)");
+            }
+           if(Integer.parseInt(cantidad9.getText())>0){
+            ResultSet rsi = stnt.executeQuery("CALL ingresoInventario("+cantidad9.getText()+",9)");
+            }           
+        } catch (SQLException ex) {
+            Logger.getLogger(AdminBebida.class.getName()).log(Level.SEVERE, null, ex);         
+    
         
         Carta go = new Carta();
         go.setVisible(true);

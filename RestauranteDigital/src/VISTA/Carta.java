@@ -5,16 +5,24 @@
  */
 package VISTA;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author reyna
  */
 public class Carta extends javax.swing.JFrame {
-
+    Connection con = null;
+    Statement stnt = null;
+    String rut = Login.jTextField1.getText();
+    
     /**
      * Creates new form Carta
      */
@@ -22,6 +30,27 @@ public class Carta extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setFocusable(true);
+        
+    try {
+    String url = "jdbc:mysql://localhost:3306/restaurante"; // direccion donde se encuentra la base de datos
+    String usuario = "root"; // usuario de la gestion de base de datos
+    String contraseña = "123"; // contraseña para entrar a la base de datos
+                
+    Class.forName("com.mysql.jdbc.Driver").newInstance(); // carga el driver para conectarce
+    con = (Connection) DriverManager.getConnection(url,usuario,contraseña); // se conecta a la base de datos nuestro programa 
+    if(con != null){
+                System.out.println("Conexion Exitosa!");
+            }else{
+                System.out.println("Conexion Fallida!");                
+            }
+    }catch(Exception e){// excepciones en el caso de haber un error
+         Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null,e); 
+    }
+
+
+    
+        
+        
     }
 
     /**
@@ -127,14 +156,14 @@ public class Carta extends javax.swing.JFrame {
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 102, 0));
-        jLabel14.setText("admin}");
+        jLabel14.setText("PAGAR");
         jLabel14.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel14MouseClicked(evt);
             }
         });
         getContentPane().add(jLabel14);
-        jLabel14.setBounds(190, 640, 240, 60);
+        jLabel14.setBounds(210, 660, 240, 60);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/93b5f9913d2e4316cd6e541c67b9aed0.jpg"))); // NOI18N
         getContentPane().add(jLabel1);
@@ -171,8 +200,8 @@ public class Carta extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel12MouseClicked
 
     private void jLabel14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseClicked
-        // TODO add your handling code here:
-        AdminMenu go = new AdminMenu();
+ 
+        Factura go = new Factura();
         go.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jLabel14MouseClicked

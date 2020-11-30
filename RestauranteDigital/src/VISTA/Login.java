@@ -82,8 +82,13 @@ public class Login extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(34, 66, 73));
         jLabel5.setText("ELIMINAR CUENTA");
+        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel5MouseClicked(evt);
+            }
+        });
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(60, 530, 230, 30);
+        jLabel5.setBounds(60, 540, 230, 30);
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(34, 66, 73));
@@ -145,9 +150,21 @@ public class Login extends javax.swing.JFrame {
                         go.setVisible(true);
                         this.setVisible(false);
                     }if(usuario.equals("2")){
+                       String inputUser = JOptionPane.showInputDialog("Ingrese el numero de la mesa en la cual usted esta");
+                        if(Integer.parseInt(inputUser)>0 && Integer.parseInt(inputUser)<25){
+                        try { 
+                        stnt = con.createStatement(); 
+                        stnt.executeUpdate("INSERT INTO factura VALUES(NULL,(SELECT id FROM usuario WHERE rut = '"+jTextField1.getText()+"'),NOW(),"+inputUser+",0)");
+                        } catch (SQLException ex) {
+                        Logger.getLogger(Carta.class.getName()).log(Level.SEVERE, null, ex);
+                        }
                         Carta go = new Carta();
                         go.setVisible(true);
                         this.setVisible(false);   
+                        }else{
+                            JOptionPane.showMessageDialog(this, "Debe ingresar el numero de la mesa en la que se encuentra");
+                        }
+                          
                     }if(!usuario.equals("1") && !usuario.equals("2")){
                         JOptionPane.showMessageDialog(this,"Usuario no existente","Error",2);
                     }
@@ -169,6 +186,13 @@ public class Login extends javax.swing.JFrame {
         go.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jLabel4MouseClicked
+
+    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+        // TODO add your handling code here:
+        Carta go = new Carta();
+        go.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jLabel5MouseClicked
 
     /**
      * @param args the command line arguments
