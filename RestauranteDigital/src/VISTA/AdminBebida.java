@@ -46,7 +46,7 @@ public class AdminBebida extends javax.swing.JFrame {
     }
 
     stnt = con.createStatement(); 
-    ResultSet rsl = stnt.executeQuery("SELECT * FROM producto");
+    ResultSet rsl = stnt.executeQuery("SELECT * FROM producto WHERE id<10");
     if(rsl.next()){ 
     bebida1.setText(rsl.getString("nombre"));
     subBebida1.setText(rsl.getString("subNombre"));
@@ -1030,12 +1030,10 @@ public class AdminBebida extends javax.swing.JFrame {
             }           
         } catch (SQLException ex) {
             Logger.getLogger(AdminBebida.class.getName()).log(Level.SEVERE, null, ex);         
-    
-        
-        Carta go = new Carta();
+        }   
+        AdminMenu go = new AdminMenu();
         go.setVisible(true);
         this.setVisible(false);
-        }
     }//GEN-LAST:event_agregarMouseClicked
 
     private void cantidad1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cantidad1FocusGained

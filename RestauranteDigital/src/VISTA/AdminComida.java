@@ -5,11 +5,24 @@
  */
 package VISTA;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author reyna
  */
 public class AdminComida extends javax.swing.JFrame {
+        
+    Connection con = null; 
+    Statement stnt = null;
+
 
     /**
      * Creates new form AdminComida
@@ -18,6 +31,61 @@ public class AdminComida extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setFocusable(true);
+
+        
+            try {
+    String url = "jdbc:mysql://localhost:3306/restaurante"; // direccion donde se encuentra la base de datos
+    String usuario = "root"; // usuario de la gestion de base de datos
+    String contraseña = "123"; // contraseña para entrar a la base de datos
+                
+    Class.forName("com.mysql.jdbc.Driver").newInstance(); // carga el driver para conectarce
+    con = (Connection) DriverManager.getConnection(url,usuario,contraseña); // se conecta a la base de datos nuestro programa 
+    if(con != null){
+                System.out.println("Conexion Exitosa!");
+            }else{
+                System.out.println("Conexion Fallida!");                
+            }
+    }catch(Exception e){// excepciones en el caso de haber un error
+         Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null,e); 
+    }
+            
+              try {
+    stnt = con.createStatement(); 
+    ResultSet rsl;
+       
+    rsl = stnt.executeQuery("SELECT * FROM producto WHERE id>=10 AND id<=16");
+    if(rsl.next()){ 
+    comida1.setText(rsl.getString("nombre"));
+    subComida1.setText(rsl.getString("subNombre"));
+    precioComida1.setText(String.valueOf(rsl.getInt("precio")));
+    }if(rsl.next()){ 
+    comida2.setText(rsl.getString("nombre"));
+    subComida2.setText(rsl.getString("subNombre"));
+    precioComida2.setText(String.valueOf(rsl.getInt("precio")));
+    }if(rsl.next()){ 
+    comida3.setText(rsl.getString("nombre"));
+    subComida3.setText(rsl.getString("subNombre"));
+    precioComida3.setText(String.valueOf(rsl.getInt("precio")));
+    }if(rsl.next()){ 
+    comida4.setText(rsl.getString("nombre"));
+    subComida4.setText(rsl.getString("subNombre"));
+    precioComida4.setText(String.valueOf(rsl.getInt("precio")));
+    }if(rsl.next()){ 
+    comida5.setText(rsl.getString("nombre"));
+    subComida5.setText(rsl.getString("subNombre"));
+    precioComida5.setText(String.valueOf(rsl.getInt("precio")));
+    }if(rsl.next()){ 
+    comida6.setText(rsl.getString("nombre"));
+    subComida6.setText(rsl.getString("subNombre"));
+    precioComida6.setText(String.valueOf(rsl.getInt("precio")));
+    }if(rsl.next()){ 
+    comida7.setText(rsl.getString("nombre"));
+    subComida7.setText(rsl.getString("subNombre"));
+    precioComida7.setText(String.valueOf(rsl.getInt("precio")));
+    }
+    }   catch (SQLException ex) {
+            Logger.getLogger(AdminComida.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -75,19 +143,24 @@ public class AdminComida extends javax.swing.JFrame {
         simbolo6 = new javax.swing.JLabel();
         simbolo7 = new javax.swing.JLabel();
         simbolo8 = new javax.swing.JLabel();
+        total2 = new javax.swing.JLabel();
+        cant9 = new javax.swing.JLabel();
         cant1 = new javax.swing.JLabel();
         cant2 = new javax.swing.JLabel();
-        cant3 = new javax.swing.JLabel();
-        cant4 = new javax.swing.JLabel();
-        cant5 = new javax.swing.JLabel();
-        cant6 = new javax.swing.JLabel();
-        cant7 = new javax.swing.JLabel();
-        total2 = new javax.swing.JLabel();
+        cant8 = new javax.swing.JLabel();
+        cant10 = new javax.swing.JLabel();
+        cant12 = new javax.swing.JLabel();
+        cant11 = new javax.swing.JLabel();
+        cant13 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(680, 940));
-        setPreferredSize(new java.awt.Dimension(680, 940));
+        addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                formMouseMoved(evt);
+            }
+        });
         getContentPane().setLayout(null);
 
         precioComida1.setColumns(20);
@@ -616,52 +689,58 @@ public class AdminComida extends javax.swing.JFrame {
         getContentPane().add(simbolo8);
         simbolo8.setBounds(420, 160, 20, 40);
 
+        total2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        total2.setForeground(new java.awt.Color(34, 66, 73));
+        getContentPane().add(total2);
+        total2.setBounds(140, 860, 140, 40);
+
+        cant9.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        cant9.setForeground(new java.awt.Color(34, 66, 73));
+        cant9.setText("Cant.");
+        getContentPane().add(cant9);
+        cant9.setBounds(510, 440, 70, 40);
+
         cant1.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
         cant1.setForeground(new java.awt.Color(34, 66, 73));
-        cant1.setText("Stock");
+        cant1.setText("Cant.");
         getContentPane().add(cant1);
         cant1.setBounds(510, 160, 70, 40);
 
         cant2.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
         cant2.setForeground(new java.awt.Color(34, 66, 73));
-        cant2.setText("Stock");
+        cant2.setText("Cant.");
         getContentPane().add(cant2);
         cant2.setBounds(510, 250, 70, 40);
 
-        cant3.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
-        cant3.setForeground(new java.awt.Color(34, 66, 73));
-        cant3.setText("Stock");
-        getContentPane().add(cant3);
-        cant3.setBounds(510, 350, 70, 40);
+        cant8.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        cant8.setForeground(new java.awt.Color(34, 66, 73));
+        cant8.setText("Cant.");
+        getContentPane().add(cant8);
+        cant8.setBounds(510, 350, 70, 40);
 
-        cant4.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
-        cant4.setForeground(new java.awt.Color(34, 66, 73));
-        cant4.setText("Stock");
-        getContentPane().add(cant4);
-        cant4.setBounds(510, 440, 70, 40);
+        cant10.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        cant10.setForeground(new java.awt.Color(34, 66, 73));
+        cant10.setText("Cant.");
+        getContentPane().add(cant10);
+        cant10.setBounds(510, 550, 70, 40);
 
-        cant5.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
-        cant5.setForeground(new java.awt.Color(34, 66, 73));
-        cant5.setText("Stock");
-        getContentPane().add(cant5);
-        cant5.setBounds(510, 540, 70, 40);
+        cant12.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        cant12.setForeground(new java.awt.Color(34, 66, 73));
+        cant12.setText("Cant.");
+        getContentPane().add(cant12);
+        cant12.setBounds(510, 640, 70, 40);
 
-        cant6.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
-        cant6.setForeground(new java.awt.Color(34, 66, 73));
-        cant6.setText("Stock");
-        getContentPane().add(cant6);
-        cant6.setBounds(510, 630, 70, 40);
+        cant11.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        cant11.setForeground(new java.awt.Color(34, 66, 73));
+        cant11.setText("Cant.");
+        getContentPane().add(cant11);
+        cant11.setBounds(510, 740, 70, 40);
 
-        cant7.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
-        cant7.setForeground(new java.awt.Color(34, 66, 73));
-        cant7.setText("Stock");
-        getContentPane().add(cant7);
-        cant7.setBounds(510, 730, 70, 40);
-
-        total2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        total2.setForeground(new java.awt.Color(34, 66, 73));
-        getContentPane().add(total2);
-        total2.setBounds(140, 860, 140, 40);
+        cant13.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        cant13.setForeground(new java.awt.Color(34, 66, 73));
+        cant13.setText("Agregar al inventario");
+        getContentPane().add(cant13);
+        cant13.setBounds(500, 130, 150, 40);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/93b5f9913d2e4316cd6e541c67b9aed0.jpg"))); // NOI18N
         getContentPane().add(jLabel1);
@@ -671,11 +750,71 @@ public class AdminComida extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void agregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_agregarMouseClicked
-
-        Carta go = new Carta();
+ try {
+            // TODO add your handling code here:
+            stnt = con.createStatement();
+            
+            ResultSet rsl = stnt.executeQuery("SELECT * FROM producto WHERE nombre =  '"+ comida1.getText()+"' AND subNombre = '"+subComida1.getText()+"' AND precio = "+ precioComida1.getText()+ "");
+            if(!rsl.next()){
+            stnt.executeUpdate("UPDATE producto SET nombre = '"+ comida1.getText()+"', subNombre = '"+subComida1.getText()+"', precio = "+ precioComida1.getText()+ " WHERE id = 10");               
+            JOptionPane.showMessageDialog(this, "cambio realizado con exito");
+            }
+            
+           
+            ResultSet rs2 = stnt.executeQuery("SELECT * FROM producto WHERE nombre =  '"+ comida2.getText()+"' AND subNombre = '"+subComida2.getText()+"' AND precio = "+ precioComida2.getText()+ "");
+            if(!rs2.first()){
+            stnt.executeUpdate("UPDATE producto SET nombre = '"+ comida2.getText()+"', subNombre = '"+subComida2.getText()+"', precio = "+ precioComida2.getText()+ " WHERE id = 11");               
+            JOptionPane.showMessageDialog(this, "cambio realizado con exito");
+            }
+            
+            
+            ResultSet rs3 = stnt.executeQuery("SELECT * FROM producto WHERE nombre = '"+ comida3.getText()+"' AND subNombre = '"+subComida3.getText()+"' AND precio = "+ precioComida3.getText()+ "");
+            if(!rs3.first()){
+            stnt.executeUpdate("UPDATE producto SET nombre = '"+ comida3.getText()+"', subNombre = '"+subComida3.getText()+"', precio = "+ precioComida3.getText()+ " WHERE id = 12");               
+            JOptionPane.showMessageDialog(this, "cambio realizado con exito");
+            }
+            
+            
+            ResultSet rs4 = stnt.executeQuery("SELECT * FROM producto WHERE nombre ='"+ comida4.getText()+"' AND subNombre = '"+subComida4.getText()+"' AND precio = "+ precioComida4.getText()+ "");
+            if(!rs4.first()){
+            stnt.executeUpdate("UPDATE producto SET nombre = '"+ comida4.getText()+"', subNombre = '"+subComida4.getText()+"', precio = "+ precioComida4.getText()+ " WHERE id = 13");               
+            JOptionPane.showMessageDialog(this, "cambio realizado con exito");
+            }
+            
+            
+            ResultSet rs5 = stnt.executeQuery("SELECT * FROM producto WHERE nombre = '"+ comida5.getText()+"' AND subNombre = '"+subComida5.getText()+"' AND precio = "+ precioComida5.getText()+ "");
+            if(!rs5.first()){
+            stnt.executeUpdate("UPDATE producto SET nombre = '"+ comida5.getText()+"', subNombre = '"+subComida5.getText()+"', precio = "+ precioComida5.getText()+ " WHERE id = 14");               
+            JOptionPane.showMessageDialog(this, "cambio realizado con exito");
+            }
+            
+            ResultSet rs6 = stnt.executeQuery("SELECT * FROM producto WHERE nombre = '"+ comida6.getText()+"' AND subNombre = '"+subComida6.getText()+"' AND precio = "+precioComida6.getText()+ "");
+            if(!rs6.first()){
+            stnt.executeUpdate("UPDATE producto SET nombre = '"+ comida6.getText()+"', subNombre = '"+subComida6.getText()+"', precio = "+ precioComida6.getText()+ " WHERE id = 15");               
+            JOptionPane.showMessageDialog(this, "cambio realizado con exito");
+            }
+            
+            ResultSet rs7 = stnt.executeQuery("SELECT * FROM producto WHERE nombre = '"+ comida7.getText()+"' AND subNombre = '"+subComida7.getText()+"' AND precio = "+ precioComida7.getText()+ "");
+            if(!rs7.first()){
+            stnt.executeUpdate("UPDATE producto SET nombre = '"+ comida7.getText()+"', subNombre = '"+subComida7.getText()+"', precio = "+ precioComida7.getText()+ " WHERE id = 16");               
+            JOptionPane.showMessageDialog(this, "cambio realizado con exito");
+            }
+ 
+                    
+      
+            ResultSet rsa = stnt.executeQuery("CALL ingresoInventario("+cantidad1.getText()+",10)");
+            ResultSet rsb = stnt.executeQuery("CALL ingresoInventario("+cantidad2.getText()+",11)");
+            ResultSet rsc = stnt.executeQuery("CALL ingresoInventario("+cantidad3.getText()+",12)");
+            ResultSet rsd = stnt.executeQuery("CALL ingresoInventario("+cantidad4.getText()+",13)");
+            ResultSet rse = stnt.executeQuery("CALL ingresoInventario("+cantidad5.getText()+",14)");
+            ResultSet rsf = stnt.executeQuery("CALL ingresoInventario("+cantidad6.getText()+",15)");
+            ResultSet rsg = stnt.executeQuery("CALL ingresoInventario("+cantidad7.getText()+",16)");
+                 
+        } catch (SQLException ex) {    
+        }
+        AdminMenu go = new AdminMenu();
         go.setVisible(true);
         this.setVisible(false);
-
     }//GEN-LAST:event_agregarMouseClicked
 
     private void cantidad1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cantidad1FocusGained
@@ -800,6 +939,26 @@ public class AdminComida extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_cantidad2ActionPerformed
 
+    private void formMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseMoved
+        // TODO add your handling code here:
+        if(cantidad1.getText().equals("")){
+            cantidad1.setText("0");
+            }if(cantidad2.getText().equals("")){
+            cantidad2.setText("0");
+            }if(cantidad3.getText().equals("")){
+            cantidad3.setText("0");
+            }if(cantidad4.getText().equals("")){
+            cantidad4.setText("0");
+            }if(cantidad5.getText().equals("")){
+            cantidad5.setText("0");
+            }if(cantidad6.getText().equals("")){
+            cantidad6.setText("0");
+            }if(cantidad7.getText().equals("")){
+            cantidad7.setText("0");}    
+  
+            
+    }//GEN-LAST:event_formMouseMoved
+
     /**
      * @param args the command line arguments
      */
@@ -838,12 +997,13 @@ public class AdminComida extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel agregar;
     private javax.swing.JLabel cant1;
+    private javax.swing.JLabel cant10;
+    private javax.swing.JLabel cant11;
+    private javax.swing.JLabel cant12;
+    private javax.swing.JLabel cant13;
     private javax.swing.JLabel cant2;
-    private javax.swing.JLabel cant3;
-    private javax.swing.JLabel cant4;
-    private javax.swing.JLabel cant5;
-    private javax.swing.JLabel cant6;
-    private javax.swing.JLabel cant7;
+    private javax.swing.JLabel cant8;
+    private javax.swing.JLabel cant9;
     private javax.swing.JTextField cantidad1;
     private javax.swing.JTextField cantidad2;
     private javax.swing.JTextField cantidad3;

@@ -56,11 +56,11 @@ public class RegistroUsuario extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        rut = new javax.swing.JTextField();
+        nombre = new javax.swing.JTextField();
+        apellido = new javax.swing.JTextField();
+        correo = new javax.swing.JTextField();
+        pass = new javax.swing.JPasswordField();
         jLabel5 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -73,24 +73,23 @@ public class RegistroUsuario extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(420, 550));
-        setPreferredSize(new java.awt.Dimension(420, 550));
         getContentPane().setLayout(null);
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        rut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                rutActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1);
-        jTextField1.setBounds(130, 250, 210, 30);
-        getContentPane().add(jTextField2);
-        jTextField2.setBounds(130, 290, 210, 30);
-        getContentPane().add(jTextField3);
-        jTextField3.setBounds(130, 330, 210, 30);
-        getContentPane().add(jTextField4);
-        jTextField4.setBounds(130, 370, 210, 30);
-        getContentPane().add(jPasswordField1);
-        jPasswordField1.setBounds(130, 410, 210, 30);
+        getContentPane().add(rut);
+        rut.setBounds(130, 250, 210, 30);
+        getContentPane().add(nombre);
+        nombre.setBounds(130, 290, 210, 30);
+        getContentPane().add(apellido);
+        apellido.setBounds(130, 330, 210, 30);
+        getContentPane().add(correo);
+        correo.setBounds(130, 370, 210, 30);
+        getContentPane().add(pass);
+        pass.setBounds(130, 410, 210, 30);
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(34, 66, 73));
@@ -102,6 +101,9 @@ public class RegistroUsuario extends javax.swing.JFrame {
         jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel3MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabel3MouseEntered(evt);
             }
         });
         getContentPane().add(jLabel3);
@@ -150,39 +152,38 @@ public class RegistroUsuario extends javax.swing.JFrame {
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
         // TODO add your handling code here:
-        String rut,nombres,apellidos,correo,pass;
-         rut = jTextField1.getText();
-         nombres = jTextField2.getText();
-         apellidos = jTextField3.getText();
-         correo = jTextField4.getText();
-         pass = jPasswordField1.getText();
-         try { // condicion en caso de error
-                stnt = con.createStatement();
-                ResultSet rs = null;
-  
-                rs = stnt.executeQuery("SELECT * FROM usuario WHERE rut = '" + rut + "'");
-                
-                if(!rs.next()){ 
-                if (jTextField1.getText().equals("") || (jTextField2.getText().equals("")) || (jTextField3.getText().equals("")) 
-                        || (jTextField4.getText().equals("")) || (jPasswordField1.getText().equals(""))){
-                    JOptionPane.showMessageDialog(this, "Debe ingresar todos los datos", "Error", 2); // 
-                }else{ 
-                    stnt.executeUpdate("INSERT INTO usuario VALUES(NULL,2,'"+ rut + "','"+nombres+"','"+apellidos+"','"+correo+"',SHA2('"+pass+"',0))"); 
-                    JOptionPane.showMessageDialog(this, "Usuario registrado con exito", "Ingreso Correcto", 1);
-                } 
-                }else{
-                    JOptionPane.showMessageDialog(this, "Usuario ya registrado", "Error", 2);
-                }
-           
-        } catch (SQLException ex) {// excepciones en el caso de haber un error
+        
+        try {
+        ResultSet rs1 = stnt.executeQuery("SELECT * FROM usuario WHERE rut = '" + rut.getText() + "' AND pass = SHA2('" +pass.getText() + "',0)"); // comando para buscar datos dento de la base de datos
+        if(!rs1.next()){
+            stnt = con.createStatement();                 
+            ResultSet rs = stnt.executeQuery("CALL agregarUsuario('"+rut.getText()+"','"+nombre.getText()+"','"+apellido.getText()+"','"+correo.getText()+"','"+pass.getText()+"')");
+            JOptionPane.showMessageDialog(this,"Usuario Agregado con exito","Ingreso realizado",1);     
+        
+        Login go = new Login();
+        go.setVisible(true);
+        this.setVisible(false);
+        }else{
+            JOptionPane.showMessageDialog(this,"Usuario ya registrado ","ERROR",0);     
+
         }
-       
+            
+  
+        } catch (SQLException ex) {
+            Logger.getLogger(RegistroUsuario.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+
 
     }//GEN-LAST:event_jLabel3MouseClicked
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void rutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rutActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_rutActionPerformed
+
+    private void jLabel3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel3MouseEntered
 
     /**
      * @param args the command line arguments
@@ -220,6 +221,8 @@ public class RegistroUsuario extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField apellido;
+    private javax.swing.JTextField correo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
@@ -229,10 +232,8 @@ public class RegistroUsuario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField nombre;
+    private javax.swing.JPasswordField pass;
+    private javax.swing.JTextField rut;
     // End of variables declaration//GEN-END:variables
 }

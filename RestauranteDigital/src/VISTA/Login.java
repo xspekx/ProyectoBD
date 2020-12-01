@@ -57,10 +57,10 @@ public class Login extends javax.swing.JFrame {
 
         jTextField1 = new javax.swing.JTextField();
         jPasswordField1 = new javax.swing.JPasswordField();
-        jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -78,17 +78,6 @@ public class Login extends javax.swing.JFrame {
         jTextField1.setBounds(160, 290, 210, 30);
         getContentPane().add(jPasswordField1);
         jPasswordField1.setBounds(160, 330, 210, 30);
-
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(34, 66, 73));
-        jLabel5.setText("ELIMINAR CUENTA");
-        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel5MouseClicked(evt);
-            }
-        });
-        getContentPane().add(jLabel5);
-        jLabel5.setBounds(60, 540, 230, 30);
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(34, 66, 73));
@@ -114,7 +103,23 @@ public class Login extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(60, 390, 326, 120);
+        jLabel3.setBounds(80, 370, 326, 120);
+
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(34, 66, 73));
+        jLabel8.setText("ACTUALIZAR CUENTA");
+        jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel8MouseClicked(evt);
+            }
+        });
+        jLabel8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jLabel8KeyReleased(evt);
+            }
+        });
+        getContentPane().add(jLabel8);
+        jLabel8.setBounds(60, 530, 260, 30);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/Imagen1.png"))); // NOI18N
         getContentPane().add(jLabel2);
@@ -141,7 +146,7 @@ public class Login extends javax.swing.JFrame {
                 stnt = con.createStatement();
                 ResultSet rs = null;
   
-                rs = stnt.executeQuery("SELECT * FROM usuario WHERE rut = '" + jTextField1.getText() + "' && pass = SHA2('" +jPasswordField1.getText() + "',0)"); // comando para buscar datos dento de la base de datos
+                rs = stnt.executeQuery("SELECT * FROM usuario WHERE rut = '" + jTextField1.getText() + "' AND pass = SHA2('" +jPasswordField1.getText() + "',0)"); // comando para buscar datos dento de la base de datos
                
                     while(rs.next()){
                         usuario = rs.getString("tipoUsuario_id_fk");
@@ -166,7 +171,7 @@ public class Login extends javax.swing.JFrame {
                         }
                           
                     }if(!usuario.equals("1") && !usuario.equals("2")){
-                        JOptionPane.showMessageDialog(this,"Usuario no existente","Error",2);
+                        JOptionPane.showMessageDialog(this,"rut/contraseña no valido","Error",2);
                     }
                 
         }catch(Exception e){
@@ -187,12 +192,31 @@ public class Login extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_jLabel4MouseClicked
 
-    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
+        try {
+            // TODO add your handling code here:
+ 
+            ResultSet rs2 = stnt.executeQuery("SELECT * FROM usuario WHERE rut = '" + jTextField1.getText() + "' AND pass = (SHA2('" +jPasswordField1.getText()+ "',0))");
+            if(rs2.next()){
+            ActualizarUsuario go = new ActualizarUsuario();
+            go.setVisible(true);
+            this.setVisible(false);
+            }else{
+            JOptionPane.showMessageDialog(this,"rut/contraseña no valido", "ERROR",2);
+        }
+            
+            
+            
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }//GEN-LAST:event_jLabel8MouseClicked
+
+    private void jLabel8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jLabel8KeyReleased
         // TODO add your handling code here:
-        Carta go = new Carta();
-        go.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_jLabel5MouseClicked
+    }//GEN-LAST:event_jLabel8KeyReleased
 
     /**
      * @param args the command line arguments
@@ -234,10 +258,10 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JPasswordField jPasswordField1;
+    private javax.swing.JLabel jLabel8;
+    public static javax.swing.JPasswordField jPasswordField1;
     public static javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

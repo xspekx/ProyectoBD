@@ -8,6 +8,7 @@ package VISTA;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -44,6 +45,63 @@ public class MenuPostres extends javax.swing.JFrame {
     }catch(Exception e){// excepciones en el caso de haber un error
          Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null,e); 
     }
+    
+     try {
+    stnt = con.createStatement(); 
+    ResultSet rsl;
+       
+    rsl = stnt.executeQuery("SELECT * FROM producto WHERE id>16");
+    if(rsl.next()){ 
+    postre1.setText(rsl.getString("nombre"));
+    subPostre1.setText(rsl.getString("subNombre"));
+    precioPostre1.setText(String.valueOf(rsl.getInt("precio")));
+    }if(rsl.next()){ 
+    postre2.setText(rsl.getString("nombre"));
+    subPostre2.setText(rsl.getString("subNombre"));
+    precioPostre2.setText(String.valueOf(rsl.getInt("precio")));
+    }if(rsl.next()){ 
+    postre3.setText(rsl.getString("nombre"));
+    subPostre3.setText(rsl.getString("subNombre"));
+    precioPostre3.setText(String.valueOf(rsl.getInt("precio")));
+    }if(rsl.next()){ 
+    postre4.setText(rsl.getString("nombre"));
+    subPostre4.setText(rsl.getString("subNombre"));
+    precioPostre4.setText(String.valueOf(rsl.getInt("precio")));
+    }if(rsl.next()){ 
+    postre5.setText(rsl.getString("nombre"));
+    subPostre5.setText(rsl.getString("subNombre"));
+    precioPostre5.setText(String.valueOf(rsl.getInt("precio")));
+    }if(rsl.next()){ 
+    postre6.setText(rsl.getString("nombre"));
+    subPostre6.setText(rsl.getString("subNombre"));
+    precioPostre6.setText(String.valueOf(rsl.getInt("precio")));
+    }if(rsl.next()){ 
+    postre7.setText(rsl.getString("nombre"));
+    subPostre7.setText(rsl.getString("subNombre"));
+    precioPostre7.setText(String.valueOf(rsl.getInt("precio")));
+    }
+         } catch (SQLException ex) {
+            Logger.getLogger(MenuComida.class.getName()).log(Level.SEVERE, null, ex);
+        }    
+     limpiar();
+     
+      if(cantidad1.getText().equals("")){
+            cantidad1.setText("0");
+            }if(cantidad2.getText().equals("")){
+            cantidad2.setText("0");
+            }if(cantidad3.getText().equals("")){
+            cantidad3.setText("0");
+            }if(cantidad4.getText().equals("")){
+            cantidad4.setText("0");
+            }if(cantidad5.getText().equals("")){
+            cantidad5.setText("0");
+            }if(cantidad6.getText().equals("")){
+            cantidad6.setText("0");
+            }if(cantidad7.getText().equals("")){
+            cantidad7.setText("0");
+            }
+
+    
     }
 
     /**
@@ -616,56 +674,57 @@ public class MenuPostres extends javax.swing.JFrame {
                 try {
                 stnt = con.createStatement();
                 ResultSet rs = null;
-                if(Integer.parseInt(cantidad1.getText())>=0){
+                if(Integer.parseInt(cantidad1.getText())>0){
                     rs = stnt.executeQuery("SELECT * FROM producto WHERE id = 17 && stock<"+cantidad1.getText()+"");               
                     if(rs.next()){
                     JOptionPane.showMessageDialog(this,"Disculpe el inconveniente pero tenemos un stock de "+ " " + rs.getInt("stock") + " en " + rs.getString("nombre"),"Error",2);
                     }else{
-                    rs = stnt.executeQuery("CALL registroVen((SELECT MAX(factura.id) FROM usuario INNER JOIN factura ON factura.usuario_id_fk = usuario.id WHERE usuario.rut = '"+rut+"'),17,"
+                    rs = stnt.executeQuery("CALL registroVenta((SELECT MAX(factura.id) FROM usuario INNER JOIN factura ON factura.usuario_id_fk = usuario.id WHERE usuario.rut = '"+rut+"'),17,"
                                              +cantidad1.getText()+","+precioTotal1+")");}
                 }if(Integer.parseInt(cantidad2.getText())>0){
                     rs = stnt.executeQuery("SELECT * FROM producto WHERE id = 18 && stock<"+cantidad2.getText()+"");               
                     if(rs.next()){
                     JOptionPane.showMessageDialog(this,"Disculpe el inconveniente pero tenemos un stock de "+ " " + rs.getInt("stock") + " en " + rs.getString("nombre"),"Error",2);
                     }else{
-                    rs = stnt.executeQuery("CALL registroVen((SELECT MAX(factura.id) FROM usuario INNER JOIN factura ON factura.usuario_id_fk = usuario.id WHERE usuario.rut = '"+rut+"'),18,"
+                    rs = stnt.executeQuery("CALL registroVenta((SELECT MAX(factura.id) FROM usuario INNER JOIN factura ON factura.usuario_id_fk = usuario.id WHERE usuario.rut = '"+rut+"'),18,"
                                              +cantidad2.getText()+","+precioTotal2+")");} 
                 }if(Integer.parseInt(cantidad3.getText())>0){
                     rs = stnt.executeQuery("SELECT * FROM producto WHERE id = 19 && stock<"+cantidad3.getText()+"");               
                     if(rs.next()){
                     JOptionPane.showMessageDialog(this,"Disculpe el inconveniente pero tenemos un stock de "+ " " + rs.getInt("stock") + " en " + rs.getString("nombre"),"Error",2);
                     }else{
-                     rs = stnt.executeQuery("CALL registroVen((SELECT MAX(factura.id) FROM usuario INNER JOIN factura ON factura.usuario_id_fk = usuario.id WHERE usuario.rut = '"+rut+"'),19,"
+                     rs = stnt.executeQuery("CALL registroVenta((SELECT MAX(factura.id) FROM usuario INNER JOIN factura ON factura.usuario_id_fk = usuario.id WHERE usuario.rut = '"+rut+"'),19,"
                                              +cantidad3.getText()+","+precioTotal3+")");}          
                 }if(Integer.parseInt(cantidad4.getText())>0){
                     rs = stnt.executeQuery("SELECT * FROM producto WHERE id = 20 && stock<"+cantidad4.getText()+"");               
                     if(rs.next()){
                     JOptionPane.showMessageDialog(this,"Disculpe el inconveniente pero tenemos un stock de "+ " " + rs.getInt("stock") + " en " + rs.getString("nombre"),"Error",2);
                     }else{
-                    rs = stnt.executeQuery("CALL registroVen((SELECT MAX(factura.id) FROM usuario INNER JOIN factura ON factura.usuario_id_fk = usuario.id WHERE usuario.rut = '"+rut+"'),20,"
+                    rs = stnt.executeQuery("CALL registroVenta((SELECT MAX(factura.id) FROM usuario INNER JOIN factura ON factura.usuario_id_fk = usuario.id WHERE usuario.rut = '"+rut+"'),20,"
                                              +cantidad4.getText()+","+precioTotal4+")");}           
                 }if(Integer.parseInt(cantidad5.getText())>0){
                     rs = stnt.executeQuery("SELECT * FROM producto WHERE id = 21 && stock<"+cantidad5.getText()+"");               
                     if(rs.next()){
                     JOptionPane.showMessageDialog(this,"Disculpe el inconveniente pero tenemos un stock de "+ " " + rs.getInt("stock") + " en " + rs.getString("nombre"),"Error",2);
                     }else{
-                    rs = stnt.executeQuery("CALL registroVen((SELECT MAX(factura.id) FROM usuario INNER JOIN factura ON factura.usuario_id_fk = usuario.id WHERE usuario.rut = '"+rut+"'),21,"
+                    rs = stnt.executeQuery("CALL registroVenta((SELECT MAX(factura.id) FROM usuario INNER JOIN factura ON factura.usuario_id_fk = usuario.id WHERE usuario.rut = '"+rut+"'),21,"
                                              +cantidad5.getText()+","+precioTotal5+")");}           
                 }if(Integer.parseInt(cantidad6.getText())>0){
                     rs = stnt.executeQuery("SELECT * FROM producto WHERE id = 22 && stock<"+cantidad6.getText()+"");               
                     if(rs.next()){
                     JOptionPane.showMessageDialog(this,"Disculpe el inconveniente pero tenemos un stock de " + " " + rs.getInt("stock") + " en " + rs.getString("nombre"),"Error",2);
                     }else{
-                    rs = stnt.executeQuery("CALL registroVen((SELECT MAX(factura.id) FROM usuario INNER JOIN factura ON factura.usuario_id_fk = usuario.id WHERE usuario.rut = '"+rut+"'),22,"
+                    rs = stnt.executeQuery("CALL registroVenta((SELECT MAX(factura.id) FROM usuario INNER JOIN factura ON factura.usuario_id_fk = usuario.id WHERE usuario.rut = '"+rut+"'),22,"
                                              +cantidad6.getText()+","+precioTotal6+")");}           
                 }if(Integer.parseInt(cantidad7.getText())>0){
                     rs = stnt.executeQuery("SELECT * FROM producto WHERE id = 23 && stock<"+cantidad7.getText()+"");               
                     if(rs.next()){
                     JOptionPane.showMessageDialog(this,"Disculpe el inconveniente pero tenemos un stock de " + " " + rs.getInt("stock") + " en " + rs.getString("nombre"),"Error",2);
                     }else{
-                    rs = stnt.executeQuery("CALL registroVen((SELECT MAX(factura.id) FROM usuario INNER JOIN factura ON factura.usuario_id_fk = usuario.id WHERE usuario.rut = '"+rut+"'),23,"
+                    rs = stnt.executeQuery("CALL registroVenta((SELECT MAX(factura.id) FROM usuario INNER JOIN factura ON factura.usuario_id_fk = usuario.id WHERE usuario.rut = '"+rut+"'),23,"
                                              +cantidad7.getText()+","+precioTotal7+")");}           
                 }
+                
                   }catch(Exception e){
                    }
         Carta go = new Carta();
@@ -811,6 +870,8 @@ public class MenuPostres extends javax.swing.JFrame {
             cantidad6.setText("0");
             }if(cantidad7.getText().equals("")){
             cantidad7.setText("0");}     
+            
+            
        if(Integer.parseInt(cantidad1.getText())>=0){    
        int a = Integer.parseInt(precioPostre1.getText());
        int b = Integer.parseInt(precioPostre2.getText());
@@ -828,8 +889,18 @@ public class MenuPostres extends javax.swing.JFrame {
        int gg = Integer.parseInt(cantidad7.getText());
        total1.setText(String.valueOf((a*aa)+(b*bb)+(c*cc)+(d*dd)+(e*ee)+(f*ff)+(g*gg)));
        }
+      
     }//GEN-LAST:event_formMouseMoved
+ public void limpiar(){
+       cantidad1.setText("0");
+       cantidad2.setText("0");
+       cantidad3.setText("0");
+       cantidad4.setText("0");
+       cantidad5.setText("0");
+       cantidad6.setText("0");
+       cantidad7.setText("0");
 
+}
     /**
      * @param args the command line arguments
      */

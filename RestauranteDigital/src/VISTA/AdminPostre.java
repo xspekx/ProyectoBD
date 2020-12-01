@@ -5,11 +5,23 @@
  */
 package VISTA;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author reyna
  */
 public class AdminPostre extends javax.swing.JFrame {
+    Connection con = null; 
+    Statement stnt = null;
+
 
     /**
      * Creates new form AdminPostre
@@ -18,6 +30,78 @@ public class AdminPostre extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setFocusable(true);
+        
+                    try {
+    String url = "jdbc:mysql://localhost:3306/restaurante"; // direccion donde se encuentra la base de datos
+    String usuario = "root"; // usuario de la gestion de base de datos
+    String contraseña = "123"; // contraseña para entrar a la base de datos
+                
+    Class.forName("com.mysql.jdbc.Driver").newInstance(); // carga el driver para conectarce
+    con = (Connection) DriverManager.getConnection(url,usuario,contraseña); // se conecta a la base de datos nuestro programa 
+    if(con != null){
+                System.out.println("Conexion Exitosa!");
+            }else{
+                System.out.println("Conexion Fallida!");                
+            }
+    }catch(Exception e){// excepciones en el caso de haber un error
+         Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null,e); 
+    }
+                    
+    try {
+    stnt = con.createStatement(); 
+    ResultSet rsl;
+       
+    rsl = stnt.executeQuery("SELECT * FROM producto WHERE id>16");
+    if(rsl.next()){ 
+    postre1.setText(rsl.getString("nombre"));
+    subPostre1.setText(rsl.getString("subNombre"));
+    precioPostre1.setText(String.valueOf(rsl.getInt("precio")));
+    }if(rsl.next()){ 
+    postre2.setText(rsl.getString("nombre"));
+    subPostre2.setText(rsl.getString("subNombre"));
+    precioPostre2.setText(String.valueOf(rsl.getInt("precio")));
+    }if(rsl.next()){ 
+    postre3.setText(rsl.getString("nombre"));
+    subPostre3.setText(rsl.getString("subNombre"));
+    precioPostre3.setText(String.valueOf(rsl.getInt("precio")));
+    }if(rsl.next()){ 
+    postre4.setText(rsl.getString("nombre"));
+    subPostre4.setText(rsl.getString("subNombre"));
+    precioPostre4.setText(String.valueOf(rsl.getInt("precio")));
+    }if(rsl.next()){ 
+    postre5.setText(rsl.getString("nombre"));
+    subPostre5.setText(rsl.getString("subNombre"));
+    precioPostre5.setText(String.valueOf(rsl.getInt("precio")));
+    }if(rsl.next()){ 
+    postre6.setText(rsl.getString("nombre"));
+    subPostre6.setText(rsl.getString("subNombre"));
+    precioPostre6.setText(String.valueOf(rsl.getInt("precio")));
+    }if(rsl.next()){ 
+    postre7.setText(rsl.getString("nombre"));
+    subPostre7.setText(rsl.getString("subNombre"));
+    precioPostre7.setText(String.valueOf(rsl.getInt("precio")));
+    }
+    }   catch (SQLException ex) {
+            Logger.getLogger(AdminComida.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    
+    
+     if(cantidad1.getText().equals("")){
+            cantidad1.setText("0");
+            }if(cantidad2.getText().equals("")){
+            cantidad2.setText("0");
+            }if(cantidad3.getText().equals("")){
+            cantidad3.setText("0");
+            }if(cantidad4.getText().equals("")){
+            cantidad4.setText("0");
+            }if(cantidad5.getText().equals("")){
+            cantidad5.setText("0");
+            }if(cantidad6.getText().equals("")){
+            cantidad6.setText("0");
+            }if(cantidad7.getText().equals("")){
+            cantidad7.setText("0");
+            }
+    
     }
 
     /**
@@ -32,6 +116,7 @@ public class AdminPostre extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
+        cant13 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
@@ -40,11 +125,11 @@ public class AdminPostre extends javax.swing.JFrame {
         subPostre5 = new javax.swing.JTextArea();
         subPostre4 = new javax.swing.JTextArea();
         subPostre3 = new javax.swing.JTextArea();
+        subPostre2 = new javax.swing.JTextArea();
+        subPostre1 = new javax.swing.JTextArea();
         jLabel60 = new javax.swing.JLabel();
         jLabel61 = new javax.swing.JLabel();
-        subPostre2 = new javax.swing.JTextArea();
         total2 = new javax.swing.JLabel();
-        subPostre1 = new javax.swing.JTextArea();
         simbolo1 = new javax.swing.JLabel();
         simbolo2 = new javax.swing.JLabel();
         simbolo3 = new javax.swing.JLabel();
@@ -55,38 +140,42 @@ public class AdminPostre extends javax.swing.JFrame {
         simbolo8 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         cantidad1 = new javax.swing.JTextField();
+        cantidad2 = new javax.swing.JTextField();
         cantidad3 = new javax.swing.JTextField();
         cantidad4 = new javax.swing.JTextField();
         cantidad5 = new javax.swing.JTextField();
         cantidad6 = new javax.swing.JTextField();
         cantidad7 = new javax.swing.JTextField();
-        cantidad2 = new javax.swing.JTextField();
-        comida1 = new javax.swing.JTextArea();
-        comida2 = new javax.swing.JTextArea();
-        comida3 = new javax.swing.JTextArea();
-        comida4 = new javax.swing.JTextArea();
-        comida5 = new javax.swing.JTextArea();
-        comida6 = new javax.swing.JTextArea();
-        comida7 = new javax.swing.JTextArea();
-        precioComida7 = new javax.swing.JTextArea();
-        precioComida6 = new javax.swing.JTextArea();
-        precioComida5 = new javax.swing.JTextArea();
-        precioComida4 = new javax.swing.JTextArea();
-        precioComida3 = new javax.swing.JTextArea();
-        precioComida2 = new javax.swing.JTextArea();
-        precioComida1 = new javax.swing.JTextArea();
+        postre1 = new javax.swing.JTextArea();
+        postre2 = new javax.swing.JTextArea();
+        postre3 = new javax.swing.JTextArea();
+        postre4 = new javax.swing.JTextArea();
+        postre5 = new javax.swing.JTextArea();
+        postre6 = new javax.swing.JTextArea();
+        postre7 = new javax.swing.JTextArea();
+        precioPostre7 = new javax.swing.JTextArea();
+        precioPostre6 = new javax.swing.JTextArea();
+        precioPostre5 = new javax.swing.JTextArea();
+        precioPostre4 = new javax.swing.JTextArea();
+        precioPostre3 = new javax.swing.JTextArea();
+        precioPostre2 = new javax.swing.JTextArea();
+        precioPostre1 = new javax.swing.JTextArea();
+        cant8 = new javax.swing.JLabel();
+        cant9 = new javax.swing.JLabel();
+        cant10 = new javax.swing.JLabel();
+        cant11 = new javax.swing.JLabel();
         cant1 = new javax.swing.JLabel();
         cant2 = new javax.swing.JLabel();
-        cant3 = new javax.swing.JLabel();
-        cant4 = new javax.swing.JLabel();
-        cant5 = new javax.swing.JLabel();
-        cant6 = new javax.swing.JLabel();
-        cant7 = new javax.swing.JLabel();
+        cant12 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(680, 940));
-        setPreferredSize(new java.awt.Dimension(680, 940));
+        addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                formMouseMoved(evt);
+            }
+        });
         getContentPane().setLayout(null);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -106,6 +195,12 @@ public class AdminPostre extends javax.swing.JFrame {
         jLabel11.setText("1.");
         getContentPane().add(jLabel11);
         jLabel11.setBounds(30, 150, 50, 60);
+
+        cant13.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        cant13.setForeground(new java.awt.Color(34, 66, 73));
+        cant13.setText("Agregar al inventario");
+        getContentPane().add(cant13);
+        cant13.setBounds(510, 130, 150, 40);
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(34, 66, 73));
@@ -205,18 +300,6 @@ public class AdminPostre extends javax.swing.JFrame {
         getContentPane().add(subPostre3);
         subPostre3.setBounds(60, 380, 310, 60);
 
-        jLabel60.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel60.setForeground(new java.awt.Color(34, 66, 73));
-        jLabel60.setText("6.");
-        getContentPane().add(jLabel60);
-        jLabel60.setBounds(30, 620, 50, 60);
-
-        jLabel61.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel61.setForeground(new java.awt.Color(34, 66, 73));
-        jLabel61.setText("7.");
-        getContentPane().add(jLabel61);
-        jLabel61.setBounds(30, 720, 50, 60);
-
         subPostre2.setEditable(false);
         subPostre2.setColumns(20);
         subPostre2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -233,17 +316,6 @@ public class AdminPostre extends javax.swing.JFrame {
         getContentPane().add(subPostre2);
         subPostre2.setBounds(60, 280, 300, 70);
 
-        total2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        total2.setForeground(new java.awt.Color(34, 66, 73));
-        total2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/agregar.png"))); // NOI18N
-        total2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                total2MouseClicked(evt);
-            }
-        });
-        getContentPane().add(total2);
-        total2.setBounds(400, 840, 200, 80);
-
         subPostre1.setEditable(false);
         subPostre1.setColumns(20);
         subPostre1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -259,6 +331,29 @@ public class AdminPostre extends javax.swing.JFrame {
         subPostre1.setSelectionColor(new java.awt.Color(34, 66, 73));
         getContentPane().add(subPostre1);
         subPostre1.setBounds(60, 190, 320, 60);
+
+        jLabel60.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel60.setForeground(new java.awt.Color(34, 66, 73));
+        jLabel60.setText("6.");
+        getContentPane().add(jLabel60);
+        jLabel60.setBounds(30, 620, 50, 60);
+
+        jLabel61.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel61.setForeground(new java.awt.Color(34, 66, 73));
+        jLabel61.setText("7.");
+        getContentPane().add(jLabel61);
+        jLabel61.setBounds(30, 720, 50, 60);
+
+        total2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        total2.setForeground(new java.awt.Color(34, 66, 73));
+        total2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/agregar.png"))); // NOI18N
+        total2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                total2MouseClicked(evt);
+            }
+        });
+        getContentPane().add(total2);
+        total2.setBounds(400, 840, 200, 80);
 
         simbolo1.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
         simbolo1.setForeground(new java.awt.Color(255, 102, 0));
@@ -329,6 +424,22 @@ public class AdminPostre extends javax.swing.JFrame {
         });
         getContentPane().add(cantidad1);
         cantidad1.setBounds(570, 170, 60, 30);
+
+        cantidad2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                cantidad2FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                cantidad2FocusLost(evt);
+            }
+        });
+        cantidad2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cantidad2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(cantidad2);
+        cantidad2.setBounds(570, 260, 60, 30);
 
         cantidad3.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -410,259 +521,243 @@ public class AdminPostre extends javax.swing.JFrame {
         getContentPane().add(cantidad7);
         cantidad7.setBounds(570, 740, 60, 30);
 
-        cantidad2.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                cantidad2FocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                cantidad2FocusLost(evt);
-            }
-        });
-        cantidad2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cantidad2ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(cantidad2);
-        cantidad2.setBounds(570, 260, 60, 30);
+        postre1.setColumns(20);
+        postre1.setFont(new java.awt.Font("Segoe UI", 1, 19)); // NOI18N
+        postre1.setForeground(new java.awt.Color(255, 102, 0));
+        postre1.setLineWrap(true);
+        postre1.setRows(5);
+        postre1.setText("MOUSSE DE CHOCOLATE");
+        postre1.setBorder(null);
+        postre1.setCaretColor(new java.awt.Color(255, 255, 255));
+        postre1.setDisabledTextColor(new java.awt.Color(34, 66, 73));
+        postre1.setMinimumSize(new java.awt.Dimension(150, 20));
+        postre1.setSelectionColor(new java.awt.Color(34, 66, 73));
+        getContentPane().add(postre1);
+        postre1.setBounds(60, 160, 340, 30);
 
-        comida1.setColumns(20);
-        comida1.setFont(new java.awt.Font("Segoe UI", 1, 19)); // NOI18N
-        comida1.setForeground(new java.awt.Color(255, 102, 0));
-        comida1.setLineWrap(true);
-        comida1.setRows(5);
-        comida1.setText("MOUSSE DE CHOCOLATE");
-        comida1.setBorder(null);
-        comida1.setCaretColor(new java.awt.Color(255, 255, 255));
-        comida1.setDisabledTextColor(new java.awt.Color(34, 66, 73));
-        comida1.setMinimumSize(new java.awt.Dimension(150, 20));
-        comida1.setSelectionColor(new java.awt.Color(34, 66, 73));
-        getContentPane().add(comida1);
-        comida1.setBounds(60, 160, 340, 30);
+        postre2.setColumns(20);
+        postre2.setFont(new java.awt.Font("Segoe UI", 1, 19)); // NOI18N
+        postre2.setForeground(new java.awt.Color(255, 102, 0));
+        postre2.setLineWrap(true);
+        postre2.setRows(5);
+        postre2.setText("PASTEL OPERA");
+        postre2.setBorder(null);
+        postre2.setCaretColor(new java.awt.Color(255, 255, 255));
+        postre2.setDisabledTextColor(new java.awt.Color(34, 66, 73));
+        postre2.setMinimumSize(new java.awt.Dimension(150, 20));
+        postre2.setSelectionColor(new java.awt.Color(34, 66, 73));
+        getContentPane().add(postre2);
+        postre2.setBounds(60, 250, 340, 30);
 
-        comida2.setColumns(20);
-        comida2.setFont(new java.awt.Font("Segoe UI", 1, 19)); // NOI18N
-        comida2.setForeground(new java.awt.Color(255, 102, 0));
-        comida2.setLineWrap(true);
-        comida2.setRows(5);
-        comida2.setText("PASTEL OPERA");
-        comida2.setBorder(null);
-        comida2.setCaretColor(new java.awt.Color(255, 255, 255));
-        comida2.setDisabledTextColor(new java.awt.Color(34, 66, 73));
-        comida2.setMinimumSize(new java.awt.Dimension(150, 20));
-        comida2.setSelectionColor(new java.awt.Color(34, 66, 73));
-        getContentPane().add(comida2);
-        comida2.setBounds(60, 250, 340, 30);
+        postre3.setColumns(20);
+        postre3.setFont(new java.awt.Font("Segoe UI", 1, 19)); // NOI18N
+        postre3.setForeground(new java.awt.Color(255, 102, 0));
+        postre3.setLineWrap(true);
+        postre3.setRows(5);
+        postre3.setText("WAFFLES CON FRUTOS ROJOS");
+        postre3.setBorder(null);
+        postre3.setCaretColor(new java.awt.Color(255, 255, 255));
+        postre3.setDisabledTextColor(new java.awt.Color(34, 66, 73));
+        postre3.setMinimumSize(new java.awt.Dimension(150, 20));
+        postre3.setSelectionColor(new java.awt.Color(34, 66, 73));
+        getContentPane().add(postre3);
+        postre3.setBounds(60, 350, 340, 30);
 
-        comida3.setColumns(20);
-        comida3.setFont(new java.awt.Font("Segoe UI", 1, 19)); // NOI18N
-        comida3.setForeground(new java.awt.Color(255, 102, 0));
-        comida3.setLineWrap(true);
-        comida3.setRows(5);
-        comida3.setText("WAFFLES CON FRUTOS ROJOS");
-        comida3.setBorder(null);
-        comida3.setCaretColor(new java.awt.Color(255, 255, 255));
-        comida3.setDisabledTextColor(new java.awt.Color(34, 66, 73));
-        comida3.setMinimumSize(new java.awt.Dimension(150, 20));
-        comida3.setSelectionColor(new java.awt.Color(34, 66, 73));
-        getContentPane().add(comida3);
-        comida3.setBounds(60, 350, 340, 30);
+        postre4.setColumns(20);
+        postre4.setFont(new java.awt.Font("Segoe UI", 1, 19)); // NOI18N
+        postre4.setForeground(new java.awt.Color(255, 102, 0));
+        postre4.setLineWrap(true);
+        postre4.setRows(5);
+        postre4.setText("BIZCOCHO DE PISTACHO");
+        postre4.setBorder(null);
+        postre4.setCaretColor(new java.awt.Color(255, 255, 255));
+        postre4.setDisabledTextColor(new java.awt.Color(34, 66, 73));
+        postre4.setMinimumSize(new java.awt.Dimension(150, 20));
+        postre4.setSelectionColor(new java.awt.Color(34, 66, 73));
+        getContentPane().add(postre4);
+        postre4.setBounds(60, 440, 340, 30);
 
-        comida4.setColumns(20);
-        comida4.setFont(new java.awt.Font("Segoe UI", 1, 19)); // NOI18N
-        comida4.setForeground(new java.awt.Color(255, 102, 0));
-        comida4.setLineWrap(true);
-        comida4.setRows(5);
-        comida4.setText("BIZCOCHO DE PISTACHO");
-        comida4.setBorder(null);
-        comida4.setCaretColor(new java.awt.Color(255, 255, 255));
-        comida4.setDisabledTextColor(new java.awt.Color(34, 66, 73));
-        comida4.setMinimumSize(new java.awt.Dimension(150, 20));
-        comida4.setSelectionColor(new java.awt.Color(34, 66, 73));
-        getContentPane().add(comida4);
-        comida4.setBounds(60, 440, 340, 30);
+        postre5.setColumns(20);
+        postre5.setFont(new java.awt.Font("Segoe UI", 1, 19)); // NOI18N
+        postre5.setForeground(new java.awt.Color(255, 102, 0));
+        postre5.setLineWrap(true);
+        postre5.setRows(5);
+        postre5.setText("BANANA SPLIT");
+        postre5.setBorder(null);
+        postre5.setCaretColor(new java.awt.Color(255, 255, 255));
+        postre5.setDisabledTextColor(new java.awt.Color(34, 66, 73));
+        postre5.setMinimumSize(new java.awt.Dimension(150, 20));
+        postre5.setSelectionColor(new java.awt.Color(34, 66, 73));
+        getContentPane().add(postre5);
+        postre5.setBounds(60, 540, 340, 30);
 
-        comida5.setColumns(20);
-        comida5.setFont(new java.awt.Font("Segoe UI", 1, 19)); // NOI18N
-        comida5.setForeground(new java.awt.Color(255, 102, 0));
-        comida5.setLineWrap(true);
-        comida5.setRows(5);
-        comida5.setText("BANANA SPLIT");
-        comida5.setBorder(null);
-        comida5.setCaretColor(new java.awt.Color(255, 255, 255));
-        comida5.setDisabledTextColor(new java.awt.Color(34, 66, 73));
-        comida5.setMinimumSize(new java.awt.Dimension(150, 20));
-        comida5.setSelectionColor(new java.awt.Color(34, 66, 73));
-        getContentPane().add(comida5);
-        comida5.setBounds(60, 540, 340, 30);
+        postre6.setColumns(20);
+        postre6.setFont(new java.awt.Font("Segoe UI", 1, 19)); // NOI18N
+        postre6.setForeground(new java.awt.Color(255, 102, 0));
+        postre6.setLineWrap(true);
+        postre6.setRows(5);
+        postre6.setText("POLLO A LA BRASA");
+        postre6.setBorder(null);
+        postre6.setCaretColor(new java.awt.Color(255, 255, 255));
+        postre6.setDisabledTextColor(new java.awt.Color(34, 66, 73));
+        postre6.setMinimumSize(new java.awt.Dimension(150, 20));
+        postre6.setSelectionColor(new java.awt.Color(34, 66, 73));
+        getContentPane().add(postre6);
+        postre6.setBounds(60, 630, 340, 30);
 
-        comida6.setColumns(20);
-        comida6.setFont(new java.awt.Font("Segoe UI", 1, 19)); // NOI18N
-        comida6.setForeground(new java.awt.Color(255, 102, 0));
-        comida6.setLineWrap(true);
-        comida6.setRows(5);
-        comida6.setText("POLLO A LA BRASA");
-        comida6.setBorder(null);
-        comida6.setCaretColor(new java.awt.Color(255, 255, 255));
-        comida6.setDisabledTextColor(new java.awt.Color(34, 66, 73));
-        comida6.setMinimumSize(new java.awt.Dimension(150, 20));
-        comida6.setSelectionColor(new java.awt.Color(34, 66, 73));
-        getContentPane().add(comida6);
-        comida6.setBounds(60, 630, 340, 30);
+        postre7.setColumns(20);
+        postre7.setFont(new java.awt.Font("Segoe UI", 1, 19)); // NOI18N
+        postre7.setForeground(new java.awt.Color(255, 102, 0));
+        postre7.setLineWrap(true);
+        postre7.setRows(5);
+        postre7.setText("COPA LIMON Y MENTA");
+        postre7.setBorder(null);
+        postre7.setCaretColor(new java.awt.Color(255, 255, 255));
+        postre7.setDisabledTextColor(new java.awt.Color(34, 66, 73));
+        postre7.setMinimumSize(new java.awt.Dimension(150, 20));
+        postre7.setSelectionColor(new java.awt.Color(34, 66, 73));
+        getContentPane().add(postre7);
+        postre7.setBounds(60, 730, 340, 30);
 
-        comida7.setColumns(20);
-        comida7.setFont(new java.awt.Font("Segoe UI", 1, 19)); // NOI18N
-        comida7.setForeground(new java.awt.Color(255, 102, 0));
-        comida7.setLineWrap(true);
-        comida7.setRows(5);
-        comida7.setText("COPA LIMON Y MENTA");
-        comida7.setBorder(null);
-        comida7.setCaretColor(new java.awt.Color(255, 255, 255));
-        comida7.setDisabledTextColor(new java.awt.Color(34, 66, 73));
-        comida7.setMinimumSize(new java.awt.Dimension(150, 20));
-        comida7.setSelectionColor(new java.awt.Color(34, 66, 73));
-        getContentPane().add(comida7);
-        comida7.setBounds(60, 730, 340, 30);
+        precioPostre7.setColumns(20);
+        precioPostre7.setFont(new java.awt.Font("Segoe UI", 1, 19)); // NOI18N
+        precioPostre7.setForeground(new java.awt.Color(255, 102, 0));
+        precioPostre7.setLineWrap(true);
+        precioPostre7.setRows(5);
+        precioPostre7.setText("4990\n");
+        precioPostre7.setBorder(null);
+        precioPostre7.setCaretColor(new java.awt.Color(255, 255, 255));
+        precioPostre7.setDisabledTextColor(new java.awt.Color(34, 66, 73));
+        precioPostre7.setMinimumSize(new java.awt.Dimension(150, 20));
+        precioPostre7.setSelectionColor(new java.awt.Color(34, 66, 73));
+        getContentPane().add(precioPostre7);
+        precioPostre7.setBounds(440, 740, 70, 30);
 
-        precioComida7.setColumns(20);
-        precioComida7.setFont(new java.awt.Font("Segoe UI", 1, 19)); // NOI18N
-        precioComida7.setForeground(new java.awt.Color(255, 102, 0));
-        precioComida7.setLineWrap(true);
-        precioComida7.setRows(5);
-        precioComida7.setText("8990");
-        precioComida7.setBorder(null);
-        precioComida7.setCaretColor(new java.awt.Color(255, 255, 255));
-        precioComida7.setDisabledTextColor(new java.awt.Color(34, 66, 73));
-        precioComida7.setMinimumSize(new java.awt.Dimension(150, 20));
-        precioComida7.setSelectionColor(new java.awt.Color(34, 66, 73));
-        getContentPane().add(precioComida7);
-        precioComida7.setBounds(440, 740, 70, 30);
+        precioPostre6.setColumns(20);
+        precioPostre6.setFont(new java.awt.Font("Segoe UI", 1, 19)); // NOI18N
+        precioPostre6.setForeground(new java.awt.Color(255, 102, 0));
+        precioPostre6.setLineWrap(true);
+        precioPostre6.setRows(5);
+        precioPostre6.setText("4990\n");
+        precioPostre6.setBorder(null);
+        precioPostre6.setCaretColor(new java.awt.Color(255, 255, 255));
+        precioPostre6.setDisabledTextColor(new java.awt.Color(34, 66, 73));
+        precioPostre6.setMinimumSize(new java.awt.Dimension(150, 20));
+        precioPostre6.setSelectionColor(new java.awt.Color(34, 66, 73));
+        getContentPane().add(precioPostre6);
+        precioPostre6.setBounds(440, 640, 70, 30);
 
-        precioComida6.setColumns(20);
-        precioComida6.setFont(new java.awt.Font("Segoe UI", 1, 19)); // NOI18N
-        precioComida6.setForeground(new java.awt.Color(255, 102, 0));
-        precioComida6.setLineWrap(true);
-        precioComida6.setRows(5);
-        precioComida6.setText("7990");
-        precioComida6.setBorder(null);
-        precioComida6.setCaretColor(new java.awt.Color(255, 255, 255));
-        precioComida6.setDisabledTextColor(new java.awt.Color(34, 66, 73));
-        precioComida6.setMinimumSize(new java.awt.Dimension(150, 20));
-        precioComida6.setSelectionColor(new java.awt.Color(34, 66, 73));
-        getContentPane().add(precioComida6);
-        precioComida6.setBounds(440, 640, 70, 30);
+        precioPostre5.setColumns(20);
+        precioPostre5.setFont(new java.awt.Font("Segoe UI", 1, 19)); // NOI18N
+        precioPostre5.setForeground(new java.awt.Color(255, 102, 0));
+        precioPostre5.setLineWrap(true);
+        precioPostre5.setRows(5);
+        precioPostre5.setText("4990");
+        precioPostre5.setBorder(null);
+        precioPostre5.setCaretColor(new java.awt.Color(255, 255, 255));
+        precioPostre5.setDisabledTextColor(new java.awt.Color(34, 66, 73));
+        precioPostre5.setMinimumSize(new java.awt.Dimension(150, 20));
+        precioPostre5.setSelectionColor(new java.awt.Color(34, 66, 73));
+        getContentPane().add(precioPostre5);
+        precioPostre5.setBounds(440, 550, 70, 30);
 
-        precioComida5.setColumns(20);
-        precioComida5.setFont(new java.awt.Font("Segoe UI", 1, 19)); // NOI18N
-        precioComida5.setForeground(new java.awt.Color(255, 102, 0));
-        precioComida5.setLineWrap(true);
-        precioComida5.setRows(5);
-        precioComida5.setText("6990");
-        precioComida5.setBorder(null);
-        precioComida5.setCaretColor(new java.awt.Color(255, 255, 255));
-        precioComida5.setDisabledTextColor(new java.awt.Color(34, 66, 73));
-        precioComida5.setMinimumSize(new java.awt.Dimension(150, 20));
-        precioComida5.setSelectionColor(new java.awt.Color(34, 66, 73));
-        getContentPane().add(precioComida5);
-        precioComida5.setBounds(440, 550, 70, 30);
+        precioPostre4.setColumns(20);
+        precioPostre4.setFont(new java.awt.Font("Segoe UI", 1, 19)); // NOI18N
+        precioPostre4.setForeground(new java.awt.Color(255, 102, 0));
+        precioPostre4.setLineWrap(true);
+        precioPostre4.setRows(5);
+        precioPostre4.setText("3990");
+        precioPostre4.setBorder(null);
+        precioPostre4.setCaretColor(new java.awt.Color(255, 255, 255));
+        precioPostre4.setDisabledTextColor(new java.awt.Color(34, 66, 73));
+        precioPostre4.setMinimumSize(new java.awt.Dimension(150, 20));
+        precioPostre4.setSelectionColor(new java.awt.Color(34, 66, 73));
+        getContentPane().add(precioPostre4);
+        precioPostre4.setBounds(440, 450, 70, 30);
 
-        precioComida4.setColumns(20);
-        precioComida4.setFont(new java.awt.Font("Segoe UI", 1, 19)); // NOI18N
-        precioComida4.setForeground(new java.awt.Color(255, 102, 0));
-        precioComida4.setLineWrap(true);
-        precioComida4.setRows(5);
-        precioComida4.setText("9990");
-        precioComida4.setBorder(null);
-        precioComida4.setCaretColor(new java.awt.Color(255, 255, 255));
-        precioComida4.setDisabledTextColor(new java.awt.Color(34, 66, 73));
-        precioComida4.setMinimumSize(new java.awt.Dimension(150, 20));
-        precioComida4.setSelectionColor(new java.awt.Color(34, 66, 73));
-        getContentPane().add(precioComida4);
-        precioComida4.setBounds(440, 450, 70, 30);
+        precioPostre3.setColumns(20);
+        precioPostre3.setFont(new java.awt.Font("Segoe UI", 1, 19)); // NOI18N
+        precioPostre3.setForeground(new java.awt.Color(255, 102, 0));
+        precioPostre3.setLineWrap(true);
+        precioPostre3.setRows(5);
+        precioPostre3.setText("3990\n");
+        precioPostre3.setBorder(null);
+        precioPostre3.setCaretColor(new java.awt.Color(255, 255, 255));
+        precioPostre3.setDisabledTextColor(new java.awt.Color(34, 66, 73));
+        precioPostre3.setMinimumSize(new java.awt.Dimension(150, 20));
+        precioPostre3.setSelectionColor(new java.awt.Color(34, 66, 73));
+        getContentPane().add(precioPostre3);
+        precioPostre3.setBounds(440, 360, 70, 30);
 
-        precioComida3.setColumns(20);
-        precioComida3.setFont(new java.awt.Font("Segoe UI", 1, 19)); // NOI18N
-        precioComida3.setForeground(new java.awt.Color(255, 102, 0));
-        precioComida3.setLineWrap(true);
-        precioComida3.setRows(5);
-        precioComida3.setText("7990");
-        precioComida3.setBorder(null);
-        precioComida3.setCaretColor(new java.awt.Color(255, 255, 255));
-        precioComida3.setDisabledTextColor(new java.awt.Color(34, 66, 73));
-        precioComida3.setMinimumSize(new java.awt.Dimension(150, 20));
-        precioComida3.setSelectionColor(new java.awt.Color(34, 66, 73));
-        getContentPane().add(precioComida3);
-        precioComida3.setBounds(440, 360, 70, 30);
+        precioPostre2.setColumns(20);
+        precioPostre2.setFont(new java.awt.Font("Segoe UI", 1, 19)); // NOI18N
+        precioPostre2.setForeground(new java.awt.Color(255, 102, 0));
+        precioPostre2.setLineWrap(true);
+        precioPostre2.setRows(5);
+        precioPostre2.setText("3990\n");
+        precioPostre2.setBorder(null);
+        precioPostre2.setCaretColor(new java.awt.Color(255, 255, 255));
+        precioPostre2.setDisabledTextColor(new java.awt.Color(34, 66, 73));
+        precioPostre2.setMinimumSize(new java.awt.Dimension(150, 20));
+        precioPostre2.setSelectionColor(new java.awt.Color(34, 66, 73));
+        getContentPane().add(precioPostre2);
+        precioPostre2.setBounds(440, 260, 70, 30);
 
-        precioComida2.setColumns(20);
-        precioComida2.setFont(new java.awt.Font("Segoe UI", 1, 19)); // NOI18N
-        precioComida2.setForeground(new java.awt.Color(255, 102, 0));
-        precioComida2.setLineWrap(true);
-        precioComida2.setRows(5);
-        precioComida2.setText("6990");
-        precioComida2.setBorder(null);
-        precioComida2.setCaretColor(new java.awt.Color(255, 255, 255));
-        precioComida2.setDisabledTextColor(new java.awt.Color(34, 66, 73));
-        precioComida2.setMinimumSize(new java.awt.Dimension(150, 20));
-        precioComida2.setSelectionColor(new java.awt.Color(34, 66, 73));
-        getContentPane().add(precioComida2);
-        precioComida2.setBounds(440, 260, 70, 30);
+        precioPostre1.setColumns(20);
+        precioPostre1.setFont(new java.awt.Font("Segoe UI", 1, 19)); // NOI18N
+        precioPostre1.setForeground(new java.awt.Color(255, 102, 0));
+        precioPostre1.setLineWrap(true);
+        precioPostre1.setRows(5);
+        precioPostre1.setText("3990");
+        precioPostre1.setBorder(null);
+        precioPostre1.setCaretColor(new java.awt.Color(255, 255, 255));
+        precioPostre1.setDisabledTextColor(new java.awt.Color(34, 66, 73));
+        precioPostre1.setMinimumSize(new java.awt.Dimension(150, 20));
+        precioPostre1.setSelectionColor(new java.awt.Color(34, 66, 73));
+        getContentPane().add(precioPostre1);
+        precioPostre1.setBounds(440, 170, 70, 30);
 
-        precioComida1.setColumns(20);
-        precioComida1.setFont(new java.awt.Font("Segoe UI", 1, 19)); // NOI18N
-        precioComida1.setForeground(new java.awt.Color(255, 102, 0));
-        precioComida1.setLineWrap(true);
-        precioComida1.setRows(5);
-        precioComida1.setText("7990");
-        precioComida1.setBorder(null);
-        precioComida1.setCaretColor(new java.awt.Color(255, 255, 255));
-        precioComida1.setDisabledTextColor(new java.awt.Color(34, 66, 73));
-        precioComida1.setMinimumSize(new java.awt.Dimension(150, 20));
-        precioComida1.setSelectionColor(new java.awt.Color(34, 66, 73));
-        getContentPane().add(precioComida1);
-        precioComida1.setBounds(440, 170, 70, 30);
+        cant8.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        cant8.setForeground(new java.awt.Color(34, 66, 73));
+        cant8.setText("Cant.");
+        getContentPane().add(cant8);
+        cant8.setBounds(510, 350, 70, 40);
+
+        cant9.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        cant9.setForeground(new java.awt.Color(34, 66, 73));
+        cant9.setText("Cant.");
+        getContentPane().add(cant9);
+        cant9.setBounds(510, 440, 70, 40);
+
+        cant10.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        cant10.setForeground(new java.awt.Color(34, 66, 73));
+        cant10.setText("Cant.");
+        getContentPane().add(cant10);
+        cant10.setBounds(510, 550, 70, 40);
+
+        cant11.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        cant11.setForeground(new java.awt.Color(34, 66, 73));
+        cant11.setText("Cant.");
+        getContentPane().add(cant11);
+        cant11.setBounds(510, 740, 70, 40);
 
         cant1.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
         cant1.setForeground(new java.awt.Color(34, 66, 73));
-        cant1.setText("Stock");
+        cant1.setText("Cant.");
         getContentPane().add(cant1);
         cant1.setBounds(510, 160, 70, 40);
 
         cant2.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
         cant2.setForeground(new java.awt.Color(34, 66, 73));
-        cant2.setText("Stock");
+        cant2.setText("Cant.");
         getContentPane().add(cant2);
         cant2.setBounds(510, 250, 70, 40);
 
-        cant3.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
-        cant3.setForeground(new java.awt.Color(34, 66, 73));
-        cant3.setText("Stock");
-        getContentPane().add(cant3);
-        cant3.setBounds(510, 350, 70, 40);
-
-        cant4.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
-        cant4.setForeground(new java.awt.Color(34, 66, 73));
-        cant4.setText("Stock");
-        getContentPane().add(cant4);
-        cant4.setBounds(510, 440, 70, 40);
-
-        cant5.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
-        cant5.setForeground(new java.awt.Color(34, 66, 73));
-        cant5.setText("Stock");
-        getContentPane().add(cant5);
-        cant5.setBounds(510, 540, 70, 40);
-
-        cant6.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
-        cant6.setForeground(new java.awt.Color(34, 66, 73));
-        cant6.setText("Stock");
-        getContentPane().add(cant6);
-        cant6.setBounds(510, 630, 70, 40);
-
-        cant7.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
-        cant7.setForeground(new java.awt.Color(34, 66, 73));
-        cant7.setText("Stock");
-        getContentPane().add(cant7);
-        cant7.setBounds(510, 730, 70, 40);
+        cant12.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
+        cant12.setForeground(new java.awt.Color(34, 66, 73));
+        cant12.setText("Cant.");
+        getContentPane().add(cant12);
+        cant12.setBounds(510, 640, 70, 40);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/93b5f9913d2e4316cd6e541c67b9aed0.jpg"))); // NOI18N
         getContentPane().add(jLabel1);
@@ -672,8 +767,76 @@ public class AdminPostre extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void total2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_total2MouseClicked
-        // TODO add your handling code here:
-        Carta go = new Carta();
+
+         try {
+            // TODO add your handling code here:
+            stnt = con.createStatement();
+            
+            ResultSet rsl = stnt.executeQuery("SELECT * FROM producto WHERE nombre =  '"+ postre1.getText()+"' AND subNombre = '"+subPostre1.getText()+"' AND precio = "+ precioPostre1.getText()+ "");
+            if(!rsl.next()){
+            stnt.executeUpdate("UPDATE producto SET nombre = '"+ postre1.getText()+"', subNombre = '"+subPostre1.getText()+"', precio = "+ precioPostre1.getText()+ " WHERE id = 17");}
+            
+           
+            ResultSet rs2 = stnt.executeQuery("SELECT * FROM producto WHERE nombre =  '"+ postre2.getText()+"' AND subNombre = '"+subPostre2.getText()+"' AND precio = "+ precioPostre2.getText()+ "");
+            if(!rs2.first()){
+            stnt.executeUpdate("UPDATE producto SET nombre = '"+ postre2.getText()+"', subNombre = '"+subPostre2.getText()+"', precio = "+ precioPostre2.getText()+ " WHERE id = 18");               
+            }
+            
+            
+            ResultSet rs3 = stnt.executeQuery("SELECT * FROM producto WHERE nombre = '"+ postre3.getText()+"' AND subNombre = '"+subPostre3.getText()+"' AND precio = "+ precioPostre3.getText()+ "");
+            if(!rs3.first()){
+            stnt.executeUpdate("UPDATE producto SET nombre = '"+ postre3.getText()+"', subNombre = '"+subPostre3.getText()+"', precio = "+ precioPostre3.getText()+ " WHERE id = 19");               
+            }
+            
+            
+            ResultSet rs4 = stnt.executeQuery("SELECT * FROM producto WHERE nombre ='"+ postre4.getText()+"' AND subNombre = '"+subPostre4.getText()+"' AND precio = "+ precioPostre4.getText()+ "");
+            if(!rs4.first()){
+            stnt.executeUpdate("UPDATE producto SET nombre = '"+ postre4.getText()+"', subNombre = '"+subPostre4.getText()+"', precio = "+ precioPostre4.getText()+ " WHERE id = 20");               
+            }
+            
+            
+            ResultSet rs5 = stnt.executeQuery("SELECT * FROM producto WHERE nombre = '"+ postre5.getText()+"' AND subNombre = '"+subPostre5.getText()+"' AND precio = "+ precioPostre5.getText()+ "");
+            if(!rs5.first()){
+            stnt.executeUpdate("UPDATE producto SET nombre = '"+ postre5.getText()+"', subNombre = '"+subPostre5.getText()+"', precio = "+ precioPostre5.getText()+ " WHERE id = 21");               
+            }
+            
+            ResultSet rs6 = stnt.executeQuery("SELECT * FROM producto WHERE nombre = '"+ postre6.getText()+"' AND subNombre = '"+subPostre6.getText()+"' AND precio = "+precioPostre6.getText()+ "");
+            if(!rs6.first()){
+            stnt.executeUpdate("UPDATE producto SET nombre = '"+ postre6.getText()+"', subNombre = '"+subPostre6.getText()+"', precio = "+ precioPostre6.getText()+ " WHERE id = 22");               
+            }
+            
+            ResultSet rs7 = stnt.executeQuery("SELECT * FROM producto WHERE nombre = '"+ postre7.getText()+"' AND subNombre = '"+subPostre7.getText()+"' AND precio = "+ precioPostre7.getText()+ "");
+            if(!rs7.first()){
+            stnt.executeUpdate("UPDATE producto SET nombre = '"+ postre7.getText()+"', subNombre = '"+subPostre7.getText()+"', precio = "+ precioPostre7.getText()+ " WHERE id = 23");               
+            }
+            
+            if(Integer.parseInt(cantidad1.getText())>0){
+            ResultSet rsa = stnt.executeQuery("CALL ingresoInventario("+cantidad1.getText()+",17)");
+            }
+            if(Integer.parseInt(cantidad2.getText())>0){
+            ResultSet rsb = stnt.executeQuery("CALL ingresoInventario("+cantidad2.getText()+",18)");
+            }
+            if(Integer.parseInt(cantidad3.getText())>0){
+            ResultSet rsc = stnt.executeQuery("CALL ingresoInventario("+cantidad3.getText()+",19)");
+            }
+           if(Integer.parseInt(cantidad4.getText())>0){
+            ResultSet rsd = stnt.executeQuery("CALL ingresoInventario("+cantidad4.getText()+",20)");
+            }                       
+           if(Integer.parseInt(cantidad5.getText())>0){
+            ResultSet rse = stnt.executeQuery("CALL ingresoInventario("+cantidad5.getText()+",21)");
+            }            
+           if(Integer.parseInt(cantidad6.getText())>0){
+            ResultSet rsf = stnt.executeQuery("CALL ingresoInventario("+cantidad6.getText()+",22)");
+            }
+           if(Integer.parseInt(cantidad7.getText())>0){
+            ResultSet rsg = stnt.executeQuery("CALL ingresoInventario("+cantidad7.getText()+",23)");
+            } 
+ 
+
+                 
+         }catch (SQLException ex) {        
+        }
+        AdminMenu go = new AdminMenu();
         go.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_total2MouseClicked
@@ -799,6 +962,26 @@ public class AdminPostre extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_cantidad2ActionPerformed
 
+    private void formMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseMoved
+        // TODO add your handling code here:
+            if(cantidad1.getText().equals("")){
+            cantidad1.setText("0");
+            }if(cantidad2.getText().equals("")){
+            cantidad2.setText("0");
+            }if(cantidad3.getText().equals("")){
+            cantidad3.setText("0");
+            }if(cantidad4.getText().equals("")){
+            cantidad4.setText("0");
+            }if(cantidad5.getText().equals("")){
+            cantidad5.setText("0");
+            }if(cantidad6.getText().equals("")){
+            cantidad6.setText("0");
+            }if(cantidad7.getText().equals("")){
+            cantidad7.setText("0");}    
+  
+            
+    }//GEN-LAST:event_formMouseMoved
+
     /**
      * @param args the command line arguments
      */
@@ -836,12 +1019,13 @@ public class AdminPostre extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel cant1;
+    private javax.swing.JLabel cant10;
+    private javax.swing.JLabel cant11;
+    private javax.swing.JLabel cant12;
+    private javax.swing.JLabel cant13;
     private javax.swing.JLabel cant2;
-    private javax.swing.JLabel cant3;
-    private javax.swing.JLabel cant4;
-    private javax.swing.JLabel cant5;
-    private javax.swing.JLabel cant6;
-    private javax.swing.JLabel cant7;
+    private javax.swing.JLabel cant8;
+    private javax.swing.JLabel cant9;
     private javax.swing.JTextField cantidad1;
     private javax.swing.JTextField cantidad2;
     private javax.swing.JTextField cantidad3;
@@ -849,13 +1033,6 @@ public class AdminPostre extends javax.swing.JFrame {
     private javax.swing.JTextField cantidad5;
     private javax.swing.JTextField cantidad6;
     private javax.swing.JTextField cantidad7;
-    private javax.swing.JTextArea comida1;
-    private javax.swing.JTextArea comida2;
-    private javax.swing.JTextArea comida3;
-    private javax.swing.JTextArea comida4;
-    private javax.swing.JTextArea comida5;
-    private javax.swing.JTextArea comida6;
-    private javax.swing.JTextArea comida7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel13;
@@ -866,13 +1043,20 @@ public class AdminPostre extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel61;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JTextArea precioComida1;
-    private javax.swing.JTextArea precioComida2;
-    private javax.swing.JTextArea precioComida3;
-    private javax.swing.JTextArea precioComida4;
-    private javax.swing.JTextArea precioComida5;
-    private javax.swing.JTextArea precioComida6;
-    private javax.swing.JTextArea precioComida7;
+    private javax.swing.JTextArea postre1;
+    private javax.swing.JTextArea postre2;
+    private javax.swing.JTextArea postre3;
+    private javax.swing.JTextArea postre4;
+    private javax.swing.JTextArea postre5;
+    private javax.swing.JTextArea postre6;
+    private javax.swing.JTextArea postre7;
+    private javax.swing.JTextArea precioPostre1;
+    private javax.swing.JTextArea precioPostre2;
+    private javax.swing.JTextArea precioPostre3;
+    private javax.swing.JTextArea precioPostre4;
+    private javax.swing.JTextArea precioPostre5;
+    private javax.swing.JTextArea precioPostre6;
+    private javax.swing.JTextArea precioPostre7;
     private javax.swing.JLabel simbolo1;
     private javax.swing.JLabel simbolo2;
     private javax.swing.JLabel simbolo3;

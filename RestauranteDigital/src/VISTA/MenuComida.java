@@ -9,6 +9,7 @@ import java.awt.Color;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -47,7 +48,44 @@ public class MenuComida extends javax.swing.JFrame {
     }catch(Exception e){// excepciones en el caso de haber un error
          Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null,e); 
     }
-        
+                 
+  try {
+    stnt = con.createStatement(); 
+    ResultSet rsl;
+       
+    rsl = stnt.executeQuery("SELECT * FROM producto WHERE id>=10 AND id<=16");
+    if(rsl.next()){ 
+    comida1.setText(rsl.getString("nombre"));
+    subComida1.setText(rsl.getString("subNombre"));
+    precioComida1.setText(String.valueOf(rsl.getInt("precio")));
+    }if(rsl.next()){ 
+    comida2.setText(rsl.getString("nombre"));
+    subComida2.setText(rsl.getString("subNombre"));
+    precioComida2.setText(String.valueOf(rsl.getInt("precio")));
+    }if(rsl.next()){ 
+    comida3.setText(rsl.getString("nombre"));
+    subComida3.setText(rsl.getString("subNombre"));
+    precioComida3.setText(String.valueOf(rsl.getInt("precio")));
+    }if(rsl.next()){ 
+    comida4.setText(rsl.getString("nombre"));
+    subComida4.setText(rsl.getString("subNombre"));
+    precioComida4.setText(String.valueOf(rsl.getInt("precio")));
+    }if(rsl.next()){ 
+    comida5.setText(rsl.getString("nombre"));
+    subComida5.setText(rsl.getString("subNombre"));
+    precioComida5.setText(String.valueOf(rsl.getInt("precio")));
+    }if(rsl.next()){ 
+    comida6.setText(rsl.getString("nombre"));
+    subComida6.setText(rsl.getString("subNombre"));
+    precioComida6.setText(String.valueOf(rsl.getInt("precio")));
+    }if(rsl.next()){ 
+    comida7.setText(rsl.getString("nombre"));
+    subComida7.setText(rsl.getString("subNombre"));
+    precioComida7.setText(String.valueOf(rsl.getInt("precio")));
+    }
+         } catch (SQLException ex) {
+            Logger.getLogger(MenuComida.class.getName()).log(Level.SEVERE, null, ex);
+        }    
 
       limpiar();        
 
@@ -634,7 +672,9 @@ public class MenuComida extends javax.swing.JFrame {
             }if(cantidad6.getText().equals("")){
             cantidad6.setText("0");
             }if(cantidad7.getText().equals("")){
-            cantidad7.setText("0");}     
+            cantidad7.setText("0");}    
+            
+            
        if(Integer.parseInt(cantidad1.getText())>=0){    
        int a = Integer.parseInt(precioComida1.getText());
        int b = Integer.parseInt(precioComida2.getText());
@@ -675,49 +715,49 @@ public class MenuComida extends javax.swing.JFrame {
                     if(rs.next()){
                     JOptionPane.showMessageDialog(this,"Disculpe el inconveniente pero tenemos un stock de "+ " " + rs.getInt("stock") + " en " + rs.getString("nombre"),"Error",2);
                     }else{
-                    rs = stnt.executeQuery("CALL registroVen((SELECT MAX(factura.id) FROM usuario INNER JOIN factura ON factura.usuario_id_fk = usuario.id WHERE usuario.rut = '"+rut+"'),10,"
+                    rs = stnt.executeQuery("CALL registroVenta((SELECT MAX(factura.id) FROM usuario INNER JOIN factura ON factura.usuario_id_fk = usuario.id WHERE usuario.rut = '"+rut+"'),10,"
                                              +cantidad1.getText()+","+precioTotal1+")");}
                 }if(Integer.parseInt(cantidad2.getText())>0){
                     rs = stnt.executeQuery("SELECT * FROM producto WHERE id = 11 && stock<"+cantidad2.getText()+"");               
                     if(rs.next()){
                     JOptionPane.showMessageDialog(this,"Disculpe el inconveniente pero tenemos un stock de "+ " " + rs.getInt("stock") + " en " + rs.getString("nombre"),"Error",2);
                     }else{
-                    rs = stnt.executeQuery("CALL registroVen((SELECT MAX(factura.id) FROM usuario INNER JOIN factura ON factura.usuario_id_fk = usuario.id WHERE usuario.rut = '"+rut+"'),11,"
+                    rs = stnt.executeQuery("CALL registroVenta((SELECT MAX(factura.id) FROM usuario INNER JOIN factura ON factura.usuario_id_fk = usuario.id WHERE usuario.rut = '"+rut+"'),11,"
                                              +cantidad2.getText()+","+precioTotal2+")");} 
                 }if(Integer.parseInt(cantidad3.getText())>0){
                     rs = stnt.executeQuery("SELECT * FROM producto WHERE id = 12 && stock<"+cantidad3.getText()+"");               
                     if(rs.next()){
                     JOptionPane.showMessageDialog(this,"Disculpe el inconveniente pero tenemos un stock de "+ " " + rs.getInt("stock") + " en " + rs.getString("nombre"),"Error",2);
                     }else{
-                     rs = stnt.executeQuery("CALL registroVen((SELECT MAX(factura.id) FROM usuario INNER JOIN factura ON factura.usuario_id_fk = usuario.id WHERE usuario.rut = '"+rut+"'),12,"
+                     rs = stnt.executeQuery("CALL registroVenta((SELECT MAX(factura.id) FROM usuario INNER JOIN factura ON factura.usuario_id_fk = usuario.id WHERE usuario.rut = '"+rut+"'),12,"
                                              +cantidad3.getText()+","+precioTotal3+")");}          
                 }if(Integer.parseInt(cantidad4.getText())>0){
                     rs = stnt.executeQuery("SELECT * FROM producto WHERE id = 13 && stock<"+cantidad4.getText()+"");               
                     if(rs.next()){
                     JOptionPane.showMessageDialog(this,"Disculpe el inconveniente pero tenemos un stock de "+ " " + rs.getInt("stock") + " en " + rs.getString("nombre"),"Error",2);
                     }else{
-                    rs = stnt.executeQuery("CALL registroVen((SELECT MAX(factura.id) FROM usuario INNER JOIN factura ON factura.usuario_id_fk = usuario.id WHERE usuario.rut = '"+rut+"'),13,"
+                    rs = stnt.executeQuery("CALL registroVenta((SELECT MAX(factura.id) FROM usuario INNER JOIN factura ON factura.usuario_id_fk = usuario.id WHERE usuario.rut = '"+rut+"'),13,"
                                              +cantidad4.getText()+","+precioTotal4+")");}           
                 }if(Integer.parseInt(cantidad5.getText())>0){
                     rs = stnt.executeQuery("SELECT * FROM producto WHERE id = 14 && stock<"+cantidad5.getText()+"");               
                     if(rs.next()){
                     JOptionPane.showMessageDialog(this,"Disculpe el inconveniente pero tenemos un stock de "+ " " + rs.getInt("stock") + " en " + rs.getString("nombre"),"Error",2);
                     }else{
-                    rs = stnt.executeQuery("CALL registroVen((SELECT MAX(factura.id) FROM usuario INNER JOIN factura ON factura.usuario_id_fk = usuario.id WHERE usuario.rut = '"+rut+"'),14,"
+                    rs = stnt.executeQuery("CALL registroVenta((SELECT MAX(factura.id) FROM usuario INNER JOIN factura ON factura.usuario_id_fk = usuario.id WHERE usuario.rut = '"+rut+"'),14,"
                                              +cantidad5.getText()+","+precioTotal5+")");}           
                 }if(Integer.parseInt(cantidad6.getText())>0){
                     rs = stnt.executeQuery("SELECT * FROM producto WHERE id = 15 && stock<"+cantidad6.getText()+"");               
                     if(rs.next()){
                     JOptionPane.showMessageDialog(this,"Disculpe el inconveniente pero tenemos un stock de " + " " + rs.getInt("stock") + " en " + rs.getString("nombre"),"Error",2);
                     }else{
-                    rs = stnt.executeQuery("CALL registroVen((SELECT MAX(factura.id) FROM usuario INNER JOIN factura ON factura.usuario_id_fk = usuario.id WHERE usuario.rut = '"+rut+"'),15,"
+                    rs = stnt.executeQuery("CALL registroVenta((SELECT MAX(factura.id) FROM usuario INNER JOIN factura ON factura.usuario_id_fk = usuario.id WHERE usuario.rut = '"+rut+"'),15,"
                                              +cantidad6.getText()+","+precioTotal6+")");}           
                 }if(Integer.parseInt(cantidad7.getText())>0){
                     rs = stnt.executeQuery("SELECT * FROM producto WHERE id = 16 && stock<"+cantidad7.getText()+"");               
                     if(rs.next()){
                     JOptionPane.showMessageDialog(this,"Disculpe el inconveniente pero tenemos un stock de " + " " + rs.getInt("stock") + " en " + rs.getString("nombre"),"Error",2);
                     }else{
-                    rs = stnt.executeQuery("CALL registroVen((SELECT MAX(factura.id) FROM usuario INNER JOIN factura ON factura.usuario_id_fk = usuario.id WHERE usuario.rut = '"+rut+"'),16,"
+                    rs = stnt.executeQuery("CALL registroVenta((SELECT MAX(factura.id) FROM usuario INNER JOIN factura ON factura.usuario_id_fk = usuario.id WHERE usuario.rut = '"+rut+"'),16,"
                                              +cantidad7.getText()+","+precioTotal7+")");}           
 
                     }

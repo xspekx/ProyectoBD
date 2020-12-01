@@ -12,6 +12,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -49,7 +50,20 @@ public class Factura extends javax.swing.JFrame {
     }
     
     
-        DefaultTableModel modeloTabla = new DefaultTableModel();
+        DefaultTableModel modeloTabla = new DefaultTableModel(){
+
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                if(column == 4){
+                    return true;
+                }else{
+                    return false;
+                }
+            }
+            
+                    
+                   
+        };
         jTable1.setModel(modeloTabla);
         modeloTabla.setColumnIdentifiers(new Object[]{"UNIDAD","DETALLE","PRECIO UND.","PRECIO TOTAL"});//
      
@@ -80,6 +94,7 @@ public class Factura extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel15 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -88,8 +103,18 @@ public class Factura extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(570, 700));
-        setPreferredSize(new java.awt.Dimension(570, 700));
         getContentPane().setLayout(null);
+
+        jLabel15.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(255, 102, 0));
+        jLabel15.setText("CANCELAR");
+        jLabel15.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel15MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jLabel15);
+        jLabel15.setBounds(380, 470, 150, 60);
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 54)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 102, 0));
@@ -97,7 +122,7 @@ public class Factura extends javax.swing.JFrame {
         getContentPane().add(jLabel7);
         jLabel7.setBounds(160, 40, 260, 60);
 
-        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
+        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 102, 0));
         jLabel14.setText("PAGAR");
         jLabel14.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -106,7 +131,7 @@ public class Factura extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jLabel14);
-        jLabel14.setBounds(200, 570, 190, 60);
+        jLabel14.setBounds(70, 470, 190, 60);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -122,7 +147,7 @@ public class Factura extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(70, 100, 452, 320);
+        jScrollPane1.setBounds(70, 120, 452, 320);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/93b5f9913d2e4316cd6e541c67b9aed0.jpg"))); // NOI18N
         getContentPane().add(jLabel1);
@@ -132,9 +157,34 @@ public class Factura extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseClicked
-        // TODO add your handling code here:
+
+        try {
+            stnt = con.createStatement(); 
+            stnt.executeUpdate("UPDATE factura SET pagado = 1 WHERE id = (SELECT MAX(factura.id) FROM usuario INNER JOIN factura ON factura.usuario_id_fk = usuario.id WHERE usuario.rut = '"+rut+"')" +
+                               " AND usuario_id_fk = (SELECT id FROM usuario WHERE rut = '"+rut+"')");
+            JOptionPane.showMessageDialog(this, "Tu pedido sera entregado dentro de poco", "Pago realizado con exito", 1);
+            
+            
+            
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(Factura.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+        
+        
+        OrdenComida go = new OrdenComida();
+        go.setVisible(true);
+        this.setVisible(false);
+                  
+
 
     }//GEN-LAST:event_jLabel14MouseClicked
+
+    private void jLabel15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel15MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel15MouseClicked
 
     /**
      * @param args the command line arguments
@@ -175,6 +225,7 @@ public class Factura extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
     public static javax.swing.JTable jTable1;
