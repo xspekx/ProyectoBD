@@ -73,7 +73,7 @@ public class RegistroUsuario extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(420, 550));
+        setMinimumSize(new java.awt.Dimension(420, 612));
         setPreferredSize(new java.awt.Dimension(420, 550));
         getContentPane().setLayout(null);
 
@@ -193,7 +193,7 @@ public class RegistroUsuario extends javax.swing.JFrame {
 
     private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
         // TODO add your handling code here:
-        Carta go = new Carta();
+        Login go = new Login();
         go.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jLabel12MouseClicked

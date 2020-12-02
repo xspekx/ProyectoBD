@@ -188,7 +188,7 @@ public class AdminBebida extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(580, 730));
+        setMinimumSize(new java.awt.Dimension(590, 740));
         getContentPane().setLayout(null);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -1214,7 +1214,7 @@ public class AdminBebida extends javax.swing.JFrame {
 
     private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
         // TODO add your handling code here:
-        Carta go = new Carta();
+        AdminMenu go = new AdminMenu();
         go.setVisible(true);
         this.setVisible(false);
 

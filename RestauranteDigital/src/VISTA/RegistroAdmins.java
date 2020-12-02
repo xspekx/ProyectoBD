@@ -26,6 +26,8 @@ public class RegistroAdmins extends javax.swing.JFrame {
      */
     public RegistroAdmins() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.setFocusable(true);
   
         
                 
@@ -75,6 +77,7 @@ public class RegistroAdmins extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(440, 700));
         getContentPane().setLayout(null);
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/Imagen4_1.png"))); // NOI18N
@@ -213,7 +216,7 @@ public class RegistroAdmins extends javax.swing.JFrame {
         // TODO add your handling code here:
                try{
         stnt = con.createStatement();                 
-        ResultSet rs = stnt.executeQuery("CALL eliminarAdmin('"+rut.getText()+"','"+nombre.getText()+"','"+apellido.getText()+"','"+correo.getText()+"','"+pass.getText()+"')");
+        ResultSet rs = stnt.executeQuery("CALL eliminarAdmin('"+rut.getText()+"','"+pass.getText()+"')");
         JOptionPane.showMessageDialog(this,"Usuario eliminado con exito","Eliminacion realizada",1);
             
         Login go = new Login();

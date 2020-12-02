@@ -73,6 +73,7 @@ public class ActualizarUsuario extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(400, 560));
         getContentPane().setLayout(null);
         getContentPane().add(correo);
         correo.setBounds(130, 360, 210, 30);

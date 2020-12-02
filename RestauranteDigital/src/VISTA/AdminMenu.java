@@ -49,7 +49,7 @@ public class AdminMenu extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(470, 700));
+        setMinimumSize(new java.awt.Dimension(530, 870));
         getContentPane().setLayout(null);
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N

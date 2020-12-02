@@ -153,7 +153,7 @@ SET stock_cantidad = (SELECT stock FROM producto WHERE id = _producto_id);
 IF _cantidad > stock_cantidad THEN
 SELECT 'No hay sufuciente stock para su compra' AS 'ERROR';
 ELSE
-INSERT INTO detalle VALUES(NULL,_factura_id,_producto_id,_cantidad,_precio);
+INSERT INTO detalle VALUES(NULL,_factura_id,_producto_id,_cantidad,(SELECT totalVentaProducto(_cantidad,_precio)));
 UPDATE producto SET stock = stock - _cantidad WHERE id = _producto_id;
 END IF;
 END
@@ -171,14 +171,6 @@ END IF;
 END
 //
 DELIMITER ;
-
-
-SELECT detalle.id
-FROM detalle
-INNER JOIN factura ON factura.id = detalle.factura_id_fk
-INNER JOIN usuario ON usuario.id = factura.usuario_id_fk
-WHERE usuario.id = 7;
-
 
 DELIMITER //
 CREATE PROCEDURE agregarUsuario(IN _rut VARCHAR(13),IN _nombre VARCHAR(50),IN _apellido VARCHAR(50),IN _correo VARCHAR(50),IN _pass VARCHAR(200))
@@ -202,6 +194,54 @@ BEGIN
 
 END //
 DELIMITER ;
+
+
+DELIMITER //
+CREATE PROCEDURE agregarAdmin(IN _rut VARCHAR(13),IN _nombre VARCHAR(50),IN _apellido VARCHAR(50),IN _correo VARCHAR(50),IN _pass VARCHAR(200))
+BEGIN
+    DECLARE existe_rut INT;
+    DECLARE existe_correo INT;
+
+
+    SET existe_rut = (SELECT COUNT(*) FROM usuario WHERE rut = _rut);
+    SET existe_correo = (SELECT COUNT(*) FROM usuario WHERE correo = _correo );
+
+    IF existe_rut = 1 THEN
+        SELECT 'PERSONA YA REGISTRADA' as 'ERROR';
+    ELSE   
+        IF existe_correo = 1 THEN 
+            SELECT 'CORREO YA REGISTRADO' as 'ERROR';
+        ELSE 
+            INSERT INTO usuario VALUES(NULL,1,_rut,_nombre,_apellido,_correo,SHA2(_pass,0));
+        END IF;
+    END IF;
+    END //
+DELIMITER ;
+
+
+
+END //
+DELIMITER ;
+
+
+DELIMITER //
+CREATE PROCEDURE eliminarAdmin(IN _rut VARCHAR(13),IN _pass VARCHAR(200))
+BEGIN
+    DECLARE datos_correctos INT;
+
+
+    SET datos_correctos = (SELECT COUNT(*) FROM usuario WHERE rut = _rut AND pass = SHA2(_pass,0));
+
+
+    IF datos_correctos = 1 THEN
+            DELETE FROM usuario WHERE rut = _rut AND pass = SHA2(_pass,0);
+        ELSE
+         SELECT 'RUT/PASS INCORRECTA' as 'ERROR';
+         END IF;
+END //
+DELIMITER ;
+ 
+
 
 
 
@@ -235,11 +275,6 @@ BEGIN
 END //
 DELIMITER ;
 
-UPDATE usuario SET nombre = 'wodofredo' WHERE id = (SELECT id FROM usuario WHERE rut = '111');
-
-
-
-
 
 
 -- PRUEBAS
@@ -263,89 +298,9 @@ UPDATE usuario SET nombre = 'wodofredo' WHERE id = (SELECT id FROM usuario WHERE
  
 -- SELECT * FROM usuario WHERE rut = '18650749-5' && pass = SHA2('1234',0);
 
-CREATE FUNCTION facturas_Pagadas(id int)
-RETURNS TABLE
-AS
-RETURN
-(
-    SELECT * FROM  WHERE CategoryID = @Valor
-)
-GO
 
-SELECT * FROM factura WHERE pagado = 1;
-
-SELECT id FROM usuario(SELECT MAX(factura.id) FROM usuario INNER JOIN factura ON factura.usuario_id_fk = usuario.id WHERE usuario.rut = '11111111-1');
-
-SELECT MAX(factura.id) FROM usuario INNER JOIN factura ON factura.usuario_id_fk = usuario.id WHERE usuario.rut = '11111111-1';
-SELECT id FROM usuario WHERE rut = '11111111-1'; 
-
-
-
-UPDATE factura SET pagado = 1 WHERE id = (SELECT MAX(factura.id) FROM usuario INNER JOIN factura ON factura.usuario_id_fk = usuario.id WHERE usuario.rut = '11111111-1')
-                                AND usuario_id_fk = (SELECT id FROM usuario WHERE rut = '11111111-1');
-
-
-"CALL registroVenta((SELECT MAX(factura.id) FROM usuario INNER JOIN factura ON factura.usuario_id_fk = usuario.id WHERE usuario.rut = '11111111-1'),1,(SELECT totalVentaProduto(2,2500))"
-
-
-DELIMITER //
-CREATE TRIGGER eliminar BEFORE DELETE ON factura
-
-BEGIN
-WHILE EXISTS (SELECT id FROM factura WHERE usuario_id_fk = (SELECT id FROM usuario WHERE rut = '111')) THEN
-DELETE FROM detalle WHERE factura_id_fk = (SELECT id FROM factura WHERE usuario_id_fk = (SELECT id FROM usuario WHERE rut = '111'));
-FOR EACH ROW
-END WHILE;
-END //
-DELIMITER ;
-
-DELETE FROM detalle WHERE factura_id_fk = (SELECT detalle.factura_id_fk
-FROM detalle
-INNER JOIN factura ON factura.id = detalle.factura_id_fk
-WHERE factura.usuario_id_fk = (SELECT id FROM usuario WHERE rut = '111'));
-
-DELIMITER //
-CREATE TRIGGER facturaInvitado AFTER INSERT ON usuario
-FOR EACH ROW
-BEGIN
-INSERT INTO factura VALUES(NULL,3,NOW(),NULL,0);
-WHERE usuario_id_fk = 3;
-END //
-DELIMITER ;
-
-
-
-UPDATE usuario
-SET correo = 'lor1o'
-WHERE rut ='123' AND pass = (SHA2('111',0));
-
-DELIMITER //
-CREATE TRIGGER detalleComida AFTER UPDATE ON factura
-FOR EACH ROW
-BEGIN
-SELECT (SELECT detalle.cantidad, producto.nombre, producto.precio, detalle.precio AS 'total'
-       FROM detalle
-       INNER JOIN producto ON producto.id = detalle.producto_id_fk
-       INNER JOIN factura ON factura.id = detalle.factura_id_fk
-       WHERE detalle.factura_id_fk = (SELECT MAX(factura.id) FROM usuario INNER JOIN factura ON factura.pagado = 1));
-END //
-DELIMITER ;
-
-
-UPDATE usuario SET nombre = 'ana', apellido = 'ruiz', correo = 'rui@d', pass = SHA2('123',0) WHERE id = (SELECT id FROM usuario WHERE rut = '111');
-
-
--- Eliminar factura
-SELECT detalle.id
-FROM detalle
-INNER JOIN factura ON factura.id = detalle.factura_id_fk
-INNER JOIN usuario ON usuario.id = factura.usuario_id_fk
-WHERE usuario.id = (SELECT id FROM usuario WHERE rut = '111');
-
-DELETE FROM detalle WHERE id = 93;
-
-SELECT detalle.cantidad, producto.nombre, producto.precio, detalle.precio AS 'total' 
-                                          FROM detalle
-                                          INNER JOIN producto ON producto.id = detalle.producto_id_fk
-                                          WHERE detalle.factura_id_fk = (SELECT MAX(factura.id) FROM usuario INNER JOIN factura ON factura.usuario_id_fk = usuario.id 
-                                          WHERE usuario.rut = '11111111-1' AND pagado = 1);
+-- SELECT detalle.id 
+-- FROM detalle
+-- INNER JOIN factura ON factura.id = detalle.factura_id_fk
+-- INNER JOIN usuario ON usuario.id = factura.usuario_id_fk
+-- WHERE usuario.rut = '11111111-1' AND factura.pagado = 0;

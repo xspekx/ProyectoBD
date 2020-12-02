@@ -727,7 +727,7 @@ public class MenuPostres extends javax.swing.JFrame {
                     }else{
                     rs = stnt.executeQuery("CALL registroVenta((SELECT MAX(factura.id) FROM usuario INNER JOIN factura ON factura.usuario_id_fk = usuario.id WHERE usuario.rut = '"+rut+"'),22,"
                                              +cantidad6.getText()+","+precioPostre6.getText()+")");}   
-                }if(Integer.parseInt(cantidad6.getText())>0){
+                }if(Integer.parseInt(cantidad7.getText())>0){
                     rs = stnt.executeQuery("SELECT * FROM producto WHERE id = 22 && stock<"+cantidad7.getText()+"");               
                     if(rs.next()){
                     JOptionPane.showMessageDialog(this,"Disculpe el inconveniente pero tenemos un stock de " + " " + rs.getInt("stock") + " en " + rs.getString("nombre"),"Error",2);
@@ -906,7 +906,7 @@ public class MenuPostres extends javax.swing.JFrame {
 
     private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
         // TODO add your handling code here:
-        Carta go = new Carta();
+        AdminMenu go = new AdminMenu();
         go.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jLabel12MouseClicked

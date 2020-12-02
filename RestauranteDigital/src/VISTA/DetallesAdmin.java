@@ -61,8 +61,6 @@ public class DetallesAdmin extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -94,7 +92,7 @@ public class DetallesAdmin extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jLabel19);
-        jLabel19.setBounds(20, 710, 530, 60);
+        jLabel19.setBounds(20, 620, 530, 60);
 
         jLabel17.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(255, 102, 0));
@@ -105,29 +103,7 @@ public class DetallesAdmin extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jLabel17);
-        jLabel17.setBounds(800, 560, 260, 60);
-
-        jLabel18.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(255, 102, 0));
-        jLabel18.setText("Historial cambios de comidas");
-        jLabel18.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel18MouseClicked(evt);
-            }
-        });
-        getContentPane().add(jLabel18);
-        jLabel18.setBounds(20, 610, 550, 60);
-
-        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(255, 102, 0));
-        jLabel16.setText("Historial cambios de usuario");
-        jLabel16.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel16MouseClicked(evt);
-            }
-        });
-        getContentPane().add(jLabel16);
-        jLabel16.setBounds(20, 660, 530, 60);
+        jLabel17.setBounds(20, 680, 260, 60);
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(255, 102, 0));
@@ -141,7 +117,7 @@ public class DetallesAdmin extends javax.swing.JFrame {
         jLabel15.setBounds(20, 560, 550, 60);
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 54)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 102, 0));
+        jLabel7.setForeground(new java.awt.Color(34, 66, 73));
         jLabel7.setText("DETALLE");
         getContentPane().add(jLabel7);
         jLabel7.setBounds(410, 40, 260, 60);
@@ -192,24 +168,6 @@ public class DetallesAdmin extends javax.swing.JFrame {
     
     }//GEN-LAST:event_jLabel15MouseClicked
 
-    private void jLabel16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel16MouseClicked
-        // TODO add your handling code here:
-       
-        DefaultTableModel modeloTabla = new DefaultTableModel();
-        jTable1.setModel(modeloTabla);
-        modeloTabla.setColumnIdentifiers(new Object[]{"id usuario","nombre","apellido","correo","fecha"});//
-
-        try { // condicion en caso de error
-        stnt = con.createStatement();
-        ResultSet rsl = stnt.executeQuery("SELECT * FROM historialUsuario");
-       
-         while(rsl.next()){
-                modeloTabla.addRow(new Object[]{rsl.getInt("usuario_id_fk"),rsl.getString("nombre"),rsl.getString("apellido"),rsl.getString("correo"),rsl.getString("fecha")});}
-            }catch (SQLException ex) {
-        }
-        
-    }//GEN-LAST:event_jLabel16MouseClicked
-
     private void jLabel17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel17MouseClicked
         // TODO add your handling code here:
         
@@ -228,12 +186,23 @@ public class DetallesAdmin extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jLabel17MouseClicked
 
-    private void jLabel18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel18MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel18MouseClicked
-
     private void jLabel19MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel19MouseClicked
         // TODO add your handling code here:
+                
+        DefaultTableModel modeloTabla = new DefaultTableModel();
+        jTable1.setModel(modeloTabla);
+        modeloTabla.setColumnIdentifiers(new Object[]{"tipo","Nombre","apellido","correo","fecha"});//
+
+        try { // condicion en caso de error
+        stnt = con.createStatement();
+        ResultSet rsl = stnt.executeQuery("SELECT * FROM historialUsuario");
+       
+         while(rsl.next()){
+                modeloTabla.addRow(new Object[]{rsl.getInt("id"),rsl.getString("nombre"),rsl.getString("apellido"),rsl.getString("correo"),rsl.getString("fecha")});}
+            }catch (SQLException ex) {
+        }
+        
+        
     }//GEN-LAST:event_jLabel19MouseClicked
 
     private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
@@ -283,9 +252,7 @@ public class DetallesAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
