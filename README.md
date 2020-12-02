@@ -13,5 +13,5 @@ conveninte.
 ![EntidadRelacion](https://github.com/xspekx/ProyectoBD/blob/main/SQL/Entidad-Relacion.JPG)
 
 
-##EJECUCION DEL PROGRAMA
+## EJECUCION DEL PROGRAMA
 El programa se ejecutara a través de un .jar que será mostrado dentro de la carpeta programa del ProyectoBD.
