@@ -143,6 +143,20 @@ iNSERT INTO producto VALUES (NULL,"MOUSSE DE CHOCOLATE",'Bizcocho de chocolate a
 
 
 
+
+
+
+-- funcion 
+
+DELIMITER //
+CREATE FUNCTION totalVentaProducto(_cantidad INT, _precio INT) RETURNS INT  
+BEGIN
+DECLARE resultado INT;
+SET resultado = (_cantidad * _precio );
+RETURN resultado;
+END //
+DELIMITER ;
+
 -- procesos Almacenados
 
 DELIMITER //
@@ -241,20 +255,6 @@ BEGIN
 END //
 DELIMITER ;
  
-
-
-
-
--- funcion 
-
-DELIMITER //
-CREATE FUNCTION totalVentaProducto(_cantidad INT, _precio INT) RETURNS INT  
-BEGIN
-DECLARE resultado INT;
-SET resultado = (_cantidad * _precio );
-RETURN resultado;
-END //
-DELIMITER ;
 
 
 -- TRIGGERS
