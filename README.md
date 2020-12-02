@@ -1,4 +1,4 @@
 # RESTAURANT DIGITAL
 
 
-![EnridadRelacion](https://github.com/SQL/Entidad-Relacion.JPG)
+![EntidadRelacion](https://github.com/xspekx/ProyectoBD/blob/main/SQL/Entidad-Relacion.JPG)
