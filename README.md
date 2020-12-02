@@ -14,4 +14,4 @@ conveninte.
 
 
 ## EJECUCION DEL PROGRAMA
-El programa se ejecutara a través de un .jar el cual esta dentro de la carpeta RestauranteDigital/dist
+El programa se ejecutara a través de un .jar el cual esta dentro de la carpeta programa
