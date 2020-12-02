@@ -45,7 +45,7 @@ public class DetallesAdmin extends javax.swing.JFrame {
     
     
     }catch(Exception e){// excepciones en el caso de haber un error
-         Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null,e); 
+         Logger.getLogger(DetallesAdmin.class.getName()).log(Level.SEVERE, null,e); 
     }
     }
 
@@ -58,6 +58,8 @@ public class DetallesAdmin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel20 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
@@ -69,8 +71,29 @@ public class DetallesAdmin extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1080, 800));
-        setPreferredSize(new java.awt.Dimension(1080, 800));
         getContentPane().setLayout(null);
+
+        jLabel20.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(255, 102, 0));
+        jLabel20.setText("Usuarios");
+        jLabel20.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel20MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jLabel20);
+        jLabel20.setBounds(800, 620, 260, 60);
+
+        jLabel18.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(255, 102, 0));
+        jLabel18.setText("Administradores");
+        jLabel18.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel18MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jLabel18);
+        jLabel18.setBounds(800, 560, 260, 60);
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(34, 66, 73));
@@ -161,6 +184,8 @@ public class DetallesAdmin extends javax.swing.JFrame {
          while(rsl.next()){
                 modeloTabla.addRow(new Object[]{rsl.getInt("producto_id_fk"),rsl.getString("nombre"),rsl.getString("subNombre"),rsl.getInt("precio"),rsl.getString("fecha")});}
             }catch (SQLException ex) {
+         Logger.getLogger(DetallesAdmin.class.getName()).log(Level.SEVERE, null, ex);
+
         }
         
         
@@ -183,6 +208,8 @@ public class DetallesAdmin extends javax.swing.JFrame {
          while(rsl.next()){
                 modeloTabla.addRow(new Object[]{rsl.getInt("stock"),rsl.getString("nombre")});}
             }catch (SQLException ex) {
+         Logger.getLogger(DetallesAdmin.class.getName()).log(Level.SEVERE, null, ex);
+
         }
     }//GEN-LAST:event_jLabel17MouseClicked
 
@@ -200,7 +227,10 @@ public class DetallesAdmin extends javax.swing.JFrame {
          while(rsl.next()){
                 modeloTabla.addRow(new Object[]{rsl.getInt("id"),rsl.getString("nombre"),rsl.getString("apellido"),rsl.getString("correo"),rsl.getString("fecha")});}
             }catch (SQLException ex) {
+        Logger.getLogger(DetallesAdmin.class.getName()).log(Level.SEVERE, null, ex);
+
         }
+        
         
         
     }//GEN-LAST:event_jLabel19MouseClicked
@@ -212,6 +242,45 @@ public class DetallesAdmin extends javax.swing.JFrame {
         this.setVisible(false);
 
     }//GEN-LAST:event_jLabel11MouseClicked
+
+    private void jLabel18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel18MouseClicked
+        // TODO add your handling code here:
+                
+        DefaultTableModel modeloTabla = new DefaultTableModel();
+        jTable1.setModel(modeloTabla);
+        modeloTabla.setColumnIdentifiers(new Object[]{"id","rut","nombre","apellido","correo"});//
+        try {
+         stnt = con.createStatement();
+         ResultSet rsl = stnt.executeQuery("SELECT * FROM usuario WHERE tipoUsuario_id_fk = 1");
+       
+         while(rsl.next()){
+                modeloTabla.addRow(new Object[]{rsl.getInt("id"),rsl.getString("nombre"),rsl.getString("apellido"),rsl.getString("correo")});}
+
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(DetallesAdmin.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }//GEN-LAST:event_jLabel18MouseClicked
+
+    private void jLabel20MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel20MouseClicked
+        // TODO add your handling code here:
+        DefaultTableModel modeloTabla = new DefaultTableModel();
+        jTable1.setModel(modeloTabla);
+        modeloTabla.setColumnIdentifiers(new Object[]{"id","rut","nombre","apellido","correo"});//
+        try {
+         stnt = con.createStatement();
+         ResultSet rsl = stnt.executeQuery("SELECT * FROM usuario WHERE tipoUsuario_id_fk = 2");
+       
+         while(rsl.next()){
+                modeloTabla.addRow(new Object[]{rsl.getInt("id"),rsl.getString("nombre"),rsl.getString("apellido"),rsl.getString("correo")});}
+
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(DetallesAdmin.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }//GEN-LAST:event_jLabel20MouseClicked
 
     /**
      * @param args the command line arguments
@@ -253,7 +322,9 @@ public class DetallesAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
     public static javax.swing.JTable jTable1;

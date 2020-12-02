@@ -38,13 +38,9 @@ public class AdminPostre extends javax.swing.JFrame {
                 
     Class.forName("com.mysql.jdbc.Driver").newInstance(); // carga el driver para conectarce
     con = (Connection) DriverManager.getConnection(url,usuario,contraseña); // se conecta a la base de datos nuestro programa 
-    if(con != null){
-                System.out.println("Conexion Exitosa!");
-            }else{
-                System.out.println("Conexion Fallida!");                
-            }
+
     }catch(Exception e){// excepciones en el caso de haber un error
-         Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null,e); 
+         Logger.getLogger(AdminPostre.class.getName()).log(Level.SEVERE, null,e); 
     }
                     
     try {
@@ -232,7 +228,6 @@ public class AdminPostre extends javax.swing.JFrame {
         getContentPane().add(jLabel15);
         jLabel15.setBounds(30, 430, 50, 60);
 
-        subPostre7.setEditable(false);
         subPostre7.setColumns(20);
         subPostre7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         subPostre7.setForeground(new java.awt.Color(34, 66, 73));
@@ -248,7 +243,6 @@ public class AdminPostre extends javax.swing.JFrame {
         getContentPane().add(subPostre7);
         subPostre7.setBounds(60, 760, 300, 80);
 
-        subPostre6.setEditable(false);
         subPostre6.setColumns(20);
         subPostre6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         subPostre6.setForeground(new java.awt.Color(34, 66, 73));
@@ -264,7 +258,6 @@ public class AdminPostre extends javax.swing.JFrame {
         getContentPane().add(subPostre6);
         subPostre6.setBounds(60, 660, 300, 70);
 
-        subPostre5.setEditable(false);
         subPostre5.setColumns(20);
         subPostre5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         subPostre5.setForeground(new java.awt.Color(34, 66, 73));
@@ -280,7 +273,6 @@ public class AdminPostre extends javax.swing.JFrame {
         getContentPane().add(subPostre5);
         subPostre5.setBounds(60, 570, 300, 60);
 
-        subPostre4.setEditable(false);
         subPostre4.setColumns(20);
         subPostre4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         subPostre4.setForeground(new java.awt.Color(34, 66, 73));
@@ -296,7 +288,6 @@ public class AdminPostre extends javax.swing.JFrame {
         getContentPane().add(subPostre4);
         subPostre4.setBounds(60, 470, 310, 70);
 
-        subPostre3.setEditable(false);
         subPostre3.setColumns(20);
         subPostre3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         subPostre3.setForeground(new java.awt.Color(34, 66, 73));
@@ -312,7 +303,6 @@ public class AdminPostre extends javax.swing.JFrame {
         getContentPane().add(subPostre3);
         subPostre3.setBounds(60, 380, 310, 60);
 
-        subPostre2.setEditable(false);
         subPostre2.setColumns(20);
         subPostre2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         subPostre2.setForeground(new java.awt.Color(34, 66, 73));
@@ -328,7 +318,6 @@ public class AdminPostre extends javax.swing.JFrame {
         getContentPane().add(subPostre2);
         subPostre2.setBounds(60, 280, 300, 70);
 
-        subPostre1.setEditable(false);
         subPostre1.setColumns(20);
         subPostre1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         subPostre1.setForeground(new java.awt.Color(34, 66, 73));
@@ -846,7 +835,8 @@ public class AdminPostre extends javax.swing.JFrame {
  
 
                  
-         }catch (SQLException ex) {        
+         }catch (SQLException ex) {      
+        Logger.getLogger(AdminPostre.class.getName()).log(Level.SEVERE, null,ex); 
         }
         AdminMenu go = new AdminMenu();
         go.setVisible(true);

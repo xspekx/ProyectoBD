@@ -166,7 +166,6 @@
     </Component>
     <Component class="javax.swing.JTextArea" name="subPostre7">
       <Properties>
-        <Property name="editable" type="boolean" value="false"/>
         <Property name="columns" type="int" value="20"/>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="1"/>
@@ -204,7 +203,6 @@
     </Component>
     <Component class="javax.swing.JTextArea" name="subPostre6">
       <Properties>
-        <Property name="editable" type="boolean" value="false"/>
         <Property name="columns" type="int" value="20"/>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="1"/>
@@ -242,7 +240,6 @@
     </Component>
     <Component class="javax.swing.JTextArea" name="subPostre5">
       <Properties>
-        <Property name="editable" type="boolean" value="false"/>
         <Property name="columns" type="int" value="20"/>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="1"/>
@@ -280,7 +277,6 @@
     </Component>
     <Component class="javax.swing.JTextArea" name="subPostre4">
       <Properties>
-        <Property name="editable" type="boolean" value="false"/>
         <Property name="columns" type="int" value="20"/>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="1"/>
@@ -318,7 +314,6 @@
     </Component>
     <Component class="javax.swing.JTextArea" name="subPostre3">
       <Properties>
-        <Property name="editable" type="boolean" value="false"/>
         <Property name="columns" type="int" value="20"/>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="1"/>
@@ -356,7 +351,6 @@
     </Component>
     <Component class="javax.swing.JTextArea" name="subPostre2">
       <Properties>
-        <Property name="editable" type="boolean" value="false"/>
         <Property name="columns" type="int" value="20"/>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="1"/>
@@ -394,7 +388,6 @@
     </Component>
     <Component class="javax.swing.JTextArea" name="subPostre1">
       <Properties>
-        <Property name="editable" type="boolean" value="false"/>
         <Property name="columns" type="int" value="20"/>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="1"/>

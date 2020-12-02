@@ -38,16 +38,9 @@ public class OrdenComida extends javax.swing.JFrame {
     String contraseña = "123"; // contraseña para entrar a la base de datos
                 
     Class.forName("com.mysql.jdbc.Driver").newInstance(); // carga el driver para conectarce
-    con = (Connection) DriverManager.getConnection(url,usuario,contraseña); // se conecta a la base de datos nuestro programa 
-    if(con != null){
-                System.out.println("Conexion Exitosa!");
-            }else{
-                System.out.println("Conexion Fallida!");                
-            }
-    
-    
+    con = (Connection) DriverManager.getConnection(url,usuario,contraseña); // se conecta a la base de datos nuestro programa    
     }catch(Exception e){// excepciones en el caso de haber un error
-         Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null,e); 
+         Logger.getLogger(OrdenComida.class.getName()).log(Level.SEVERE, null,e); 
     }
         
         DefaultTableModel modeloTabla = new DefaultTableModel();
@@ -76,6 +69,7 @@ public class OrdenComida extends javax.swing.JFrame {
              mesa.setText(String.valueOf(rs2.getInt("mesa_id_fk")));
          }
             }catch (SQLException ex) {
+            Logger.getLogger(OrdenComida.class.getName()).log(Level.SEVERE, null,ex); 
         }
         
         

@@ -233,8 +233,27 @@ BEGIN
 DELIMITER ;
 
 
+DELIMITER //
+CREATE PROCEDURE eliminarFacturaNoPagada(IN _rut VARCHAR(13))
+BEGIN
+DECLARE existe_rut INT;
 
+SET existe_rut = (SELECT COUNT(*) FROM usuario WHERE rut = _rut);
+
+IF existe_rut = 0 THEN
+SELECT 'USUARIO NO REGISTRADO' as 'ERROR';
+ELSE
+
+DELETE FROM detalle WHERE id = (SELECT MAX(detalle.id)
+FROM detalle
+INNER JOIN factura ON factura.id = detalle.factura_id_fk
+INNER JOIN usuario ON usuario.id = factura.usuario_id_fk
+WHERE usuario.rut = _rut AND factura.pagado = 0);
+
+DELETE FROM factura WHERE id = (SELECT MAX(factura.id) FROM factura WHERE usuario_id_fk = (SELECT id FROM usuario WHERE rut = _rut AND pagado = 0));
+END IF;
 END //
+
 DELIMITER ;
 
 
@@ -304,3 +323,7 @@ DELIMITER ;
 -- INNER JOIN factura ON factura.id = detalle.factura_id_fk
 -- INNER JOIN usuario ON usuario.id = factura.usuario_id_fk
 -- WHERE usuario.rut = '11111111-1' AND factura.pagado = 0;
+
+
+
+

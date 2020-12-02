@@ -40,13 +40,8 @@ public class AdminComida extends javax.swing.JFrame {
                 
     Class.forName("com.mysql.jdbc.Driver").newInstance(); // carga el driver para conectarce
     con = (Connection) DriverManager.getConnection(url,usuario,contraseña); // se conecta a la base de datos nuestro programa 
-    if(con != null){
-                System.out.println("Conexion Exitosa!");
-            }else{
-                System.out.println("Conexion Fallida!");                
-            }
     }catch(Exception e){// excepciones en el caso de haber un error
-         Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null,e); 
+         Logger.getLogger(AdminComida.class.getName()).log(Level.SEVERE, null,e); 
     }
             
               try {
@@ -822,7 +817,9 @@ public class AdminComida extends javax.swing.JFrame {
             ResultSet rsf = stnt.executeQuery("CALL ingresoInventario("+cantidad6.getText()+",15)");
             ResultSet rsg = stnt.executeQuery("CALL ingresoInventario("+cantidad7.getText()+",16)");
                  
-        } catch (SQLException ex) {    
+        } catch (SQLException ex) { 
+        Logger.getLogger(AdminComida.class.getName()).log(Level.SEVERE, null,ex); 
+
         }
         AdminMenu go = new AdminMenu();
         go.setVisible(true);

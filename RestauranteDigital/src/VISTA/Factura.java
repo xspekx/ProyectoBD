@@ -38,18 +38,10 @@ public class Factura extends javax.swing.JFrame {
                 
     Class.forName("com.mysql.jdbc.Driver").newInstance(); // carga el driver para conectarce
     con = (Connection) DriverManager.getConnection(url,usuario,contraseña); // se conecta a la base de datos nuestro programa 
-    if(con != null){
-                System.out.println("Conexion Exitosa!");
-            }else{
-                System.out.println("Conexion Fallida!");                
-            }
-    
     
     }catch(Exception e){// excepciones en el caso de haber un error
-         Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null,e); 
+         Logger.getLogger(Factura.class.getName()).log(Level.SEVERE, null,e); 
     }
-    
-    
         DefaultTableModel modeloTabla = new DefaultTableModel(){
 
             @Override
@@ -83,13 +75,9 @@ public class Factura extends javax.swing.JFrame {
          if(rs2.next()){
              totalFactura.setText(String.valueOf(rs2.getInt("total")));
          }
-            
-            
-            
+        
             }catch (SQLException ex) {
-                
-                
-                
+                      Logger.getLogger(Factura.class.getName()).log(Level.SEVERE, null,ex);         
         }
             
         
@@ -224,6 +212,16 @@ public class Factura extends javax.swing.JFrame {
 
     private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
         // TODO add your handling code here:
+        
+         try {
+            stnt = con.createStatement(); 
+            stnt.executeUpdate("CALL eliminarFacturaNoPagada('"+rut+"')");
+            JOptionPane.showMessageDialog(this, "Pedido cancelado");
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(Factura.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
         Login go = new Login();
         go.setVisible(true);
         this.setVisible(false);

@@ -37,13 +37,9 @@ public class RegistroUsuario extends javax.swing.JFrame {
                 
     Class.forName("com.mysql.jdbc.Driver").newInstance(); // carga el driver para conectarce
     con = (Connection) DriverManager.getConnection(url,usuario,contraseña); // se conecta a la base de datos nuestro programa 
-    if(con != null){
-                System.out.println("Conexion Exitosa!");
-            }else{
-                System.out.println("Conexion Fallida!");                
-            }
+
     }catch(Exception e){// excepciones en el caso de haber un error
-         Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null,e); 
+         Logger.getLogger(RegistroUsuario.class.getName()).log(Level.SEVERE, null,e); 
     }
     }
 

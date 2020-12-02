@@ -36,16 +36,9 @@ public class ActualizarUsuario extends javax.swing.JFrame {
     String contraseña = "123"; // contraseña para entrar a la base de datos
                 
     Class.forName("com.mysql.jdbc.Driver").newInstance(); // carga el driver para conectarce
-    con = (Connection) DriverManager.getConnection(url,usuario,contraseña); // se conecta a la base de datos nuestro programa 
-    if(con != null){
-                System.out.println("Conexion Exitosa!");
-            }else{
-                System.out.println("Conexion Fallida!");                
-            }
-    
-    
+    con = (Connection) DriverManager.getConnection(url,usuario,contraseña); // se conecta a la base de datos nuestro programa  
     }catch(Exception e){// excepciones en el caso de haber un error
-         Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null,e); 
+         Logger.getLogger(ActualizarUsuario.class.getName()).log(Level.SEVERE, null,e); 
     }
     }
 
@@ -73,7 +66,7 @@ public class ActualizarUsuario extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(400, 560));
+        setMinimumSize(new java.awt.Dimension(400, 580));
         getContentPane().setLayout(null);
         getContentPane().add(correo);
         correo.setBounds(130, 360, 210, 30);
@@ -163,6 +156,8 @@ public class ActualizarUsuario extends javax.swing.JFrame {
         stnt.executeUpdate("UPDATE usuario SET nombre = '"+nombre.getText()+"', apellido = '"+apellido.getText()+"', "
                 + "correo = '"+correo.getText()+"', pass = SHA2('"+pass.getText()+"',0) WHERE id = (SELECT id FROM usuario WHERE rut = '"+rut+"')");
         } catch (SQLException ex) {
+        Logger.getLogger(ActualizarUsuario.class.getName()).log(Level.SEVERE, null,ex); 
+
         }
         
             Login go = new Login();
@@ -173,7 +168,7 @@ public class ActualizarUsuario extends javax.swing.JFrame {
 
     private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
         // TODO add your handling code here:
-        AdminMenu go = new AdminMenu();
+        Login go = new Login();
         go.setVisible(true);
         this.setVisible(false);
 
