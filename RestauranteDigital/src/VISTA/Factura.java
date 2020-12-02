@@ -76,7 +76,20 @@ public class Factura extends javax.swing.JFrame {
                                           " FROM usuario INNER JOIN factura ON factura.usuario_id_fk = usuario.id WHERE usuario.rut = '"+rut+"')");
             while(rsl.next()){
                 modeloTabla.addRow(new Object[]{rsl.getInt("detalle.cantidad"),rsl.getString("nombre"),rsl.getInt("precio"),rsl.getInt("total")});}
+            
+            
+         ResultSet rs2 = stnt.executeQuery("SElECT SUM(detalle.precio) AS 'total' FROM detalle INNER JOIN factura ON factura.id = detalle.factura_id_fk WHERE factura.id =(SELECT MAX(factura.id)" +
+                                          " FROM usuario INNER JOIN factura ON factura.usuario_id_fk = usuario.id WHERE usuario.rut = '"+rut+"')");
+         if(rs2.next()){
+             totalFactura.setText(String.valueOf(rs2.getInt("total")));
+         }
+            
+            
+            
             }catch (SQLException ex) {
+                
+                
+                
         }
             
         
@@ -94,7 +107,9 @@ public class Factura extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel15 = new javax.swing.JLabel();
+        totalFactura = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -105,22 +120,43 @@ public class Factura extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(570, 700));
         getContentPane().setLayout(null);
 
-        jLabel15.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(255, 102, 0));
-        jLabel15.setText("CANCELAR");
-        jLabel15.addMouseListener(new java.awt.event.MouseAdapter() {
+        totalFactura.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        totalFactura.setForeground(new java.awt.Color(255, 102, 0));
+        totalFactura.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel15MouseClicked(evt);
+                totalFacturaMouseClicked(evt);
             }
         });
-        getContentPane().add(jLabel15);
-        jLabel15.setBounds(380, 470, 150, 60);
+        getContentPane().add(totalFactura);
+        totalFactura.setBounds(170, 440, 190, 60);
+
+        jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 102, 0));
+        jLabel11.setText("CANCELAR");
+        jLabel11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel11MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jLabel11);
+        jLabel11.setBounds(400, 540, 150, 40);
+
+        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 102, 0));
+        jLabel16.setText("Total $");
+        jLabel16.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel16MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jLabel16);
+        jLabel16.setBounds(70, 440, 190, 60);
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 54)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 102, 0));
-        jLabel7.setText("DETALLE");
+        jLabel7.setText("FACTURA");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(160, 40, 260, 60);
+        jLabel7.setBounds(170, 30, 260, 60);
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 102, 0));
@@ -131,7 +167,7 @@ public class Factura extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jLabel14);
-        jLabel14.setBounds(70, 470, 190, 60);
+        jLabel14.setBounds(70, 530, 190, 60);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -151,7 +187,7 @@ public class Factura extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/93b5f9913d2e4316cd6e541c67b9aed0.jpg"))); // NOI18N
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 570, 770);
+        jLabel1.setBounds(0, 0, 600, 770);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -164,16 +200,12 @@ public class Factura extends javax.swing.JFrame {
                                " AND usuario_id_fk = (SELECT id FROM usuario WHERE rut = '"+rut+"')");
             JOptionPane.showMessageDialog(this, "Tu pedido sera entregado dentro de poco", "Pago realizado con exito", 1);
             
-            
-            
-            
         } catch (SQLException ex) {
             Logger.getLogger(Factura.class.getName()).log(Level.SEVERE, null, ex);
         }
         
         
-        
-        
+       
         OrdenComida go = new OrdenComida();
         go.setVisible(true);
         this.setVisible(false);
@@ -182,9 +214,21 @@ public class Factura extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jLabel14MouseClicked
 
-    private void jLabel15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel15MouseClicked
+    private void jLabel16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel16MouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel15MouseClicked
+    }//GEN-LAST:event_jLabel16MouseClicked
+
+    private void totalFacturaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_totalFacturaMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_totalFacturaMouseClicked
+
+    private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
+        // TODO add your handling code here:
+        Login go = new Login();
+        go.setVisible(true);
+        this.setVisible(false);
+
+    }//GEN-LAST:event_jLabel11MouseClicked
 
     /**
      * @param args the command line arguments
@@ -224,10 +268,12 @@ public class Factura extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
     public static javax.swing.JTable jTable1;
+    private javax.swing.JLabel totalFactura;
     // End of variables declaration//GEN-END:variables
 }

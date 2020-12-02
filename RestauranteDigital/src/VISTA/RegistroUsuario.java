@@ -56,6 +56,7 @@ public class RegistroUsuario extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel12 = new javax.swing.JLabel();
         rut = new javax.swing.JTextField();
         nombre = new javax.swing.JTextField();
         apellido = new javax.swing.JTextField();
@@ -73,7 +74,19 @@ public class RegistroUsuario extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(420, 550));
+        setPreferredSize(new java.awt.Dimension(420, 550));
         getContentPane().setLayout(null);
+
+        jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(34, 66, 73));
+        jLabel12.setText("VOLVER");
+        jLabel12.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel12MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jLabel12);
+        jLabel12.setBounds(170, 540, 110, 32);
 
         rut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -107,7 +120,7 @@ public class RegistroUsuario extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(50, 440, 360, 120);
+        jLabel3.setBounds(50, 450, 360, 90);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/Imagen1.png"))); // NOI18N
         getContentPane().add(jLabel2);
@@ -145,7 +158,7 @@ public class RegistroUsuario extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/93b5f9913d2e4316cd6e541c67b9aed0.jpg"))); // NOI18N
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(-20, -10, 460, 570);
+        jLabel1.setBounds(-20, -10, 460, 620);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -153,22 +166,15 @@ public class RegistroUsuario extends javax.swing.JFrame {
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
         // TODO add your handling code here:
         
-        try {
-        ResultSet rs1 = stnt.executeQuery("SELECT * FROM usuario WHERE rut = '" + rut.getText() + "' AND pass = SHA2('" +pass.getText() + "',0)"); // comando para buscar datos dento de la base de datos
-        if(!rs1.next()){
-            stnt = con.createStatement();                 
-            ResultSet rs = stnt.executeQuery("CALL agregarUsuario('"+rut.getText()+"','"+nombre.getText()+"','"+apellido.getText()+"','"+correo.getText()+"','"+pass.getText()+"')");
-            JOptionPane.showMessageDialog(this,"Usuario Agregado con exito","Ingreso realizado",1);     
-        
+     try{
+        stnt = con.createStatement();                 
+        ResultSet rs = stnt.executeQuery("CALL agregarUsuario('"+rut.getText()+"','"+nombre.getText()+"','"+apellido.getText()+"','"+correo.getText()+"','"+pass.getText()+"')");
+        JOptionPane.showMessageDialog(this,"Usuario Agregado con exito","Ingreso realizado",1);
+            
         Login go = new Login();
         go.setVisible(true);
         this.setVisible(false);
-        }else{
-            JOptionPane.showMessageDialog(this,"Usuario ya registrado ","ERROR",0);     
 
-        }
-            
-  
         } catch (SQLException ex) {
             Logger.getLogger(RegistroUsuario.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -184,6 +190,13 @@ public class RegistroUsuario extends javax.swing.JFrame {
     private void jLabel3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseEntered
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel3MouseEntered
+
+    private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
+        // TODO add your handling code here:
+        Carta go = new Carta();
+        go.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jLabel12MouseClicked
 
     /**
      * @param args the command line arguments
@@ -225,6 +238,7 @@ public class RegistroUsuario extends javax.swing.JFrame {
     private javax.swing.JTextField correo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;

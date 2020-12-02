@@ -88,13 +88,13 @@ public class Carta extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(190, 300, 230, 60);
+        jLabel4.setBounds(190, 240, 230, 60);
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(34, 66, 73));
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/Imagen4.png"))); // NOI18N
         getContentPane().add(jLabel8);
-        jLabel8.setBounds(60, 280, 80, 100);
+        jLabel8.setBounds(70, 230, 80, 100);
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 102, 0));
@@ -105,13 +105,13 @@ public class Carta extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jLabel12);
-        jLabel12.setBounds(190, 550, 240, 60);
+        jLabel12.setBounds(190, 510, 240, 60);
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(34, 66, 73));
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/Imagen4.png"))); // NOI18N
         getContentPane().add(jLabel9);
-        jLabel9.setBounds(80, 270, 70, 100);
+        jLabel9.setBounds(90, 220, 70, 100);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 102, 0));
@@ -122,7 +122,7 @@ public class Carta extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(190, 430, 220, 60);
+        jLabel6.setBounds(190, 380, 220, 60);
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 54)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 102, 0));
@@ -134,19 +134,19 @@ public class Carta extends javax.swing.JFrame {
         jLabel11.setForeground(new java.awt.Color(34, 66, 73));
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/Imagen5.png"))); // NOI18N
         getContentPane().add(jLabel11);
-        jLabel11.setBounds(30, 540, 100, 110);
+        jLabel11.setBounds(40, 490, 100, 110);
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(34, 66, 73));
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/Imagen3_1.png"))); // NOI18N
         getContentPane().add(jLabel10);
-        jLabel10.setBounds(40, 410, 90, 90);
+        jLabel10.setBounds(50, 370, 90, 90);
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(34, 66, 73));
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/Imagen4.png"))); // NOI18N
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(40, 270, 80, 100);
+        jLabel5.setBounds(50, 220, 80, 100);
 
         jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(34, 66, 73));
@@ -163,11 +163,11 @@ public class Carta extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jLabel14);
-        jLabel14.setBounds(210, 660, 240, 60);
+        jLabel14.setBounds(190, 610, 240, 60);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/93b5f9913d2e4316cd6e541c67b9aed0.jpg"))); // NOI18N
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 570, 1880);
+        jLabel1.setBounds(-20, 0, 570, 1880);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

@@ -108,6 +108,7 @@ public class MenuComida extends javax.swing.JFrame {
         comida6 = new javax.swing.JLabel();
         comida7 = new javax.swing.JLabel();
         total1 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -159,7 +160,7 @@ public class MenuComida extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(625, 945));
+        setMinimumSize(new java.awt.Dimension(656, 945));
         addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 formMouseMoved(evt);
@@ -218,6 +219,17 @@ public class MenuComida extends javax.swing.JFrame {
         total1.setForeground(new java.awt.Color(34, 66, 73));
         getContentPane().add(total1);
         total1.setBounds(140, 860, 230, 40);
+
+        jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(34, 66, 73));
+        jLabel12.setText("VOLVER");
+        jLabel12.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel12MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jLabel12);
+        jLabel12.setBounds(480, 890, 110, 20);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(34, 66, 73));
@@ -420,7 +432,7 @@ public class MenuComida extends javax.swing.JFrame {
             }
         });
         getContentPane().add(agregar);
-        agregar.setBounds(420, 840, 200, 80);
+        agregar.setBounds(430, 820, 200, 80);
 
         subComida1.setEditable(false);
         subComida1.setColumns(20);
@@ -900,6 +912,13 @@ public class MenuComida extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_formMouseClicked
 
+    private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
+        // TODO add your handling code here:
+        Carta go = new Carta();
+        go.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jLabel12MouseClicked
+
     
     private void limpiar(){
        cantidad1.setText("0");
@@ -976,6 +995,7 @@ public class MenuComida extends javax.swing.JFrame {
     private javax.swing.JLabel comida7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;

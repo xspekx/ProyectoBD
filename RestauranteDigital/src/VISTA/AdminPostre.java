@@ -119,6 +119,7 @@ public class AdminPostre extends javax.swing.JFrame {
         cant13 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         subPostre7 = new javax.swing.JTextArea();
         subPostre6 = new javax.swing.JTextArea();
@@ -213,6 +214,17 @@ public class AdminPostre extends javax.swing.JFrame {
         jLabel14.setText("3.");
         getContentPane().add(jLabel14);
         jLabel14.setBounds(30, 340, 60, 60);
+
+        jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(34, 66, 73));
+        jLabel12.setText("VOLVER");
+        jLabel12.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel12MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jLabel12);
+        jLabel12.setBounds(50, 860, 110, 20);
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(34, 66, 73));
@@ -982,6 +994,14 @@ public class AdminPostre extends javax.swing.JFrame {
             
     }//GEN-LAST:event_formMouseMoved
 
+    private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
+        // TODO add your handling code here:
+        AdminMenu go = new AdminMenu();
+        go.setVisible(true);
+        this.setVisible(false);
+
+    }//GEN-LAST:event_jLabel12MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1035,6 +1055,7 @@ public class AdminPostre extends javax.swing.JFrame {
     private javax.swing.JTextField cantidad7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;

@@ -59,6 +59,7 @@ public class ActualizarUsuario extends javax.swing.JFrame {
     private void initComponents() {
 
         correo = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
         pass = new javax.swing.JPasswordField();
         jLabel11 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -75,6 +76,17 @@ public class ActualizarUsuario extends javax.swing.JFrame {
         getContentPane().setLayout(null);
         getContentPane().add(correo);
         correo.setBounds(130, 360, 210, 30);
+
+        jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(34, 66, 73));
+        jLabel12.setText("VOLVER");
+        jLabel12.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel12MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jLabel12);
+        jLabel12.setBounds(170, 510, 110, 20);
 
         pass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -146,12 +158,25 @@ public class ActualizarUsuario extends javax.swing.JFrame {
 
     private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
         try {
+        stnt = con.createStatement();  
         stnt.executeUpdate("UPDATE usuario SET nombre = '"+nombre.getText()+"', apellido = '"+apellido.getText()+"', "
                 + "correo = '"+correo.getText()+"', pass = SHA2('"+pass.getText()+"',0) WHERE id = (SELECT id FROM usuario WHERE rut = '"+rut+"')");
         } catch (SQLException ex) {
         }
+        
+            Login go = new Login();
+            go.setVisible(true);
+            this.setVisible(false);
 
     }//GEN-LAST:event_jLabel11MouseClicked
+
+    private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
+        // TODO add your handling code here:
+        AdminMenu go = new AdminMenu();
+        go.setVisible(true);
+        this.setVisible(false);
+
+    }//GEN-LAST:event_jLabel12MouseClicked
 
     /**
      * @param args the command line arguments
@@ -194,6 +219,7 @@ public class ActualizarUsuario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;

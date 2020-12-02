@@ -33,11 +33,13 @@ public class AdminMenu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel16 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
@@ -50,6 +52,17 @@ public class AdminMenu extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(470, 700));
         getContentPane().setLayout(null);
 
+        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(34, 66, 73));
+        jLabel16.setText("AGREGAR/ELIMINAR ADMINISTRADOR");
+        jLabel16.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel16MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jLabel16);
+        jLabel16.setBounds(30, 680, 380, 60);
+
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(204, 204, 204));
         jLabel14.setText("Cerrar sesion");
@@ -59,7 +72,7 @@ public class AdminMenu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jLabel14);
-        jLabel14.setBounds(290, 590, 160, 60);
+        jLabel14.setBounds(30, 730, 160, 60);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 102, 0));
@@ -78,22 +91,33 @@ public class AdminMenu extends javax.swing.JFrame {
         getContentPane().add(jLabel8);
         jLabel8.setBounds(60, 220, 80, 100);
 
-        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(255, 102, 0));
-        jLabel12.setText("POSTRES");
+        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(34, 66, 73));
+        jLabel12.setText("VER DETALLES");
         jLabel12.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel12MouseClicked(evt);
             }
         });
         getContentPane().add(jLabel12);
-        jLabel12.setBounds(190, 510, 240, 60);
+        jLabel12.setBounds(30, 630, 160, 60);
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(34, 66, 73));
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/Imagen4.png"))); // NOI18N
         getContentPane().add(jLabel9);
         jLabel9.setBounds(80, 210, 70, 100);
+
+        jLabel15.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(255, 102, 0));
+        jLabel15.setText("POSTRES");
+        jLabel15.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel15MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jLabel15);
+        jLabel15.setBounds(190, 510, 240, 60);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 102, 0));
@@ -138,7 +162,7 @@ public class AdminMenu extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/93b5f9913d2e4316cd6e541c67b9aed0.jpg"))); // NOI18N
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 570, 700);
+        jLabel1.setBounds(0, 0, 670, 880);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -157,7 +181,7 @@ public class AdminMenu extends javax.swing.JFrame {
 
     private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
         // TODO add your handling code here:
-        AdminPostre go = new AdminPostre();
+        DetallesAdmin go = new DetallesAdmin();
         go.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jLabel12MouseClicked
@@ -175,6 +199,22 @@ public class AdminMenu extends javax.swing.JFrame {
         go.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jLabel14MouseClicked
+
+    private void jLabel15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel15MouseClicked
+        // TODO add your handling code here:       
+        AdminPostre go = new AdminPostre();
+        go.setVisible(true);
+        this.setVisible(false);
+
+    }//GEN-LAST:event_jLabel15MouseClicked
+
+    private void jLabel16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel16MouseClicked
+        // TODO add your handling code here:
+        RegistroAdmins go = new RegistroAdmins();
+        go.setVisible(true);
+        this.setVisible(false);
+                            
+    }//GEN-LAST:event_jLabel16MouseClicked
 
     /**
      * @param args the command line arguments
@@ -218,6 +258,8 @@ public class AdminMenu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;

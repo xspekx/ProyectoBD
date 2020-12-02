@@ -66,7 +66,7 @@ public class Login extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(460, 710));
+        setMinimumSize(new java.awt.Dimension(449, 600));
         getContentPane().setLayout(null);
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
@@ -75,15 +75,15 @@ public class Login extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTextField1);
-        jTextField1.setBounds(160, 290, 210, 30);
+        jTextField1.setBounds(130, 300, 210, 30);
         getContentPane().add(jPasswordField1);
-        jPasswordField1.setBounds(160, 330, 210, 30);
+        jPasswordField1.setBounds(130, 340, 210, 30);
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(34, 66, 73));
         jLabel6.setText("CONTRASEÑA");
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(50, 330, 140, 30);
+        jLabel6.setBounds(20, 340, 140, 30);
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(34, 66, 73));
@@ -94,7 +94,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(60, 490, 140, 30);
+        jLabel4.setBounds(20, 480, 140, 30);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/Imagen3.png"))); // NOI18N
         jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -119,21 +119,21 @@ public class Login extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jLabel8);
-        jLabel8.setBounds(60, 530, 260, 30);
+        jLabel8.setBounds(20, 530, 260, 32);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/Imagen1.png"))); // NOI18N
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(130, 20, 190, 178);
+        jLabel2.setBounds(140, 30, 190, 178);
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(34, 66, 73));
         jLabel7.setText("USUARIO");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(50, 290, 140, 30);
+        jLabel7.setBounds(20, 300, 140, 30);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/93b5f9913d2e4316cd6e541c67b9aed0.jpg"))); // NOI18N
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 570, 1880);
+        jLabel1.setBounds(-90, 0, 570, 1880);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -195,7 +195,7 @@ public class Login extends javax.swing.JFrame {
     private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
         try {
             // TODO add your handling code here:
- 
+            stnt = con.createStatement();  
             ResultSet rs2 = stnt.executeQuery("SELECT * FROM usuario WHERE rut = '" + jTextField1.getText() + "' AND pass = (SHA2('" +jPasswordField1.getText()+ "',0))");
             if(rs2.next()){
             ActualizarUsuario go = new ActualizarUsuario();

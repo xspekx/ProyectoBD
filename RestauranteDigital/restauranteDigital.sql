@@ -344,4 +344,8 @@ WHERE usuario.id = (SELECT id FROM usuario WHERE rut = '111');
 
 DELETE FROM detalle WHERE id = 93;
 
-
+SELECT detalle.cantidad, producto.nombre, producto.precio, detalle.precio AS 'total' 
+                                          FROM detalle
+                                          INNER JOIN producto ON producto.id = detalle.producto_id_fk
+                                          WHERE detalle.factura_id_fk = (SELECT MAX(factura.id) FROM usuario INNER JOIN factura ON factura.usuario_id_fk = usuario.id 
+                                          WHERE usuario.rut = '11111111-1' AND pagado = 1);

@@ -100,6 +100,8 @@ public class MenuPostres extends javax.swing.JFrame {
             }if(cantidad7.getText().equals("")){
             cantidad7.setText("0");
             }
+            
+       
 
     
     }
@@ -114,6 +116,8 @@ public class MenuPostres extends javax.swing.JFrame {
     private void initComponents() {
 
         postre1 = new javax.swing.JLabel();
+        total3 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
         postre2 = new javax.swing.JLabel();
         postre3 = new javax.swing.JLabel();
         postre4 = new javax.swing.JLabel();
@@ -171,7 +175,7 @@ public class MenuPostres extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(635, 930));
+        setMinimumSize(new java.awt.Dimension(656, 930));
         addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 formMouseMoved(evt);
@@ -184,6 +188,22 @@ public class MenuPostres extends javax.swing.JFrame {
         postre1.setText("MOUSSE DE CHOCOLATE");
         getContentPane().add(postre1);
         postre1.setBounds(60, 160, 250, 40);
+
+        total3.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        total3.setForeground(new java.awt.Color(34, 66, 73));
+        getContentPane().add(total3);
+        total3.setBounds(440, 210, 190, 40);
+
+        jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(34, 66, 73));
+        jLabel12.setText("VOLVER");
+        jLabel12.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel12MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jLabel12);
+        jLabel12.setBounds(480, 890, 110, 20);
 
         postre2.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
         postre2.setForeground(new java.awt.Color(255, 102, 0));
@@ -385,7 +405,7 @@ public class MenuPostres extends javax.swing.JFrame {
             }
         });
         getContentPane().add(total2);
-        total2.setBounds(400, 840, 200, 80);
+        total2.setBounds(420, 820, 200, 80);
 
         subPostre1.setEditable(false);
         subPostre1.setColumns(20);
@@ -856,7 +876,17 @@ public class MenuPostres extends javax.swing.JFrame {
 
     private void formMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseMoved
         // TODO add your handling code here:
-                   if(cantidad1.getText().equals("")){
+        
+                try {  
+            stnt = con.createStatement(); 
+            ResultSet rs = stnt.executeQuery("SELECT totalVentaProduct("+precioPostre1.getText()+","+cantidad1.getText()+") AS 'total'");
+                total3.setText(String.valueOf(rs.getInt("total")));
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(MenuPostres.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    
+            if(cantidad1.getText().equals("")){
             cantidad1.setText("0");
             }if(cantidad2.getText().equals("")){
             cantidad2.setText("0");
@@ -891,6 +921,13 @@ public class MenuPostres extends javax.swing.JFrame {
        }
       
     }//GEN-LAST:event_formMouseMoved
+
+    private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
+        // TODO add your handling code here:
+        Carta go = new Carta();
+        go.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jLabel12MouseClicked
  public void limpiar(){
        cantidad1.setText("0");
        cantidad2.setText("0");
@@ -953,6 +990,7 @@ public class MenuPostres extends javax.swing.JFrame {
     private javax.swing.JTextField cantidad7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
@@ -993,5 +1031,6 @@ public class MenuPostres extends javax.swing.JFrame {
     private javax.swing.JLabel total;
     private javax.swing.JLabel total1;
     private javax.swing.JLabel total2;
+    private javax.swing.JLabel total3;
     // End of variables declaration//GEN-END:variables
 }
