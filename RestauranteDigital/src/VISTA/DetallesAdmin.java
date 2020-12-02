@@ -58,6 +58,7 @@ public class DetallesAdmin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel21 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
@@ -73,6 +74,17 @@ public class DetallesAdmin extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(1080, 800));
         getContentPane().setLayout(null);
 
+        jLabel21.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(255, 102, 0));
+        jLabel21.setText("Facturas");
+        jLabel21.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel21MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jLabel21);
+        jLabel21.setBounds(460, 680, 260, 60);
+
         jLabel20.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(255, 102, 0));
         jLabel20.setText("Usuarios");
@@ -82,7 +94,7 @@ public class DetallesAdmin extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jLabel20);
-        jLabel20.setBounds(800, 620, 260, 60);
+        jLabel20.setBounds(460, 620, 260, 60);
 
         jLabel18.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(255, 102, 0));
@@ -93,7 +105,7 @@ public class DetallesAdmin extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jLabel18);
-        jLabel18.setBounds(800, 560, 260, 60);
+        jLabel18.setBounds(460, 560, 260, 60);
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(34, 66, 73));
@@ -282,6 +294,26 @@ public class DetallesAdmin extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jLabel20MouseClicked
 
+    private void jLabel21MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel21MouseClicked
+        // TODO add your handling code here:
+        DefaultTableModel modeloTabla = new DefaultTableModel();
+        jTable1.setModel(modeloTabla);
+        modeloTabla.setColumnIdentifiers(new Object[]{"id","rut","nombre","apellido","fecha","total"});//
+        try {
+         stnt = con.createStatement();
+         ResultSet rsl = stnt.executeQuery("SELECT factura.id, usuario.rut, usuario.nombre, usuario.apellido , factura.fecha , detalle.precio AS 'total'" +
+                                            " FROM detalle INNER JOIN factura ON factura.id = detalle.factura_id_fk INNER JOIN usuario ON usuario.id = factura.usuario_id_fk");
+       
+         while(rsl.next()){
+                modeloTabla.addRow(new Object[]{rsl.getInt("id"),rsl.getString("rut"),rsl.getString("nombre"),rsl.getString("apellido"),rsl.getString("fecha"),rsl.getString("total")});}
+
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(DetallesAdmin.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       
+    }//GEN-LAST:event_jLabel21MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -325,6 +357,7 @@ public class DetallesAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
     public static javax.swing.JTable jTable1;
